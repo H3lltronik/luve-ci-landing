@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
+    "sass": "^1.56.1",
     "standard": "^17.0.0"
   }
 }

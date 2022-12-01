@@ -1,4 +1,7 @@
 export default function HomePage (options: any) {
-    return <h1>Prueba</h1>
+  return (
+    <main>
+      <h1>Main</h1>
+    </main>
+  )
 }
-  
