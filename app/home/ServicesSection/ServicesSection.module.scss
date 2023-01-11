@@ -1,0 +1,51 @@
+.home_services {
+    $gap: 1rem;
+    position: relative;
+    &__bullet {
+        position: sticky;
+        top: 50vh;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+        width: calc(#{$gap});
+        height: calc(#{$gap});
+        border-radius: 100%;
+        background-color: var(--primary-color-200);
+    }
+    &__item {
+        $ctx: &;
+        gap: $gap;
+        display: flex;
+        align-items: center;
+        &__title {
+        }
+        &__subtitle {
+
+        }
+        &__text {
+
+        }
+        &__image {
+            width: 100%;
+            img {
+                width: 100%;
+            }
+        }
+        &__content {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+        }
+        &__container {
+        }
+        &__button {
+            margin: 50px;
+        }
+        &--inverse {
+            flex-direction: row-reverse;
+        }
+    }
+    
+}

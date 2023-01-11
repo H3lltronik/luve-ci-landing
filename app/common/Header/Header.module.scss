@@ -1,6 +1,37 @@
 .header {
-    background: black;
-    .luve-logo, svg {
-        width: 200px;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    position: fixed;
+    padding: 10px 0;
+    width: calc(100vw - 10px);
+    background-color: white;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+    &_logo {
+        width: 77px;
+    }
+    &_nav {
+        top: 50%;
+        left: 50%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        &_ul {
+            gap: 100px;
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+        &_li {
+            color: black;
+        }
+    }
+    &_container {
+        width: 100vw;
+        margin: auto;
+        display: flex;
+        max-width: 1800px;
+        align-items: center;
+        background-color: white;
+        justify-content: space-between;
     }
 }
