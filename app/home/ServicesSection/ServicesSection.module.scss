@@ -5,12 +5,28 @@
         position: sticky;
         top: 50vh;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, 0%);
         z-index: 10;
         width: calc(#{$gap});
         height: calc(#{$gap});
         border-radius: 100%;
         background-color: var(--primary-color-200);
+        display: none;
+    }
+    &__line {
+        top: 0;
+        left: 50%;
+        z-index: 10;
+        position: absolute;
+        width: calc(#{$gap});
+        transition-duration: 0.5s;
+        transform: translate(-50%, 0%);
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        height: var(--services-line-height);
+        max-height: var(--services-line-max-height);
+        background-color: var(--primary-color-dimmer);
+        transition-timing-function: cubic-bezier(.32,.42,0,.99);
     }
     &__item {
         $ctx: &;
