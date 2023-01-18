@@ -100,3 +100,10 @@ ul p, ol p {
 ::-webkit-scrollbar-thumb {
   background: var(--neutral-color-300);
 }
+
+.debug {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}

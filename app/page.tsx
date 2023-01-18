@@ -2,31 +2,32 @@
 import { ServicesSection, GridSection } from './home'
 import { ParallaxProvider } from 'react-scroll-parallax'
 import HeroSection from './home/HeroSection/HeroSection'
-import { useEffect } from 'react'
 import PartnersSection from './home/PartnersSection/PartnersSection'
-import $ from 'jquery'
+import ContactSection from './home/ContactSection/ContactSection'
+
+/*
+window.addEventListener('load', () => {
+  const root = document.querySelector(':root') as HTMLElement
+  const $logoObj = $('#logo-anim')
+  const objFromTop = ($logoObj.offset()?.top || 0)
+  const objHeight = ($logoObj.height() ?? 0)
+  const logoFromTop = objFromTop - (window.innerHeight * 1.5)
+
+  root.style.setProperty('--services-line-max-height', `${logoFromTop + (objHeight / 3)}px`)
+
+  window.addEventListener('scroll', function (e) {
+    if (this.scrollY >= this.innerHeight) {
+      if (!root) return
+
+      root.style.setProperty('--services-line-height', `${(this.scrollY - this.innerHeight) + 10}px`)
+    } else {
+      root.style.setProperty('--services-line-height', '0px')
+    }
+  })
+})
+*/
 
 export default function HomePage (options: any) {
-  useEffect(() => {
-    const test = document.querySelector(':root') as HTMLElement
-    const $logoObj = $('#logo-anim')
-    const objFromTop = ($logoObj.offset()?.top || 0)
-    const objHeight = ($logoObj.height() ?? 0) / 1.3
-    console.log('objHeight', objHeight)
-    const logoFromTop = objFromTop - window.innerHeight
-    test.style.setProperty('--services-line-max-height', `${logoFromTop - objHeight}px`)
-
-    window.addEventListener('scroll', function (e) {
-      if (this.scrollY >= this.innerHeight) {
-        if (!test) return
-
-        test.style.setProperty('--services-line-height', `${(this.scrollY - this.innerHeight) + 10}px`)
-      } else {
-        test.style.setProperty('--services-line-height', '0px')
-      }
-    })
-  })
-
   return (
     <ParallaxProvider>
       <main>
@@ -39,6 +40,8 @@ export default function HomePage (options: any) {
         <PartnersSection />
 
         <GridSection />
+
+        <ContactSection />
       </main>
     </ParallaxProvider>
   )
