@@ -2,44 +2,81 @@
 import * as React from 'react'
 import ServiceItem from './ServiceItem'
 import styles from './ServicesSection.module.scss'
-import image from '../../../assets/pexels-torsten-dettlaff-70912.jpg'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import useLuveStore from '../../../store'
 import { setCSSVariable } from '../../../utils'
+import homeData from '../../../data/home.json'
 
-let _onScroll: any = null
+let _lineHeightScrollE: any = null
 const ServicesSection = (props: any) => {
-  const { setPageScroll, logoAnimElHeight, logoAnimElTop, setLineMaxHeight, lineGrowthEnabled } = useLuveStore()
+  const {
+    serviceSectionHeight,
+    scrollValue,
+    setPageScroll,
+    logoAnimElHeight,
+    logoAnimElTop,
+    setLineMaxHeight,
+    lineGrowthEnabled,
+    setServiceSectionHeight,
+    setScrollValue
+  } = useLuveStore()
+  const [headerHeight, setHeaderHeight] = useState(0)
+  const [logoPageScroll, setLogoPageScroll] = useState(false)
 
+  // SCROLL EVENTS
   useEffect(() => {
-    _onScroll = () => scrollEvent(window.pageYOffset)
-    window.removeEventListener('scroll', _onScroll)
-    window.addEventListener('scroll', _onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', _onScroll)
+    _lineHeightScrollE = () => LineHeightScrollEvent(window.pageYOffset)
+    window.removeEventListener('scroll', _lineHeightScrollE)
+    window.addEventListener('scroll', _lineHeightScrollE, { passive: true })
+
+    return () => {
+      window.removeEventListener('scroll', _lineHeightScrollE)
+    }
   }, [])
 
+  // SCROLL EVENTS STOP WHEN GETTING THERE
   useEffect(() => {
-    console.log('lineGrowthEnabled', lineGrowthEnabled)
-    if (!lineGrowthEnabled) {
-      window.removeEventListener('scroll', _onScroll)
-    }
+    if (!lineGrowthEnabled) { window.removeEventListener('scroll', _lineHeightScrollE) }
   }, [lineGrowthEnabled])
 
+  // GETTING HEIGHTS AND SETTING CSS VARIABLE
   useEffect(() => {
     const objFromTop = logoAnimElTop
     const objHeight = logoAnimElHeight
-    const logoFromTop = objFromTop - (window.innerHeight * 1.5)
-    const maxHeight = logoFromTop + (objHeight / 3)
+    const logoFromTop = objFromTop - window.innerHeight * 1.5
+    const maxHeight = logoFromTop + objHeight / 3
 
     setLineMaxHeight(maxHeight)
     setCSSVariable('services-line-max-height', `${maxHeight}px`)
-    return () => { }
+    return () => {}
   }, [logoAnimElHeight, logoAnimElTop, setLineMaxHeight])
 
-  const scrollEvent = (scrollValue: number) => {
+  // SCROLL EVENT FULL PAGE SCROLL
+  useEffect(() => {
+    const fullPageScrollVal = serviceSectionHeight + (window.innerHeight * 0.5) - headerHeight
+    console.log(scrollValue, fullPageScrollVal)
+    if (scrollValue >= fullPageScrollVal && !logoPageScroll) {
+      window.scrollTo({
+        top: fullPageScrollVal + window.innerHeight * 1.1,
+        behavior: 'smooth'
+      })
+      setLogoPageScroll(true)
+    }
+  }, [headerHeight, scrollValue, serviceSectionHeight])
+
+  const LineHeightScrollEvent = (scrollValue: number) => {
+    setScrollValue(scrollValue)
+    setHeaderHeight(document.querySelector('#header')?.clientHeight || 0)
+    setServiceSectionHeight(
+      document.querySelector('#home_services')?.clientHeight || 0
+    )
+
     if (scrollValue >= window.innerHeight) {
       setPageScroll(scrollValue - window.innerHeight)
-      setCSSVariable('services-line-height', `${(scrollValue - window.innerHeight) + 10}px`)
+      setCSSVariable(
+        'services-line-height',
+        `${scrollValue - window.innerHeight + 10}px`
+      )
     } else {
       setPageScroll(0)
       setCSSVariable('services-line-height', '0px')
@@ -47,14 +84,19 @@ const ServicesSection = (props: any) => {
   }
 
   return (
-    <section className={styles.home_services}>
+    <section className={styles.home_services} id='home_services'>
       <div className={styles.home_services__bullet} />
-      <div id='test' className={styles.home_services__line} />
-      <ServiceItem title='Test' description='Test' items={['1', '2']} image={image.src} />
-      <ServiceItem title='Test' description='Test' items={['1', '2']} image={image.src} inverted />
-      <ServiceItem title='Test' description='Test' items={['1', '2']} image={image.src} />
-      <ServiceItem title='Test' description='Test' items={['1', '2']} image={image.src} inverted />
-
+      <div className={styles.home_services__line} />
+      {homeData.services.map((data, index) => (
+        <ServiceItem
+          title={data.title}
+          description={data.description}
+          items={data.items}
+          image={data.image}
+          key={index}
+          inverted={index % 2 !== 0}
+        />
+      ))}
     </section>
   )
 }

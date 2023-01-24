@@ -1,0 +1,53 @@
+{
+  "services": [
+    {
+      "title": "Test 1",
+      "description": "Lorem ipsum dolor sit amet, consectetur adip",
+      "link": "",
+      "image": "services/pexels-anamul-rezwan-1116035.jpg",
+      "items": ["Lorem ipsum", "dolor sit", "consectetur adip"],
+      "order": 1
+    },
+    {
+      "title": "Test 2",
+      "description": "Lorem ipsum dolor sit amet, consectetur adip",
+      "link": "",
+      "image": "services/pexels-photomix-company-95687.jpg",
+      "items": ["Lorem ipsum", "dolor sit", "consectetur adip"],
+      "order": 1
+    },
+    {
+      "title": "Test 3",
+      "description": "Lorem ipsum dolor sit amet, consectetur adip",
+      "link": "",
+      "image": "services/pexels-pixabay-164634.jpg",
+      "items": ["Lorem ipsum", "dolor sit", "consectetur adip"],
+      "order": 1
+    },
+    {
+      "title": "Test 4",
+      "description": "Lorem ipsum dolor sit amet, consectetur adip",
+      "link": "",
+      "image": "services/pexels-torsten-dettlaff-70912.jpg",
+      "items": ["Lorem ipsum", "dolor sit", "consectetur adip"],
+      "order": 1
+    }
+  ],
+  "logos": [
+    {
+        "src": "/logos/avaco.svg",
+        "alt": "AVACO logo",
+        "order": 1
+    },
+    {
+        "src": "/logos/equilibrio.svg",
+        "alt": "Equilibrio logo",
+        "order": 2
+    },
+    {
+        "src": "/logos/h3.svg",
+        "alt": "H3lltronik logo",
+        "order": 3
+    }
+  ]
+}

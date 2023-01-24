@@ -4,6 +4,8 @@ import { devtools, persist } from 'zustand/middleware'
 interface StoreState {
   pageScroll: number
   setPageScroll: (value: number) => void
+  scrollValue: number
+  setScrollValue: (value: number) => void
   logoAnimElHeight: number
   setLogoAnimElHeight: (value: number) => void
   logoAnimElTop: number
@@ -12,6 +14,8 @@ interface StoreState {
   setLineMaxHeight: (value: number) => void
   lineGrowthEnabled: Boolean
   setLineGrowthEnabled: (value: Boolean) => void
+  serviceSectionHeight: number
+  setServiceSectionHeight: (value: number) => void
 }
 
 const useLuveStore = create<StoreState>()(
@@ -20,6 +24,11 @@ const useLuveStore = create<StoreState>()(
     setPageScroll: (value) => set((state) => ({
       ...state,
       pageScroll: value
+    })),
+    scrollValue: 0,
+    setScrollValue: (value) => set((state) => ({
+      ...state,
+      scrollValue: value
     })),
     logoAnimElHeight: 0,
     setLogoAnimElHeight: (value) => set((state) => ({
@@ -40,6 +49,11 @@ const useLuveStore = create<StoreState>()(
     setLineGrowthEnabled: (value) => set((state) => ({
       ...state,
       lineGrowthEnabled: value
+    })),
+    serviceSectionHeight: 0,
+    setServiceSectionHeight: (value) => set((state) => ({
+      ...state,
+      serviceSectionHeight: value
     }))
   })
 )

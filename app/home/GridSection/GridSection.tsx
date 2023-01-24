@@ -4,15 +4,17 @@ import GridSectionItem from './GridSectionItem'
 
 const GridSection = (props: any) => {
   return (
-    <div className='content-container'>
-      <section className={styles.grid_section}>
-        <GridSectionItem />
-        <GridSectionItem />
-        <GridSectionItem />
-        <GridSectionItem />
-        <GridSectionItem />
-        <GridSectionItem />
-      </section>
+    <div className={styles.grid_section__wrapper}>
+      <div className='content-container'>
+        <section className={styles.grid_section}>
+          <GridSectionItem />
+          <GridSectionItem />
+          <GridSectionItem />
+          <GridSectionItem />
+          <GridSectionItem />
+          <GridSectionItem />
+        </section>
+      </div>
     </div>
   )
 }

@@ -4,7 +4,7 @@ import styles from './Header.module.scss'
 
 function Header () {
   return (
-    <header className={styles.header}>
+    <header id='header' className={styles.header}>
       <div className='page-header'>
         <div className={styles.header_container}>
           <LuveLogo className={styles.header_logo} />
