@@ -1,17 +1,19 @@
-import React from 'react'
-import { WordIcon } from '../../common/Icons'
+import React, { FC } from 'react'
 import styles from './GridSection.module.scss'
 
-export default function GridSectionItem () {
+type GridSectionItemProps = {
+  title: string
+  icon: React.ReactNode
+  className?: string
+}
+const GridSectionItem : FC<GridSectionItemProps> = (props) => {
+  const { icon, title, className } = props
   return (
-    <div className={styles.grid_section__item}>
-      <div className={styles.grid_section__item__icon}>
-        <WordIcon />
-      </div>
-      <h2 className={styles.grid_section__item__title}>Soluciones de Software</h2>
-      <p className={styles.grid_section__item__description}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.{' '}
-      </p>
+    <div className={`${styles.grid_section__item}, ${className}`}>
+      <div className={styles.grid_section__item__icon}>{icon}</div>
+      <h3 className={styles.grid_section__item__title}>{title}</h3>
     </div>
   )
 }
+
+export default GridSectionItem

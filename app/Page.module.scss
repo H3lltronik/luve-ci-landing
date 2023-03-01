@@ -49,6 +49,14 @@
                 margin-bottom: 32px;
             }
         }
+        &_content_logo {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 300px;
+            opacity: 0.5;
+            z-index: 100;
+        }
         &_button {
             margin-top: 130px;
         }   

@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "title": "Service 11",
+    "description": "Préstamo para adquisición de de unidades vehiculares nuevas y seminuevas (hasta 10 años ade antigüedad) con fines de uso particular, plataformas y de trabajo.",
+    "target": ["PF", "PFAE", "PM"],
+    "features": [
+      {
+        "title": "Unidades Nuevas <br>y <br>Seminuevas <br>(Hasta 5 años)",
+        "icon": {
+          "type": "lottie",
+          "name": "car"
+        }
+      }
+    ],
+    "requirements": [
+      {
+        "title": "Confirmacion de <br>Minimo 6 <br>Meses",
+        "icon": {
+          "type": "lottie",
+          "name": "car"
+        }
+      }
+    ],
+    "images": [
+      {
+        "src": "https://picsum.photos/760/460?image=0",
+        "alt": "image 0"
+      },
+      {
+        "src": "https://picsum.photos/760/460?image=1",
+        "alt": "image 1"
+      },
+      {
+        "src": "https://picsum.photos/760/460?image=2",
+        "alt": "image 2"
+      },
+      {
+        "src": "https://picsum.photos/760/460?image=3",
+        "alt": "image 3"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Service 12",
+    "description": "Préstamo para adquisición de de unidades vehiculares nuevas y seminuevas (hasta 10 años ade antigüedad) con fines de uso particular, plataformas y de trabajo.",
+    "target": ["PF", "PFAE", "PM"],
+    "features": [
+      {
+        "title": "Unidades Nuevas <br>y <br>Seminuevas <br>(Hasta 5 años)",
+        "icon": {
+          "type": "lottie",
+          "name": "car"
+        }
+      }
+    ],
+    "requirements": [
+      {
+        "title": "Confirmacion de <br>Minimo 6 <br>Meses",
+        "icon": {
+          "type": "lottie",
+          "name": "car"
+        }
+      }
+    ],
+    "images": [
+      {
+        "src": "https://picsum.photos/760/460?image=0",
+        "alt": "image 0"
+      },
+      {
+        "src": "https://picsum.photos/760/460?image=1",
+        "alt": "image 1"
+      },
+      {
+        "src": "https://picsum.photos/760/460?image=2",
+        "alt": "image 2"
+      },
+      {
+        "src": "https://picsum.photos/760/460?image=3",
+        "alt": "image 3"
+      }
+    ]
+  }
+]

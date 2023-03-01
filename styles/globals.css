@@ -101,6 +101,10 @@ ul p, ol p {
   background: var(--neutral-color-300);
 }
 
+.red {
+  color: var(--primary-color-200);
+}
+
 .debug {
   position: fixed;
   top: 0;

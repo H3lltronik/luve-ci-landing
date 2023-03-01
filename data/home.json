@@ -1,6 +1,8 @@
 {
   "services": [
     {
+      "id": 1,
+      "slug": "test-1",
       "title": "Test 1",
       "description": "Lorem ipsum dolor sit amet, consectetur adip",
       "link": "",
@@ -9,6 +11,8 @@
       "order": 1
     },
     {
+      "id": 2,
+      "slug": "test-2",
       "title": "Test 2",
       "description": "Lorem ipsum dolor sit amet, consectetur adip",
       "link": "",
@@ -17,6 +21,8 @@
       "order": 1
     },
     {
+      "id": 3,
+      "slug": "test-3",
       "title": "Test 3",
       "description": "Lorem ipsum dolor sit amet, consectetur adip",
       "link": "",
@@ -25,6 +31,8 @@
       "order": 1
     },
     {
+      "id": 4,
+      "slug": "test-4",
       "title": "Test 4",
       "description": "Lorem ipsum dolor sit amet, consectetur adip",
       "link": "",

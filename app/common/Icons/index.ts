@@ -1,2 +1,6 @@
 export { default as RightArrowIcon } from './RightArrowIcon'
 export { default as WordIcon } from './WordIcon'
+export { default as InfoIcon } from './InfoIcon'
+export { default as GroupIcon } from './GroupIcon'
+export { default as GraphIcon } from './GraphIcon'
+export { default as BoardTableIcon } from './BoardTableIcon'

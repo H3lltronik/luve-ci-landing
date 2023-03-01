@@ -1,0 +1,38 @@
+.footer {
+    padding: 20px 0;
+    background-color: var(--neutral-color-50);
+    &__container {
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__logo {
+        img {
+        }
+        &__wrapper {
+
+        }
+        &__icons {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+    &__links {
+        top: 50%;
+        left: 50%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+    }
+    
+
+    a {
+        transition: all 0.2s ease-in-out;
+    }
+
+    a:hover {
+        color: var(--primary-color-200);
+    }
+}

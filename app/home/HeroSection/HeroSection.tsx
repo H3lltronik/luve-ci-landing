@@ -2,6 +2,7 @@ import React from 'react'
 import styles from '../../Page.module.scss'
 import { SimpleButton } from '../../common/Buttons'
 import { useParallax } from 'react-scroll-parallax'
+import { LuveLogo } from '../../common/Logo'
 
 const HeroSection = () => {
   const ref = useParallax({
@@ -23,13 +24,16 @@ const HeroSection = () => {
             <source src='/hero-video.webm' />
           </video>
         </div>
+        <LuveLogo className={styles.home_page__video_hero_content_logo} />
         <div className={styles.home_page__video_hero_content}>
           <div ref={ref.ref} className=''>
-            <h1>Somos Consultoria Integral</h1>
+            <h1>LUVE</h1>
+            <h1>Consultoria Integral</h1>
+            <br />
 
             <h2>
-              Ofrecemos soluciones a todas
-              <br /> las necesidades financieras
+              Ofrecemos las mejores soluciones
+              <br /> para todas las necesidades financieras
             </h2>
           </div>
 

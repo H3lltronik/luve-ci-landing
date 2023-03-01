@@ -43,7 +43,7 @@ const ServicesSection = (props: any) => {
   useEffect(() => {
     const objFromTop = logoAnimElTop
     const objHeight = logoAnimElHeight
-    const logoFromTop = objFromTop - window.innerHeight * 1.5
+    const logoFromTop = objFromTop - window.innerHeight * 2.45
     const maxHeight = logoFromTop + objHeight / 3
 
     setLineMaxHeight(maxHeight)
@@ -53,8 +53,7 @@ const ServicesSection = (props: any) => {
 
   // SCROLL EVENT FULL PAGE SCROLL
   useEffect(() => {
-    const fullPageScrollVal = serviceSectionHeight + (window.innerHeight * 0.5) - headerHeight
-    console.log(scrollValue, fullPageScrollVal)
+    const fullPageScrollVal = serviceSectionHeight + (window.innerHeight * 1.4) - headerHeight
     if (scrollValue >= fullPageScrollVal && !logoPageScroll) {
       window.scrollTo({
         top: fullPageScrollVal + window.innerHeight * 1.1,
@@ -71,11 +70,12 @@ const ServicesSection = (props: any) => {
       document.querySelector('#home_services')?.clientHeight || 0
     )
 
-    if (scrollValue >= window.innerHeight) {
-      setPageScroll(scrollValue - window.innerHeight)
+    const scrollStart = (window.innerHeight * 1.7)
+    if (scrollValue >= scrollStart) {
+      setPageScroll(scrollValue - scrollStart)
       setCSSVariable(
         'services-line-height',
-        `${scrollValue - window.innerHeight + 10}px`
+        `${scrollValue - scrollStart + 10}px`
       )
     } else {
       setPageScroll(0)
@@ -89,10 +89,7 @@ const ServicesSection = (props: any) => {
       <div className={styles.home_services__line} />
       {homeData.services.map((data, index) => (
         <ServiceItem
-          title={data.title}
-          description={data.description}
-          items={data.items}
-          image={data.image}
+          item={data}
           key={index}
           inverted={index % 2 !== 0}
         />

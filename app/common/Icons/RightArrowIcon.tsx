@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { SVGProps } from 'react'
 
-const RightArrowIcon = (props: SVGProps<SVGSVGElement>) => (
+const RightArrowIcon: React.FC<any> = (props: SVGProps<SVGSVGElement>) => (
   <svg
     width='1em'
     height='1em'

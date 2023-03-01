@@ -33,13 +33,13 @@ export default function HomePage (options: any) {
       <main>
         <HeroSection />
 
+        <GridSection />
+
         <div className='content-container'>
           <ServicesSection />
         </div>
 
         <PartnersSection />
-
-        <GridSection />
 
         <ContactSection />
       </main>

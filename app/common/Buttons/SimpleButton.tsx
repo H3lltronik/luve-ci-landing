@@ -10,7 +10,7 @@ const SimpleButton = React.forwardRef<any>((props: any, ref) => {
       className={`${props.className} ${styles.simple_button__wrapper}`}
     >
       <button className={styles.simple_button}>
-        <p>CONOCER MAS</p>
+        <p>CONOCE MAS</p>
       </button>
     </div>
   )
