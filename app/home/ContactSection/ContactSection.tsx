@@ -1,6 +1,8 @@
 import React from 'react'
 import { ContactForm } from '../../common/Forms'
 import styles from '../../Page.module.scss'
+import * as Icons from '../../common/Icons'
+import Link from 'next/link'
 
 const ContactSection = (props: any) => {
   return (
@@ -14,24 +16,31 @@ const ContactSection = (props: any) => {
         <div className={styles.home_page__contact__info}>
           <div className={styles.home_page__contact_circle} />
           <h2 className={styles.home_page__contact__title}>CONTACTANOS</h2>
-          <h4 className={styles.home_page__contact__subtitle}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h4>
-          <p className={styles.home_page__contact__text}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris.
-          </p>
+          <h4 className={styles.home_page__contact__subtitle}>Nos contactaremos contigo.</h4>
 
           <div className={styles.home_page__contact__list}>
             <div className={styles.home_page__contact__list__item}>
-              <div className='' />
-              <div className=''>+52 33 1735 4536</div>
+              <Icons.PhoneIcon className={styles.home_page__contact__list__icon} />
+              <strong className=''>
+                <Link href='tel:523317354536'>+52 33 1735 4536</Link>
+              </strong>
             </div>
             <div className={styles.home_page__contact__list__item}>
-              <div className='' />
-              <div className=''>+52 33 1735 4536</div>
+              <Icons.WhatsAppIcon className={styles.home_page__contact__list__icon} />
+              <strong className=''>
+                <Link href='https://wa.me/523314464774'>+52 33 1735 4536</Link>
+              </strong>
             </div>
             <div className={styles.home_page__contact__list__item}>
-              <div className='' />
-              <div className=''>hello@luve.com</div>
+              <Icons.ArrobaIcon className={styles.home_page__contact__list__icon} />
+              <strong className=''>
+                <Link href='mailto:hello@luve.com'>hello@luve.com</Link>
+              </strong>
             </div>
+          </div>
+
+          <div className={styles.home_page__contact__map}>
+            <iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14927.672913581613!2d-103.34763907398695!3d20.713544891326215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428b0324420428d%3A0xe218a584caa8a4f7!2sOXXO%20GAS!5e0!3m2!1ses-419!2smx!4v1677644031648!5m2!1ses-419!2smx' allowFullScreen loading='lazy' referrerPolicy='no-referrer-when-downgrade' style={{ border: 0 }} />
           </div>
         </div>
         <div className=''>
