@@ -28,12 +28,12 @@ const HeroSection = () => {
         <div className={styles.home_page__video_hero_content}>
           <div ref={ref.ref} className=''>
             <h1>LUVE</h1>
-            <h1>Consultoria Integral</h1>
+            <h1>Cons<span className='red'>u</span>ltoria Int<span className='red'>e</span>gral</h1>
             <br />
 
             <h2>
-              Ofrecemos las mejores soluciones
-              <br /> para todas las necesidades financieras
+              Ofr<span className='red'>e</span>c<span className='red'>e</span>mos <span className='red'>l</span>as mejor<span className='red'>e</span>s so<span className='red'>l</span>uciones
+              <br /> para todas <span className='red'>l</span>as necesidad<span className='red'>e</span>s financi<span className='red'>e</span>ras
             </h2>
           </div>
 

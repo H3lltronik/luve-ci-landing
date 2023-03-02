@@ -40,7 +40,8 @@
 
         }
         &__text {
-
+            font-size: 19px;
+            text-align: justify;
         }
         &__image {
             width: 100%;
@@ -48,17 +49,37 @@
                 width: 100%;
             }
         }
-        &__content {
+        &__wrapper {
             width: 100%;
             display: flex;
             align-items: center;
             flex-direction: column;
             justify-content: center;
         }
+        &__content {
+            display: flex;
+            padding: 0 5rem;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            ul {
+                margin: 0;
+                gap: 10px;
+                padding: 0;
+                display: flex;
+                list-style: none;
+            }
+        }
         &__container {
         }
+        &__target {
+            gap: 1ex;
+            display: flex;
+            align-self: start;
+        }
         &__button {
-            margin: 50px;
+            margin: 50px auto;
+            display: inline-block;
         }
         &--inverse {
             flex-direction: row-reverse;

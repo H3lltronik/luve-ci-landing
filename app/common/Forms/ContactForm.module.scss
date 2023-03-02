@@ -15,6 +15,17 @@
     margin-top: 1.5rem;
     flex-direction: column;
     gap: 1rem;
+    input[type="submit"] {
+      background-color: var(--primary-color-200);
+      color: white;
+      border: none;
+      padding: 0.5rem;
+      border-radius: 0.25rem;
+      transition: all 0.2s ease-in-out;
+      &:hover {
+        background-color: var(--secondary-color-200);
+      }
+    }
     input {
       padding: 0.5rem;
       border: 1px solid var(--neutral-color-200);

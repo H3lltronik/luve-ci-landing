@@ -5,7 +5,7 @@ import styles from './ServicesSection.module.scss'
 import { useEffect, useState } from 'react'
 import useLuveStore from '../../../store'
 import { setCSSVariable } from '../../../utils'
-import homeData from '../../../data/home.json'
+import services from '../../../assets/data/services.json'
 
 let _lineHeightScrollE: any = null
 const ServicesSection = (props: any) => {
@@ -87,7 +87,7 @@ const ServicesSection = (props: any) => {
     <section className={styles.home_services} id='home_services'>
       <div className={styles.home_services__bullet} />
       <div className={styles.home_services__line} />
-      {homeData.services.map((data, index) => (
+      {services.map((data, index) => (
         <ServiceItem
           item={data}
           key={index}

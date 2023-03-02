@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 const ContactSection = (props: any) => {
   return (
-    <section className={styles.home_page__contact}>
+    <section id='contact' className={styles.home_page__contact}>
       <div className={styles.home_page__contact__header}>
         <h2 className={styles.home_page__title}>COMIENZA HOY MISMO</h2>
         <h3 className={styles.home_page__subtitle}>Solicita tu cotizacion</h3>
@@ -34,7 +34,7 @@ const ContactSection = (props: any) => {
             <div className={styles.home_page__contact__list__item}>
               <Icons.ArrobaIcon className={styles.home_page__contact__list__icon} />
               <strong className=''>
-                <Link href='mailto:hello@luve.com'>hello@luve.com</Link>
+                <Link href='mailto:contacto@luve.com'>contacto@luve.com</Link>
               </strong>
             </div>
           </div>

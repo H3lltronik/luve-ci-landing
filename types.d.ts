@@ -33,7 +33,7 @@ declare module Services {
     id: number;
     title: string;
     description: string;
-    target: string[];
+    targets: string[];
     order: number;
     features: Feature[];
     requirements: Requirement[];

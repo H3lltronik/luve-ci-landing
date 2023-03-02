@@ -21,7 +21,9 @@ async function Header () {
             <ul className={styles.header_nav_ul}>{renderList(links)}</ul>
           </nav>
 
-          <PrimaryButton />
+          <a href='#contact'>
+            <PrimaryButton text='CONTACTO' />
+          </a>
         </div>
       </div>
     </header>

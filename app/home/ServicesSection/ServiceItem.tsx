@@ -2,41 +2,41 @@ import React from 'react'
 import styles from './ServicesSection.module.scss'
 import { PrimaryButton } from '../../common/Buttons'
 import Link from 'next/link'
+import { Services } from '../../../types'
 
-type Service = {
-  id: Number,
-  slug: String,
-  title: String,
-  description: String,
-  link: String,
-  image: String,
-  items: Array<String>,
-  order: Number
-}
 type ServiceItemProps = {
   inverted?: Boolean,
-  item: Service
+  item: Services.Service
 }
 const ServiceItem: React.FC<ServiceItemProps> = (props) => {
   const { item } = props
   return (
     <div className={`${styles.home_services__item} ${props.inverted ? styles['home_services__item--inverse'] : ''}`}>
       <div className={styles.home_services__item__image}>
-        <img src={item.image} alt='' />
+        <img src={item.images[0].src} alt='' />
       </div>
-      <div className={styles.home_services__item__content}>
-        <h2 className={styles.home_services__item__title}>{item.title}</h2>
-        <h3 className={styles.home_services__item__title}>{item.description}</h3>
+      <div className={styles.home_services__item__wrapper}>
+        <div className={styles.home_services__item__content}>
+          <h2 className={styles.home_services__item__title}>{item.title}</h2>
+          <p className={styles.home_services__item__text}>{item.description}</p>
 
-        <ol>
-          {item.items.map((item, index) => (
-            <li key={index}><p>{item}</p></li>
-          ))}
-        </ol>
+          <div className={styles.home_services__item__target}>
+            <strong>Dirigido a:</strong>
+            <ul>
+              {item.targets.map((target, index) => (
+                <li key={target}>
+                  <strong>{target} {(index < item.targets.length - 2) ? ',' : ''}</strong>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
 
-        <Link href={`/services/${item.id}/${item.slug}`}>
-          <PrimaryButton className={styles.home_services__item__button} />
-        </Link>
+        <div className={styles.home_services__item__button}>
+          <Link href={`/services/${item.id}/${item.slug}`}>
+            <PrimaryButton text='MAS INFORMACION' />
+          </Link>
+        </div>
       </div>
     </div>
   )

@@ -22,11 +22,12 @@
       list-style: none;
       align-items: center;
       &_sub {
-        top: 100%;
         left: 0;
+        top: 100%;
+        padding: 0;
         opacity: 0;
         width: 200px;
-        padding: 0;
+        cursor: pointer;
         list-style: none;
         position: absolute;
         visibility: hidden;
@@ -43,19 +44,6 @@
             background-color: var(--neutral-color-50);
           }
         }
-
-        // a {
-        //   /* Add stagger effect */
-        //   $count: 0;
-        //   @for $i from 1 through 10 {
-        //     &:nth-child(#{$i}) {
-        //       li {
-        //         animation-delay: ($count * 0.10) * 1s !important;
-        //         $count: $count + 1;
-        //       }
-        //     }
-        //   }
-        // }
       }
     }
     &_li {
@@ -76,8 +64,6 @@
 
         &:hover {
           &::before {
-            // transform: rotate(180deg) translateY(25%);
-            // fix the rotation pivot
             transform: rotate(180deg);
           }
           #{$ctx}_ul_sub {
