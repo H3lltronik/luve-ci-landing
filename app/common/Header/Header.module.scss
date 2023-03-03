@@ -3,10 +3,11 @@
   left: 0;
   z-index: 999;
   position: fixed;
-  padding: 10px 0;
+  padding: 10px 0rem;
   width: calc(100vw);
   background-color: white;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+
   &_logo {
     width: 77px;
   }
@@ -50,6 +51,7 @@
       $ctx1: &;
       color: black;
       &_sub {
+        white-space: nowrap;
         position: relative;
 
         &::before {
@@ -86,10 +88,48 @@
     width: 100vw;
     margin: auto;
     display: flex;
+    padding: 0 3rem;
     max-width: 1800px;
     align-items: center;
     background-color: white;
     justify-content: space-between;
+  }
+
+  &__hamburger {
+    display: none;
+    @media (max-width: 877px) {
+      display: block;
+      button {
+        width: 40px;
+        height: 40px;
+      }
+      svg {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  // media query
+  @media (max-width: 1030px) {
+    &_nav {
+      &_ul {
+        gap: 50px;
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    &__contact_button {
+      display: none;
+    }
+  }
+  
+  
+  
+  @media (max-width: 877px) {
+    &_nav {
+      display: none;
+    }
   }
 }
 

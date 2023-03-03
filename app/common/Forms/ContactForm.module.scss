@@ -9,7 +9,7 @@
     }
   }
   form {
-    width: 100%;
+    width: 90%;
     display: flex;
     max-width: 90vw;
     margin-top: 1.5rem;
@@ -71,6 +71,8 @@
   }
 
   // media query
+  @media (max-width: 1200px) {
+  }
   @media (max-width: 768px) {
     margin-top: 3rem;
     text-align: center;

@@ -3,6 +3,7 @@ import { Fragment } from 'react'
 import { Header as HeaderType } from '../../../types'
 import { getLinks } from '../../api/header'
 import { PrimaryButton } from '../Buttons'
+import IconButton from '../Buttons/IconButton'
 import { LuveLogo } from '../Logo'
 import styles from './Header.module.scss'
 
@@ -21,9 +22,13 @@ async function Header () {
             <ul className={styles.header_nav_ul}>{renderList(links)}</ul>
           </nav>
 
-          <a href='#contact'>
+          <a href='#contact' className={styles.header__contact_button}>
             <PrimaryButton text='CONTACTO' />
           </a>
+
+          <div className={styles.header__hamburger}>
+            <IconButton icon='HamburgerIcon' />
+          </div>
         </div>
       </div>
     </header>

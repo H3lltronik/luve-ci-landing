@@ -37,6 +37,10 @@ const ServiceItem: React.FC<ServiceItemProps> = (props) => {
             <PrimaryButton text='MAS INFORMACION' />
           </Link>
         </div>
+
+        <div className={styles.home_services__item__hr}>
+          <hr />
+        </div>
       </div>
     </div>
   )

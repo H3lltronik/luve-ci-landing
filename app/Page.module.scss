@@ -37,6 +37,7 @@
             top: 50%;
             left: 50%;
             z-index: 2;
+            width: 100%;
             color: white;
             position: absolute;
             text-align: center;
@@ -55,7 +56,10 @@
             right: 10px;
             width: 300px;
             opacity: 0.5;
-            z-index: 100;
+            z-index: 1;
+            @media (max-width: 768px) {
+                width: 100px;
+            }
         }
         &_button {
             margin-top: 130px;
@@ -169,6 +173,14 @@
         @media (max-width: 768px) {
             &__content {
                 flex-direction: column;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        &__video_hero {
+            &__outer {
+                height: 100vh;
             }
         }
     }

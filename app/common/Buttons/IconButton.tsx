@@ -4,7 +4,7 @@ import styles from './Buttons.module.scss'
 import * as Icons from '../Icons'
 
 type IconButtonProps = {
-  icon: 'RightArrowIcon' | 'WordIcon' | 'InfoIcon' | 'GroupIcon' | 'GraphIcon' | 'BoardTableIcon' | 'WhatsAppIcon' | 'PhoneIcon' | 'ArrobaIcon' | 'WhatsAppIcon2' | 'TwitterIcon' | 'LinkedInIcon';
+  icon: 'RightArrowIcon' | 'WordIcon' | 'InfoIcon' | 'GroupIcon' | 'GraphIcon' | 'BoardTableIcon' | 'WhatsAppIcon' | 'PhoneIcon' | 'ArrobaIcon' | 'WhatsAppIcon2' | 'TwitterIcon' | 'LinkedInIcon' | 'HamburgerIcon';
   className?: string;
 };
 // eslint-disable-next-line react/display-name
@@ -36,6 +36,8 @@ const IconButton = React.forwardRef<any, IconButtonProps>((props, ref) => {
       icon = <Icons.TwitterIcon />
     } else if (props.icon === 'LinkedInIcon') {
       icon = <Icons.LinkedInIcon />
+    } else if (props.icon === 'HamburgerIcon') {
+      icon = <Icons.HamburgerIcon />
     }
 
     return icon
