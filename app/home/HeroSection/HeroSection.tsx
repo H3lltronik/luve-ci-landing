@@ -32,7 +32,7 @@ const HeroSection = () => {
             <br />
 
             <h2>
-              Ofr<span className='red'>e</span>c<span className='red'>e</span>mos <span className='red'>l</span>as mejor<span className='red'>e</span>s so<span className='red'>l</span>uciones
+              Ofr<span className='red'>e</span>cemos <span className='red'>l</span>as mejor<span className='red'>e</span>s so<span className='red'>l</span>uciones
               <br /> para todas <span className='red'>l</span>as necesidad<span className='red'>e</span>s financi<span className='red'>e</span>ras
             </h2>
           </div>

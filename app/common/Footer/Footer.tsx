@@ -13,9 +13,9 @@ const Footer = (props: any) => {
             <Image src='/logos/logo_luve.svg' alt='Luve logo' width={90} height={70} />
           </div>
           <div className={styles.footer__logo__icons}>
-            <IconButton icon='RightArrowIcon' />
-            <IconButton icon='RightArrowIcon' />
-            <IconButton icon='RightArrowIcon' />
+            <IconButton icon='TwitterIcon' />
+            <IconButton className={styles.footer__whatsapp} icon='WhatsAppIcon' />
+            <IconButton className='' icon='LinkedInIcon' />
           </div>
         </div>
         <div className={styles.footer__links}>

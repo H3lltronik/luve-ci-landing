@@ -35,4 +35,10 @@
     a:hover {
         color: var(--primary-color-200);
     }
+
+    &__whatsapp {
+        svg {
+            font-size: 16px !important;
+        }
+    }
 }

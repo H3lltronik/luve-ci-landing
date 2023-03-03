@@ -76,7 +76,7 @@
 
 .icon_button {
     $logoSize: 20px;
-    $iconSize: 10px;
+    $iconSize: 14px;
 
     border: none;
     color: white;
@@ -95,7 +95,7 @@
         flex-direction: row;
         align-items: flex-start;
     }
-    &__icon {
+    &__icon, svg {
         position: absolute;
         top: 50%; left: 50%;
         transform: translate(-50%, -50%);

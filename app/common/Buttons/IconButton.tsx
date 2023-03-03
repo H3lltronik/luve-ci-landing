@@ -4,7 +4,7 @@ import styles from './Buttons.module.scss'
 import * as Icons from '../Icons'
 
 type IconButtonProps = {
-  icon: 'RightArrowIcon' | 'WordIcon';
+  icon: 'RightArrowIcon' | 'WordIcon' | 'InfoIcon' | 'GroupIcon' | 'GraphIcon' | 'BoardTableIcon' | 'WhatsAppIcon' | 'PhoneIcon' | 'ArrobaIcon' | 'WhatsAppIcon2' | 'TwitterIcon' | 'LinkedInIcon';
   className?: string;
 };
 // eslint-disable-next-line react/display-name
@@ -16,9 +16,27 @@ const IconButton = React.forwardRef<any, IconButtonProps>((props, ref) => {
       icon = <Icons.RightArrowIcon />
     } else if (props.icon === 'WordIcon') {
       icon = <Icons.WordIcon />
+    } else if (props.icon === 'InfoIcon') {
+      icon = <Icons.InfoIcon />
+    } else if (props.icon === 'GroupIcon') {
+      icon = <Icons.GroupIcon />
+    } else if (props.icon === 'GraphIcon') {
+      icon = <Icons.GraphIcon />
+    } else if (props.icon === 'BoardTableIcon') {
+      icon = <Icons.BoardTableIcon />
+    } else if (props.icon === 'WhatsAppIcon') {
+      icon = <Icons.WhatsAppIcon />
+    } else if (props.icon === 'WhatsAppIcon2') {
+      icon = <Icons.WhatsAppIcon2 />
+    } else if (props.icon === 'PhoneIcon') {
+      icon = <Icons.PhoneIcon />
+    } else if (props.icon === 'ArrobaIcon') {
+      icon = <Icons.ArrobaIcon />
+    } else if (props.icon === 'TwitterIcon') {
+      icon = <Icons.TwitterIcon />
+    } else if (props.icon === 'LinkedInIcon') {
+      icon = <Icons.LinkedInIcon />
     }
-
-    // if (icon !== null) { icon.props.className = styles.icon_button__icon }
 
     return icon
   }
