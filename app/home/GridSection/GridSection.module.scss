@@ -1,10 +1,15 @@
 .grid_section {
   gap: 32px;
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
   padding: 100px 0;
-  grid-auto-rows: 1fr;
-  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+
   &__item {
+    width: 20vw;
+    max-width: 300px;
+    text-align: center;
+
     color: white;
     border-radius: 10px;
     padding: 32px 24px 64px 24px;
@@ -15,15 +20,34 @@
       color: var(--primary-color-200);
     }
     &__title {
-        font-size: 40px;
-        font-weight: 400;
-        line-height: 110%;
-        text-align: center;
-        margin: 0;
-        color: var(--neutral-color-300);
+      font-size: 40px;
+      font-weight: 400;
+      line-height: 110%;
+      text-align: center;
+      margin: 0;
+      color: var(--neutral-color-300);
     }
     &__description {
-        text-justify: auto;
+      text-justify: auto;
+    }
+    @media (max-width: 1300px) {
+      &__title {
+        font-size: 30px;
+      }
+    }
+    @media (max-width: 990px) {
+      &__title {
+        font-size: 25px;
+      }
+
+      width: 50vw;
+    }
+    @media (max-width: 675px) {
+      &__title {
+        font-size: 25px;
+      }
+
+      width: 90vw;
     }
   }
   &__title {

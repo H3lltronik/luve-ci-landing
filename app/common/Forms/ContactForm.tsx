@@ -12,7 +12,7 @@ const ContactForm = () => {
         <input name='nombre' required type='text' placeholder='Nombre completo' />
         <input name='email' required type='email' placeholder='Correo electronico' />
         <input name='phone' required type='text' placeholder='Telefono celular' />
-        <select name='state' name='Estado' id='state'>
+        <select name='state' id='state'>
           {contactData.states.map((state) => (
             <option key={state.value} value={state.label}>
               {state.label}

@@ -83,6 +83,7 @@
     &__partners {
         width: 100%;
         margin-top: 5rem;
+        
         &__img {
             margin: auto;
             width: 234px;
@@ -99,7 +100,7 @@
         flex-direction: column;
         &__map {
             margin-top: 20px;
-            width: 700px;
+            width: 100%;
             max-width: 90vw;
             iframe {
                 width: 100%;
@@ -162,6 +163,13 @@
             font-weight: 400;
             font-size: 20px;
             margin-bottom: 5rem;
+        }
+
+        // media query wrap content
+        @media (max-width: 768px) {
+            &__content {
+                flex-direction: column;
+            }
         }
     }
 }
