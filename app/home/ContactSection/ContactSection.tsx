@@ -3,6 +3,7 @@ import { ContactForm } from '../../common/Forms'
 import styles from '../../Page.module.scss'
 import * as Icons from '../../common/Icons'
 import Link from 'next/link'
+import IconButton from '../../common/Buttons/IconButton'
 
 const ContactSection = (props: any) => {
   return (
@@ -47,6 +48,8 @@ const ContactSection = (props: any) => {
           <ContactForm />
         </div>
       </div>
+
+      <IconButton className={styles.home_page__floating_whatsapp} icon='WhatsAppIcon2' />
     </section>
   )
 }
