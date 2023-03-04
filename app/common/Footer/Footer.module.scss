@@ -25,6 +25,13 @@
         left: 50%;
         position: absolute;
         transform: translate(-50%, -50%);
+        a {
+            transition: all 0.2s ease-in-out;
+            color: var(--primary-color-200);
+            &:hover {
+                color: var(--neutral-color-300);
+            }
+        }
     }
     
 
@@ -32,13 +39,42 @@
         transition: all 0.2s ease-in-out;
     }
 
-    a:hover {
-        color: var(--primary-color-200);
-    }
-
     &__whatsapp {
         svg {
             font-size: 16px !important;
+        }
+    }
+
+    // media query
+    @media (max-width: 1200px) {
+        &__links {
+            gap: 1rem;
+            inset: unset;
+            display: flex;
+            transform: unset;
+            position: relative;
+            text-align: center;
+            flex-direction: column;
+            justify-content: center;
+            span {
+                display: none;
+            }
+        }
+        &__container {
+            gap: 3rem;
+            flex-direction: column;
+            &__logo {
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        &__container {
+            flex-direction: column;
+            &__logo {
+                margin-bottom: 20px;
+            }
         }
     }
 }
