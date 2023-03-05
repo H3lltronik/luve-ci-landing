@@ -7,7 +7,7 @@ import IconButton from '../../common/Buttons/IconButton'
 
 const ContactSection = (props: any) => {
   return (
-    <section id='contact' className={styles.home_page__contact}>
+    <section id='contact' className={`${styles.home_page__contact} ${props.className}`}>
       <div className={styles.home_page__contact__header}>
         <h2 className={styles.home_page__title}>COMIENZA HOY MISMO</h2>
         <h3 className={styles.home_page__subtitle}>Solicita tu cotizacion</h3>

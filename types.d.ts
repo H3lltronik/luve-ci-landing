@@ -4,41 +4,44 @@ export type Image = {
 };
 
 declare module Services {
+
   export interface Icon {
-    type: string;
-    name: string;
+      type: string;
+      name: string;
   }
 
   export interface Feature {
-    title: string;
-    icon: Icon;
+      title: string;
+      icon: Icon;
   }
 
   export interface Icon2 {
-    type: string;
-    name: string;
+      type: string;
+      name: string;
   }
 
   export interface Requirement {
-    title: string;
-    icon: Icon2;
+      title: string;
+      icon: Icon2;
   }
 
   export interface Image {
-    src: string;
-    alt: string;
+      src: string;
+      alt: string;
   }
 
   export interface Service {
-    id: number;
-    title: string;
-    description: string;
-    targets: string[];
-    order: number;
-    features: Feature[];
-    requirements: Requirement[];
-    images: Image[];
+      id: number;
+      title: string;
+      slug: string;
+      order: number;
+      description: string;
+      targets: string[];
+      features: Feature[];
+      requirements: Requirement[];
+      images: Image[];
   }
+
 }
 
 declare module Header {

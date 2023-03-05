@@ -1,9 +1,12 @@
 'use client'
 import { FC } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import 'swiper/css'
+import { Autoplay, Pagination } from 'swiper'
 import NextImage from 'next/image'
 import { Image } from '../../types'
+import 'swiper/css'
+import 'swiper/css/autoplay'
+import 'swiper/css/pagination'
 
 const imageSizes = `
 (max-width: 768px) 100vw,
@@ -13,14 +16,22 @@ const imageSizes = `
 interface ServicesSliderProps {
   images: Image[];
   className?: string;
+  itemsClass?: string;
 }
 
 const ServicesSlider: FC<ServicesSliderProps> = (props) => {
-  const { images, className } = props
+  const { images, className, itemsClass } = props
   return (
-    <Swiper spaceBetween={50} slidesPerView={1} className={className}>
+    <Swiper
+      spaceBetween={50} slidesPerView={1} className={className} loop
+      autoplay={{
+        delay: 2000,
+        disableOnInteraction: false
+      }}
+      modules={[Autoplay, Pagination]}
+    >
       {images.map((image, index) => (
-        <SwiperSlide key={index}>
+        <SwiperSlide className={itemsClass} key={index}>
           <div className=''>
             <NextImage
               src={image.src}

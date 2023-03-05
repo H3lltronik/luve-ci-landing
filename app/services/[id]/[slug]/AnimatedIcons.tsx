@@ -21,15 +21,13 @@ const newShineAnimOpts = { ...commonSettings, animationData: newShineAnim, loop:
 const workAnimOpts = { ...commonSettings, animationData: workAnim }
 const walletAnimOpts = { ...commonSettings, animationData: walletAnim }
 
-const CrashAnim = () => {
+const CrashAnim = (props: any) => {
   const [paused, setPaused] = useState(true)
 
   return (
-    <div>
+    <div className={props.className ? props.className : ''}>
       <Lottie
         options={cashAnimOpts}
-        height={400}
-        width={400}
         isStopped={!paused}
         isPaused={false}
       />
@@ -37,15 +35,13 @@ const CrashAnim = () => {
   )
 }
 
-const GainsAnim = () => {
+const GainsAnim = (props: any) => {
   const [paused, setPaused] = useState(true)
 
   return (
-    <div>
+    <div className={props.className ? props.className : ''}>
       <Lottie
         options={gainsAnimOpts}
-        height={400}
-        width={400}
         isStopped={!paused}
         isPaused={false}
       />
@@ -53,15 +49,13 @@ const GainsAnim = () => {
   )
 }
 
-const NewShineAnim = () => {
+const NewShineAnim = (props: any) => {
   const [paused, setPaused] = useState(true)
 
   return (
-    <div>
+    <div className={props.className ? props.className : ''}>
       <Lottie
         options={newShineAnimOpts}
-        height={400}
-        width={400}
         isStopped={!paused}
         isPaused={false}
       />
@@ -69,15 +63,13 @@ const NewShineAnim = () => {
   )
 }
 
-const WorkAnim = () => {
+const WorkAnim = (props: any) => {
   const [paused, setPaused] = useState(true)
 
   return (
-    <div>
+    <div className={props.className ? props.className : ''}>
       <Lottie
         options={workAnimOpts}
-        height={400}
-        width={400}
         isStopped={!paused}
         isPaused={false}
       />
@@ -85,15 +77,13 @@ const WorkAnim = () => {
   )
 }
 
-const WalletAnim = () => {
+const WalletAnim = (props: any) => {
   const [paused, setPaused] = useState(true)
 
   return (
-    <div>
+    <div className={props.className ? props.className : ''}>
       <Lottie
         options={walletAnimOpts}
-        height={400}
-        width={400}
         isStopped={!paused}
         isPaused={false}
       />
@@ -101,4 +91,28 @@ const WalletAnim = () => {
   )
 }
 
-export { CrashAnim, GainsAnim, NewShineAnim, WorkAnim, WalletAnim }
+type LottieIconProps = {
+  className?: String
+  icon: String
+}
+const LottieIcon : React.FC<LottieIconProps> = (props: any) => {
+  return (
+    <>
+      {
+        props.icon === 'CrashAnim'
+          ? <CrashAnim className={props.className} />
+          : props.icon === 'GainsAnim'
+            ? <GainsAnim className={props.className} />
+            : props.icon === 'NewShineAnim'
+              ? <NewShineAnim className={props.className} />
+              : props.icon === 'WorkAnim'
+                ? <WorkAnim className={props.className} />
+                : props.icon === 'WalletAnim'
+                  ? <WalletAnim className={props.className} />
+                  : null
+      }
+    </>
+  )
+}
+
+export { CrashAnim, GainsAnim, NewShineAnim, WorkAnim, WalletAnim, LottieIcon }

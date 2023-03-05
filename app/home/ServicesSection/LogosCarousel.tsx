@@ -2,7 +2,7 @@ import React from 'react'
 // import styles from '../../Page.module.scss'
 import homeData from '../../../data/home.json'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Pagination } from 'swiper'
+import { Pagination, Autoplay } from 'swiper'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import Image from 'next/image'
@@ -21,8 +21,12 @@ const breakpoints = {
 const LogosCarousel = () => {
   return (
     <Swiper
-      modules={[Pagination]} pagination={{ clickable: true }} loop
-      spaceBetween={50} slidesPerView='auto' autoplay breakpoints={breakpoints}
+      modules={[Pagination, Autoplay]} pagination={{ clickable: true }} loop
+      spaceBetween={50} slidesPerView='auto' breakpoints={breakpoints}
+      autoplay={{
+        delay: 2000,
+        disableOnInteraction: false
+      }}
     >
       {
         homeData.logos.map((logo, index) => (

@@ -39,7 +39,7 @@ export const getLinks = async (): Promise<Header.Data> => {
 
   servicesItem.children = services.map((service, index) => ({
     label: service.title,
-    path: `/services/${service.id}`,
+    path: `/services/${service.id}/${service.slug}`,
     type: 'link',
     order: index
   }))

@@ -3,17 +3,26 @@ import styles from './ServicesSection.module.scss'
 import { PrimaryButton } from '../../common/Buttons'
 import Link from 'next/link'
 import { Services } from '../../../types'
+import ServicesSlider from '../../services/ServicesSlider'
 
 type ServiceItemProps = {
   inverted?: Boolean,
+  slider?: Boolean,
   item: Services.Service
+  actionButtonText?: string
 }
 const ServiceItem: React.FC<ServiceItemProps> = (props) => {
   const { item } = props
   return (
     <div className={`${styles.home_services__item} ${props.inverted ? styles['home_services__item--inverse'] : ''}`}>
       <div className={styles.home_services__item__image}>
-        <img src={item.images[0].src} alt='' />
+        {
+          props.slider
+            ? (
+              <ServicesSlider images={item.images} className={styles.home_services__slider} itemsClass={styles.home_services__slider_item} />
+              )
+            : <img src={item.images[0].src} alt='' />
+        }
       </div>
       <div className={styles.home_services__item__wrapper}>
         <div className={styles.home_services__item__content}>
@@ -21,7 +30,7 @@ const ServiceItem: React.FC<ServiceItemProps> = (props) => {
           <p className={styles.home_services__item__text}>{item.description}</p>
 
           <div className={styles.home_services__item__target}>
-            <strong>Dirigido a:</strong>
+            <strong style={{ whiteSpace: 'nowrap' }}>Dirigido a:</strong>
             <ul>
               {item.targets.map((target, index) => (
                 <li key={target}>
@@ -34,7 +43,7 @@ const ServiceItem: React.FC<ServiceItemProps> = (props) => {
 
         <div className={styles.home_services__item__button}>
           <Link href={`/services/${item.id}/${item.slug}`}>
-            <PrimaryButton text='MAS INFORMACION' />
+            <PrimaryButton text={`${props.actionButtonText || 'MAS INFORMACION'} `} />
           </Link>
         </div>
 
