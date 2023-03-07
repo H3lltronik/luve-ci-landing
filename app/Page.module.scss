@@ -96,6 +96,12 @@
       background-position: center;
       background-repeat: no-repeat;
     }
+    &__slider {
+      padding-bottom: 100px !important;
+      .swiper-pagination {
+
+      }
+    }
   }
   &__contact {
     display: flex;

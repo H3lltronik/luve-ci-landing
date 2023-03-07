@@ -30,12 +30,7 @@
     &__description {
       text-justify: auto;
     }
-    @media (max-width: 1300px) {
-      &__title {
-        font-size: 30px;
-      }
-    }
-    @media (max-width: 1130px) {
+    @media (max-width: 1360px) {
       &__title {
         font-size: 25px;
       }

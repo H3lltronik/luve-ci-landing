@@ -1,5 +1,5 @@
 import React from 'react'
-// import styles from '../../Page.module.scss'
+import styles from '../../Page.module.scss'
 import homeData from '../../../data/home.json'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, Autoplay } from 'swiper'
@@ -21,6 +21,7 @@ const breakpoints = {
 const LogosCarousel = () => {
   return (
     <Swiper
+      className={styles.home_page__partners__slider}
       modules={[Pagination, Autoplay]} pagination={{ clickable: true }} loop
       spaceBetween={50} slidesPerView='auto' breakpoints={breakpoints}
       autoplay={{

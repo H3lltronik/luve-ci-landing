@@ -17,9 +17,13 @@ export default function HomePage (options: any) {
           <ServicesSection />
         </div>
 
-        <PartnersSection />
+        <div className='content-container'>
+          <PartnersSection />
+        </div>
 
-        <ContactSection whatsappMsg='¡Hola Luve! Estoy en tu sitio web, quisiera recibir mas información.' />
+        <div className='content-container'>
+          <ContactSection whatsappMsg='¡Hola Luve! Estoy en tu sitio web, quisiera recibir mas información.' />
+        </div>
       </main>
     </ParallaxProvider>
   )
