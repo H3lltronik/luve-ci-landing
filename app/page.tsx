@@ -19,7 +19,7 @@ export default function HomePage (options: any) {
 
         <PartnersSection />
 
-        <ContactSection />
+        <ContactSection whatsappMsg='¡Hola Luve! Estoy en tu sitio web, quisiera recibir mas información.' />
       </main>
     </ParallaxProvider>
   )

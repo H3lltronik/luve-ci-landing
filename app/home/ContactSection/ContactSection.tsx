@@ -5,7 +5,14 @@ import * as Icons from '../../common/Icons'
 import Link from 'next/link'
 import IconButton from '../../common/Buttons/IconButton'
 
-const ContactSection = (props: any) => {
+type ContactSectionProps = {
+  className?: string
+  whatsappMsg?: string
+}
+const ContactSection: React.FC<ContactSectionProps> = (props) => {
+  let whatsappMsg = encodeURIComponent(props.whatsappMsg || '')
+  whatsappMsg = `?text=${whatsappMsg}`
+
   return (
     <section id='contact' className={`${styles.home_page__contact} ${props.className}`}>
       <div className={styles.home_page__contact__header}>
@@ -29,7 +36,7 @@ const ContactSection = (props: any) => {
             <div className={styles.home_page__contact__list__item}>
               <Icons.WhatsAppIcon className={styles.home_page__contact__list__icon} />
               <strong className=''>
-                <Link href='https://wa.me/523314464774'>+52 33 1735 4536</Link>
+                <Link href='https://wa.me/523344515189&text=¡Hola%20Luve!%20👋👋%0AEstoy%20en%20tu%20sitio%20web%2C%20quisiera%20recibir%20mas%20informacion.'>+52 33 1735 4536</Link>
               </strong>
             </div>
             <div className={styles.home_page__contact__list__item}>
@@ -49,7 +56,9 @@ const ContactSection = (props: any) => {
         </div>
       </div>
 
-      <IconButton className={styles.home_page__floating_whatsapp} icon='WhatsAppIcon2' />
+      <Link href={`https://wa.me/523344515189${whatsappMsg}`} target='_blank' rel='noreferrer'>
+        <IconButton className={styles.home_page__floating_whatsapp} icon='WhatsAppIcon2' />
+      </Link>
     </section>
   )
 }
