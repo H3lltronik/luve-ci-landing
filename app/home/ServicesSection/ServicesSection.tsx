@@ -29,6 +29,11 @@ const ServicesSection = (props: any) => {
     window.removeEventListener('scroll', _lineHeightScrollE)
     window.addEventListener('scroll', _lineHeightScrollE, { passive: true })
 
+    const vw = document.documentElement.clientWidth
+    const vh = document.documentElement.clientHeight
+    setCSSVariable('vw', `${vw}px`)
+    setCSSVariable('vh', `${vh}px`)
+
     return () => {
       window.removeEventListener('scroll', _lineHeightScrollE)
     }

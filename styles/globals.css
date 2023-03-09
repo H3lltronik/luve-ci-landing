@@ -10,6 +10,8 @@
 
   --services-line-height: 0px;
   --services-line-max-height: 0px;
+
+  
 }
 
 :root[data-theme="theme-dark"] {
@@ -17,6 +19,8 @@
 
 :root {
   --todo-circle-size: 25px;
+  --header-height: 80px;
+  --horizontal-module-progress-width: 0px;
 }
 
 html,
@@ -25,7 +29,7 @@ body {
   margin: 0;
   color: black;
   font-family: var(--font-roboto-slab);
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 a {
@@ -202,6 +206,42 @@ ul p, ol p {
   }
 }
 
+.pulse {
+  animation: pulse 1s ease-in-out infinite;
+}
+@keyframes pulse {
+  0% {
+      transform: translate(-50%, 0) scale(0.95);
+      box-shadow: 0 0 0 0 rgba(204, 16, 52, 0.4);
+  }
+  70% {
+      transform: translate(-50%, 0) scale(1);
+      box-shadow: 0 0 0 10px rgba(204, 16, 52, 0);
+  }
+  100% {
+      transform: translate(-50%, 0) scale(0.95);
+      box-shadow: 0 0 0 0 rgba(204, 16, 52, 0);
+  }
+}
+
+/* fade up animation and class */
+.fade_up {
+  animation-name: fade_up;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  opacity: 0;
+}
+
+@keyframes fade_up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
 
 .anim_delay_1 {
   animation-delay: 0.2s;
@@ -235,4 +275,17 @@ ul p, ol p {
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
+}
+
+.z_index_1 {
+  z-index: 1;
+}
+.z_index_2 {
+  z-index: 2;
+}
+.z_index_3 {
+  z-index: 3;
+}
+.z_index_4 {
+  z-index: 4;
 }

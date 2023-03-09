@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './LuvePage.module.scss'
 import image from '../../assets/pexels-christina-morillo-1181421.jpg'
+import { HorizontalModule } from './HorizontalModule/HorizontalModule'
 
 export default function LuvePage () {
   return (
@@ -12,6 +13,10 @@ export default function LuvePage () {
         </h1>
         <div className={styles.luve_page__header___overlay} />
       </header>
+
+      <div className='content-container'>
+        <HorizontalModule />
+      </div>
     </main>
   )
 }

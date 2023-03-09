@@ -4,6 +4,7 @@ import { ParallaxProvider } from 'react-scroll-parallax'
 import HeroSection from './home/HeroSection/HeroSection'
 import PartnersSection from './home/PartnersSection/PartnersSection'
 import ContactSection from './home/ContactSection/ContactSection'
+import { HorizontalModule } from './luve/HorizontalModule/HorizontalModule'
 
 export default function HomePage (options: any) {
   return (
