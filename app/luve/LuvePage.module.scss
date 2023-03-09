@@ -47,5 +47,111 @@
         }
     }
 
+    &__row {
+        gap: 0 100px;
+        width: 100%;
+        margin: 0px auto;
+        padding: 0 20px;
+        margin-top: 50px;
+        text-align: center;
 
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(1, auto 1fr);
+        
+        &__item {
+            margin-top: 50px;
+            flex: 1;
+
+            display: grid;
+            grid-row: span 2;
+            grid-column: span 2;
+            grid-template-rows: subgrid;
+        }
+        
+        p {
+            color: black;
+            font-size: 17px;
+            font-weight: 400;
+            line-height: 150%;
+            text-align: justify;
+        }
+
+        @media (max-width: 1200px) {
+            place-content: center;
+            place-items: center;
+            grid-template-columns: repeat(4, 1fr);
+
+            & > :nth-child(4) {
+                grid-column: span 4;
+            }
+        }
+
+        @media (max-width: 800px) {
+            place-content: center;
+            place-items: center;
+            grid-template-columns: repeat(4, 1fr);
+
+            & > * {
+                grid-column: span 4;
+            }
+        }
+    }
+
+    &__values {
+        // display: 'inline-block', width: 'auto', margin: 'auto'
+        width: auto !important;
+        margin: auto !important;
+        display: inline-block !important;
+        &__container {
+            display: flex;
+            margin-top: 150px;
+        }
+        &__row {
+            margin-bottom: 100px;
+        }
+
+        // media query
+        @media (max-width: 1000px) {
+            &__container {
+                margin-top: 100px;
+            }
+        }
+    }
+
+    &__underlined_title {
+        width: 100%;
+        display: grid;
+        place-content: center;
+
+        margin: 20px auto;
+        text-align: center;
+        font-weight: 700;
+        line-height: 110%;
+        text-align: center;
+        margin-bottom: 20px;
+        position: relative;
+        text-transform: uppercase;
+        color: var(--neutral-color-300);
+
+        &, & > h2 {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 30px;
+            line-height: 120%;
+            letter-spacing: 0.15em;
+        }
+
+        &::after {
+            content: "";
+            left: 50%;
+            top: 100%;
+            height: 2px;
+            width: 60%;
+            z-index: 100;
+            position: absolute;
+            transform: translate(-50%, 10px);
+            background-color: var(--primary-color-200);
+        }
+    }
 }
