@@ -179,3 +179,42 @@ ul p, ol p {
   display: flex;
   justify-content: center;
 }
+
+
+.floating {
+  position: relative;
+  display: inline-block;
+  animation: floating 3s ease-in-out infinite;
+}
+.floating:hover {
+  animation-play-state: paused;
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+
+.anim_delay_1 {
+  animation-delay: 0.2s;
+}
+
+.anim_delay_2 {
+  animation-delay: 0.4s;
+}
+
+.anim_delay_3 {
+  animation-delay: 0.6s;
+}
+
+.anim_delay_4 {
+  animation-delay: 0.8s;
+}

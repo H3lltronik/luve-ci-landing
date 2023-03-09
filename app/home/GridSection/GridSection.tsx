@@ -6,18 +6,22 @@ import GridSectionItem from './GridSectionItem'
 const items = [
   {
     title: 'Solicitar Informacion',
+    description: 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ',
     icon: <Icons.InfoIcon />
   },
   {
     title: 'Integracion de Expediente',
+    description: 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ',
     icon: <Icons.BoardTableIcon />
   },
   {
     title: 'Análisis y Propuesta',
+    description: 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ',
     icon: <Icons.GraphIcon />
   },
   {
     title: 'Formalización',
+    description: 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ',
     icon: <Icons.GroupIcon />
   }
 ]
@@ -30,12 +34,13 @@ const GridSection = (props: any) => {
         <section className={styles.grid_section}>
           {items.map((item, index) => {
             return (
-              <GridSectionItem
-                title={item.title}
-                icon={item.icon}
-                key={index}
-                className={styles.grid_section__item}
-              />
+              <div className={`floating anim_delay_${index + 1}`} key={index}>
+                <GridSectionItem
+                  title={item.title}
+                  icon={item.icon}
+                  className={`${styles.grid_section__item}`}
+                />
+              </div>
             )
           })}
         </section>
