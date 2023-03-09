@@ -15,12 +15,12 @@
     position: relative;
     border-radius: 10px;
     padding: 32px 24px 64px 24px;
-    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.55);
     transition: transform 0.5s;
     transform-style: preserve-3d;
     transform: perspective(1000px);
+    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.55);
     // small static hovering effect
-    
+
     
     &_container {
       &:hover {
@@ -39,6 +39,7 @@
       backface-visibility: hidden;
     }
     &__back {
+      padding: 20px;
       transform: rotateY(180deg);
     }
     &__icon {
@@ -57,7 +58,7 @@
     &__description {
       text-justify: auto;
     }
-    @media (max-width: 1360px) {
+    @media (max-width: 1400px) {
       &__title {
         font-size: 25px;
       }

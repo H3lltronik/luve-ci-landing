@@ -218,3 +218,21 @@ ul p, ol p {
 .anim_delay_4 {
   animation-delay: 0.8s;
 }
+
+
+.position_relative {
+  position: relative;
+}
+.luve_logo_watermark {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 1000;
+  opacity: 1;
+  width: 100px !important;
+  height: 50px !important;
+  background-image: url('http://localhost:3000/logos/logo_luve.svg');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}

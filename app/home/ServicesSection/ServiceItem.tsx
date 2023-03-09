@@ -21,7 +21,10 @@ const ServiceItem: React.FC<ServiceItemProps> = (props) => {
             ? (
               <ServicesSlider images={item.images} className={styles.home_services__slider} itemsClass={styles.home_services__slider_item} />
               )
-            : <img src={item.images[0].src} alt='' />
+            : <div className='position_relative'>
+              <img src={item.images[0].src} alt='' />
+              <div className='luve_logo_watermark' />
+              </div>
         }
       </div>
       <div className={styles.home_services__item__wrapper}>

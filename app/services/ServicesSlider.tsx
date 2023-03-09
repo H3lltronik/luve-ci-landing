@@ -32,7 +32,7 @@ const ServicesSlider: FC<ServicesSliderProps> = (props) => {
     >
       {images.map((image, index) => (
         <SwiperSlide className={itemsClass} key={index}>
-          <div className=''>
+          <div className='position_relative'>
             <NextImage
               src={image.src}
               alt={image.alt}
@@ -41,6 +41,7 @@ const ServicesSlider: FC<ServicesSliderProps> = (props) => {
               sizes={imageSizes}
               style={{ height: '100%', width: '100%' }}
             />
+            <div className='luve_logo_watermark' />
           </div>
         </SwiperSlide>
       ))}
