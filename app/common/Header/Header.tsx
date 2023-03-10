@@ -3,9 +3,10 @@ import { Fragment } from 'react'
 import { Header as HeaderType } from '../../../types'
 import { getLinks } from '../../api/header'
 import { PrimaryButton } from '../Buttons'
-import IconButton from '../Buttons/IconButton'
+
 import { LuveLogo } from '../Logo'
 import styles from './Header.module.scss'
+import MobileMenu from './MobileMenu'
 
 async function Header () {
   const { links } = await getLinks()
@@ -26,11 +27,13 @@ async function Header () {
             <PrimaryButton text='CONTACTO' />
           </a>
 
-          <div className={styles.header__hamburger}>
-            <IconButton icon='HamburgerIcon' />
-          </div>
+          <MobileMenu />
         </div>
       </div>
+
+      <nav id='mobile_nav' className={styles.header_mobile_nav}>
+        <ul className={styles.header_nav_ul}>{renderList(links)}</ul>
+      </nav>
     </header>
   )
 }

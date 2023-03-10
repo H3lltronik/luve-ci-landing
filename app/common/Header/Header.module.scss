@@ -3,10 +3,9 @@
   left: 0;
   z-index: 999;
   position: fixed;
-  padding: 10px 0rem;
   width: 100vw;
   max-width: var(--vw);
-  overflow: hidden;
+  // overflow: hidden;
   background-color: white;
   height: var(--header-height);
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
@@ -92,7 +91,7 @@
     width: 100vw;
     margin: auto;
     display: flex;
-    padding: 0 3rem;
+    padding: 10px 3rem;
     max-width: 1800px;
     align-items: center;
     background-color: white;
@@ -128,13 +127,44 @@
     }
   }
   
-  
-  
+  &_mobile_nav {
+    display: none;
+  }
+  &__mobile_menu {
+    display: none;
+  }
   @media (max-width: 877px) {
+    
     &_nav {
       display: none;
     }
+    &__mobile_menu {
+      display: block;
+    }
+    &_mobile_nav {
+      z-index: -1;
+      width: 100%;
+      display: block;
+      position: absolute;
+      transform: translateY(-100%);
+      background: var(--neutral-color-50);
+      left: 0;
+      & > ul {
+        padding: 0;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+
+        li {
+          text-align: center;
+          grid-row: span 1;
+          grid-column: span 1;
+        }
+      }
+    }
   }
+
+  
 }
 
 @keyframes slideIn {
@@ -146,4 +176,45 @@
     opacity: 1;
     transform: translateY(0);
   }
+
+
+
+  // MOBILE
+// &__mobile_menu {
+  //   top: -35px;
+  //   right: 0px;
+  //   width: 500px;
+  //   height: 500px;
+  //   z-index: 100;
+  //   color: white;
+  //   position: absolute;
+  //   padding-right: 30px;
+  //   border-radius: 100%;
+  //   background-color: var(--primary-color-200);
+
+  //   clip-path: circle(20px at 81% 26%);
+
+  //   &__wrapper {
+  //     position: relative;
+  //     width: 100%;
+  //     height: 100%;
+  //   }
+  //   ul {
+  //     list-style: none;
+  //     padding: 0;
+  //   }
+  //   &__button {
+  //     top: 50px;
+  //     right: 15px;
+  //     cursor: pointer;
+      
+  //     position: absolute;
+  //     background-color: var(--primary-color-200);
+  //   }
+
+  //   // media query
+  //   @media (min-width: 1000px) {
+  //   }
+  // }
+  
 }

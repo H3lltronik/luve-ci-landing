@@ -289,3 +289,29 @@ ul p, ol p {
 .z_index_4 {
   z-index: 4;
 }
+.page-header {
+}
+
+.menu__mobile_menu_open {
+  animation: menuOpen 0.3s ease-in-out forwards;
+}
+@keyframes menuOpen {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+.menu__mobile_close {
+  animation: menuClose 0.3s ease-in-out forwards;
+}
+@keyframes menuClose {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
