@@ -4,9 +4,8 @@ import image from '../../assets/pexels-christina-morillo-1181421.jpg'
 import horizontalModuleStyles from './HorizontalModule/HorizontalModule.module.scss'
 import homeStyles from '../Page.module.scss'
 import ContactSection from '../home/ContactSection/ContactSection'
-// import HorizontalModule from './HorizontalModule/HorizontalModule'
-import dynamic from 'next/dynamic'
-const HorizontalModule = dynamic(() => import('./HorizontalModule/HorizontalModule'), { ssr: false })
+import HorizontalModule from './HorizontalModule/HorizontalModule'
+import { IsClientCtxProvider } from '../utils/hooks/IsClient'
 
 export default function LuvePage () {
   return (
@@ -20,7 +19,9 @@ export default function LuvePage () {
       </header>
 
       <div className='content-container'>
-        <HorizontalModule />
+        <IsClientCtxProvider>
+          <HorizontalModule />
+        </IsClientCtxProvider>
       </div>
 
       <div className='content-container'>

@@ -7,31 +7,31 @@ import SecondModule from './modules/SecondModule'
 import ThirdModule from './modules/ThirdModule'
 import FourthModule from './modules/FourthModule'
 import FifthModule from './modules/FifthModule'
+import { useIsClient } from '../../utils/hooks/IsClient'
 
 const ITEMS_COUNT = 5
 const HEADER_HEIGHT = 80
 const MAX_PAGE_WIDTH = 1550
-export default function HorizontalModule (props: any) {
+const HorizontalModule = (props: any) => {
   const filler = React.useRef<HTMLDivElement>(null)
   const container = React.useRef<HTMLDivElement>(null)
+  const isClient = useIsClient()
 
   const [scrollPosition, setScrollPosition] = useState(0)
-
-  if (typeof window === 'undefined') return (<></>)
   //
   // SETTING FILLER HEIGHT
   //
   useEffect(() => {
-    if (!window) return
+    if (!isClient) return
     if (filler.current === null) return
     filler.current.style.height = `${window.innerHeight * ITEMS_COUNT}px`
-  }, [filler])
+  }, [filler, isClient])
 
   //
   // SETTING PROGRESS BAR
   //
   useEffect(() => {
-    if (!window) return
+    if (!isClient) return
     if (container.current === null) return
     const elementPosition =
       container.current.getBoundingClientRect().top + window.scrollY
@@ -61,7 +61,7 @@ export default function HorizontalModule (props: any) {
       window.removeEventListener('scroll', handleScroll)
       window.removeEventListener('resize', handleResize)
     }
-  }, [container])
+  }, [container, isClient])
 
   return (
     <section ref={container} className={styles.horizontal_module__container}>
@@ -74,19 +74,19 @@ export default function HorizontalModule (props: any) {
             <FirstModule />
           )}
 
-          {scrollPosition >= window.innerHeight * 1 && (
+          {isClient && scrollPosition >= window.innerHeight * 1 && (
             <SecondModule />
           )}
 
-          {scrollPosition >= window.innerHeight * 2 && (
+          {isClient && scrollPosition >= window.innerHeight * 2 && (
             <ThirdModule />
           )}
 
-          {scrollPosition >= window.innerHeight * 3 && (
+          {isClient && scrollPosition >= window.innerHeight * 3 && (
             <FourthModule />
           )}
 
-          {scrollPosition >= window.innerHeight * 4 && (
+          {isClient && scrollPosition >= window.innerHeight * 4 && (
             <FifthModule />
           )}
 
@@ -97,3 +97,5 @@ export default function HorizontalModule (props: any) {
     </section>
   )
 }
+
+export default HorizontalModule
