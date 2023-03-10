@@ -4,7 +4,6 @@ import styles from '../HorizontalModule.module.scss'
 import image4 from '../../../../assets/images/modules/pexels-christina-morillo-1181421.webp'
 
 type ModuleProps = {
-  image: string
 }
 export default function FourthModule (props: ModuleProps) {
   return (

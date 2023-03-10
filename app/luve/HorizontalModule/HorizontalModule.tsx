@@ -2,51 +2,32 @@
 import React, { useEffect, useState } from 'react'
 import styles from './HorizontalModule.module.scss'
 import { setCSSVariable } from '../../../utils'
-import dynamic from 'next/dynamic'
-
-const FirstModule = dynamic<any>({
-  suspense: false,
-  ssr: true,
-  loader: async () => await require('./modules/FirstModule')
-})
-
-const SecondModule = dynamic<any>({
-  suspense: false,
-  ssr: true,
-  loader: async () => await require('./modules/SecondModule')
-})
-
-const ThirdModule = dynamic<any>({
-  suspense: false,
-  ssr: true,
-  loader: async () => await require('./modules/ThirdModule')
-})
-
-const FourthModule = dynamic<any>({
-  suspense: false,
-  ssr: true,
-  loader: async () => await require('./modules/FourthModule')
-})
-
-const FifthModule = dynamic<any>({
-  suspense: false,
-  ssr: true,
-  loader: async () => await require('./modules/FifthModule')
-})
+import FirstModule from './modules/FirstModule'
+import SecondModule from './modules/SecondModule'
+import ThirdModule from './modules/ThirdModule'
+import FourthModule from './modules/FourthModule'
+import FifthModule from './modules/FifthModule'
 
 const ITEMS_COUNT = 5
 const HEADER_HEIGHT = 80
 const MAX_PAGE_WIDTH = 1550
-export const HorizontalModule: React.FC<any> = (props) => {
+export default function HorizontalModule (props: any) {
   const filler = React.useRef<HTMLDivElement>(null)
   const container = React.useRef<HTMLDivElement>(null)
+  const [windowHeight, setWindowHeight] = React.useState(0)
 
   const [scrollPosition, setScrollPosition] = useState(0)
+
+  useEffect(() => {
+    if (!window) return
+    setWindowHeight(window.innerHeight)
+  }, [window])
 
   //
   // SETTING FILLER HEIGHT
   //
   useEffect(() => {
+    if (!window) return
     if (filler.current === null) return
     filler.current.style.height = `${window.innerHeight * ITEMS_COUNT}px`
   }, [filler])
@@ -55,6 +36,7 @@ export const HorizontalModule: React.FC<any> = (props) => {
   // SETTING PROGRESS BAR
   //
   useEffect(() => {
+    if (!window) return
     if (container.current === null) return
     const elementPosition =
       container.current.getBoundingClientRect().top + window.scrollY
@@ -97,19 +79,19 @@ export const HorizontalModule: React.FC<any> = (props) => {
             <FirstModule />
           )}
 
-          {scrollPosition >= window.innerHeight * 1 && (
+          {scrollPosition >= windowHeight * 1 && (
             <SecondModule />
           )}
 
-          {scrollPosition >= window.innerHeight * 2 && (
+          {scrollPosition >= windowHeight * 2 && (
             <ThirdModule />
           )}
 
-          {scrollPosition >= window.innerHeight * 3 && (
+          {scrollPosition >= windowHeight * 3 && (
             <FourthModule />
           )}
 
-          {scrollPosition >= window.innerHeight * 4 && (
+          {scrollPosition >= windowHeight * 4 && (
             <FifthModule />
           )}
 

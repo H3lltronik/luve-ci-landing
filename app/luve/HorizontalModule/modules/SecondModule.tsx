@@ -4,7 +4,6 @@ import styles from '../HorizontalModule.module.scss'
 import image2 from '../../../../assets/images/modules/pexels-alena-darmel-7710218.webp'
 
 type ModuleProps = {
-  image: string
 }
 export default function SecondModule (props: ModuleProps) {
   return (

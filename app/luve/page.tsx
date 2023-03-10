@@ -1,10 +1,11 @@
+'use client'
 import React from 'react'
 import styles from './LuvePage.module.scss'
 import image from '../../assets/pexels-christina-morillo-1181421.jpg'
-import { HorizontalModule } from './HorizontalModule/HorizontalModule'
 import horizontalModuleStyles from './HorizontalModule/HorizontalModule.module.scss'
 import homeStyles from '../Page.module.scss'
 import ContactSection from '../home/ContactSection/ContactSection'
+import HorizontalModule from './HorizontalModule/HorizontalModule'
 
 export default function LuvePage () {
   return (
