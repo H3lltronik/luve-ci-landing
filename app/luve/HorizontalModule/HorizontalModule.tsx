@@ -14,15 +14,10 @@ const MAX_PAGE_WIDTH = 1550
 export default function HorizontalModule (props: any) {
   const filler = React.useRef<HTMLDivElement>(null)
   const container = React.useRef<HTMLDivElement>(null)
-  const [windowHeight, setWindowHeight] = React.useState(0)
 
   const [scrollPosition, setScrollPosition] = useState(0)
 
-  useEffect(() => {
-    if (!window) return
-    setWindowHeight(window.innerHeight)
-  }, [window])
-
+  if (typeof window === 'undefined') return (<></>)
   //
   // SETTING FILLER HEIGHT
   //
@@ -79,19 +74,19 @@ export default function HorizontalModule (props: any) {
             <FirstModule />
           )}
 
-          {scrollPosition >= windowHeight * 1 && (
+          {scrollPosition >= window.innerHeight * 1 && (
             <SecondModule />
           )}
 
-          {scrollPosition >= windowHeight * 2 && (
+          {scrollPosition >= window.innerHeight * 2 && (
             <ThirdModule />
           )}
 
-          {scrollPosition >= windowHeight * 3 && (
+          {scrollPosition >= window.innerHeight * 3 && (
             <FourthModule />
           )}
 
-          {scrollPosition >= windowHeight * 4 && (
+          {scrollPosition >= window.innerHeight * 4 && (
             <FifthModule />
           )}
 
