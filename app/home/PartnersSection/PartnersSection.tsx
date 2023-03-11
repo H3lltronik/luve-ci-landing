@@ -5,6 +5,7 @@ import * as animationData from '../../../assets/Comp 2.json'
 import useLuveStore from '../../../store'
 import { getOffset } from '../../../utils'
 import styles from '../../Page.module.scss'
+import { useIsClient } from '../../utils/hooks/IsClient'
 import LogosCarousel from '../ServicesSection/LogosCarousel'
 
 const lottieOptions = {
@@ -24,7 +25,22 @@ const PartnersSection = () => {
       setLogoAnimElHeight(node.clientHeight)
       setLogoAnimElTop(getOffset(node).top)
     }
-  }, [])
+  }, [setLogoAnimElHeight, setLogoAnimElTop])
+
+  const isClient = useIsClient()
+  // LottieAnimWidth values responsive
+  const [lottieAnimWidth, setLottieAnimWidth] = useState(400)
+
+  useEffect(() => {
+    if (!isClient) return
+    if (window.innerWidth < 768) {
+      setLottieAnimWidth(200)
+    } else if (window.innerWidth < 1024) {
+      setLottieAnimWidth(300)
+    } else {
+      setLottieAnimWidth(400)
+    }
+  }, [isClient])
 
   useEffect(() => {
     if (pageScroll >= lineMaxHeight && pageScroll !== 0 && lineMaxHeight !== 0) {
@@ -40,8 +56,8 @@ const PartnersSection = () => {
         <div id='logo-anim' ref={onRefChange} className={styles.home_page__logo_anim__image}>
           <Lottie
             options={lottieOptions}
-            height={400}
-            width={400}
+            // className={styles.home_page__logo_anim__lottie}
+            width={lottieAnimWidth}
             isStopped={!paused}
             isPaused={false}
           />

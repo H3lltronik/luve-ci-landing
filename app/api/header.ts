@@ -8,19 +8,19 @@ const headerData: Header.Data = {
       label: 'Inicio',
       path: '/',
       type: 'link',
-      order: 1
+      priority: 1
     },
     {
       label: 'Nosotros',
       path: '/luve',
       type: 'link',
-      order: 2
+      priority: 2
     },
     {
       label: 'Contacto',
       path: '/contact',
       type: 'link',
-      order: 4
+      priority: 4
     }
   ]
 }
@@ -30,7 +30,7 @@ export const getLinks = async (): Promise<Header.Data> => {
     label: 'Servicios',
     path: '/services',
     type: 'list',
-    order: 3,
+    priority: 3,
     children: {}
   }
 
@@ -38,14 +38,14 @@ export const getLinks = async (): Promise<Header.Data> => {
   const services: Services.Service[] = JSON.parse(fs.readFileSync('./assets/data/services.json', 'utf8'))
 
   servicesItem.children = services.map((service, index) => ({
-    label: service.title,
+    label: service.name,
     path: `/services/${service.id}/${service.slug}`,
     type: 'link',
-    order: index
+    priority: index
   }))
 
   headerLinks.links.push(servicesItem)
 
-  headerLinks.links.sort((a: Services.Service, b: Services.Service) => a.order - b.order)
+  headerLinks.links.sort((a: Services.Service, b: Services.Service) => a.priority - b.priority)
   return headerLinks
 }

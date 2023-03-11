@@ -70,6 +70,9 @@
     align-items: center;
     margin-bottom: 10rem;
     flex-direction: column;
+    &__lottie {
+      width: 100px;
+    }
     &__image {
       max-width: 600px;
       object-fit: contain;
@@ -81,6 +84,10 @@
         height: 100vh;
         display: flex;
         align-items: center;
+
+        @media (max-width: 768px) {
+          height: 50vh;
+        }
       }
     }
   }
@@ -158,6 +165,11 @@
       align-items: center;
       flex-direction: column;
       width: 100%;
+
+      // media query
+      @media (max-width: 768px) {
+        padding: 0 1rem;
+      }
     }
     &__title {
       font-size: 40px;

@@ -4,6 +4,7 @@ import { ParallaxProvider } from 'react-scroll-parallax'
 import HeroSection from './home/HeroSection/HeroSection'
 import PartnersSection from './home/PartnersSection/PartnersSection'
 import ContactSection from './home/ContactSection/ContactSection'
+import { IsClientCtxProvider } from './utils/hooks/IsClient'
 
 export default function HomePage (options: any) {
   return (
@@ -11,14 +12,14 @@ export default function HomePage (options: any) {
       <main>
         <HeroSection />
 
-        <GridSection />
-
         <div className='content-container'>
           <ServicesSection />
         </div>
 
         <div className='content-container'>
-          <PartnersSection />
+          <IsClientCtxProvider>
+            <PartnersSection />
+          </IsClientCtxProvider>
         </div>
 
         <div className='content-container'>

@@ -1,46 +1,57 @@
+/* eslint-disable no-unused-vars */
 export type Image = {
   src: string;
   alt: string;
 };
 
-declare module Services {
+export declare module Services {
 
-  export interface Icon {
-      type: string;
-      name: string;
-  }
+    export interface Icon {
+        type: string;
+        name: string;
+    }
 
-  export interface Feature {
-      title: string;
-      icon: Icon;
-  }
+    export interface Feature {
+        title: string;
+        icon: Icon;
+    }
 
-  export interface Icon2 {
-      type: string;
-      name: string;
-  }
+    export interface Icon2 {
+        type: string;
+        name: string;
+    }
 
-  export interface Requirement {
-      title: string;
-      icon: Icon2;
-  }
+    export interface Requirement {
+        title: string;
+        icon: Icon2;
+    }
 
-  export interface Image {
-      src: string;
-      alt: string;
-  }
+    export interface Image {
+        src: string;
+        alt: string;
+    }
 
-  export interface Service {
-      id: number;
-      title: string;
-      slug: string;
-      order: number;
-      description: string;
-      targets: string[];
-      features: Feature[];
-      requirements: Requirement[];
-      images: Image[];
-  }
+    export interface Item {
+        id: number;
+        title: string;
+        slug: string;
+        order: number;
+        description: string;
+        targets: string[];
+        features: Feature[];
+        requirements: Requirement[];
+        images: Image[];
+    }
+
+    export interface Service {
+        id: string;
+        name: string;
+        slug: string;
+        body: string;
+        image: Image;
+        priority: number;
+        items: Item[];
+    }
 
 }
 
