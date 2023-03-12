@@ -315,3 +315,60 @@ ul p, ol p {
     transform: translateY(-100%);
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hamburger {
+  display: inline-block;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hamburger span {
+  display: block;
+  position: relative;
+  height: 3px;
+  width: 25px;
+  background: #000;
+  margin-bottom: 5px;
+  border-radius: 3px;
+  transform-origin: center;
+  transition: transform 0.5s ease-in-out;
+}
+
+.hamburger span:nth-child(1) {
+  transform-origin: top left;
+}
+
+.hamburger span:nth-child(2),
+.hamburger span:nth-child(3) {
+  transform-origin: center;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(4px, -2.5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  transform: scaleX(0);
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}

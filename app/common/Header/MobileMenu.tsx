@@ -20,7 +20,11 @@ export default function MobileMenu (props: any) {
     <section className={styles.header__mobile_menu}>
       <div className={styles.header__mobile_menu__wrapper}>
         <div className={styles.header__mobile_menu__button} onMouseDown={() => setIsOpen(!isOpen)}>
-          <IconButton icon='HamburgerIcon' />
+          <div className={`hamburger  ${isOpen ? 'active' : ''}`}>
+            <span />
+            <span />
+            <span />
+          </div>
         </div>
 
       </div>

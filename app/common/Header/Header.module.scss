@@ -140,6 +140,13 @@
     }
     &__mobile_menu {
       display: block;
+      button {
+        width: 30px;
+        height: 30px;
+      }
+      svg {
+        font-size: 18px;
+      }
     }
     &_mobile_nav {
       z-index: -1;
