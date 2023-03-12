@@ -3,11 +3,14 @@
 import React, { FC } from 'react'
 import styles from './GridSection.module.scss'
 import { Pace, WindupChildren } from 'windups'
+import { PrimaryButton } from '../../common/Buttons'
 
 type GridSectionItemProps = {
   title: string
-  icon: React.ReactNode
+  icon?: React.ReactNode
+  description: React.ReactNode
   className?: string
+  button?: boolean
 }
 const GridSectionItem : FC<GridSectionItemProps> = (props) => {
   const { icon, title, className } = props
@@ -15,14 +18,15 @@ const GridSectionItem : FC<GridSectionItemProps> = (props) => {
   const [isHovered, setIsHovered] = React.useState(false)
 
   return (
-    <div className={`${styles.grid_section__item_container}`}>
-      <div
-        className={`${styles.grid_section__item}, ${className}`}
-        onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}
-      >
+    <div
+      className={`${styles.grid_section__item_container}`}
+      onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}
+    >
+      <div className={`${styles.grid_section__item}, ${className}`}>
         <div className={`${styles.grid_section__item__front}`}>
-          <div className={`${styles.grid_section__item__icon}`}>{icon}</div>
+          {icon && <div className={`${styles.grid_section__item__icon}`}>{icon}</div>}
           <h3 className={`${styles.grid_section__item__title}`}>{title}</h3>
+          <small className={styles.grid_section__item__small}><strong>Mas informacion</strong></small>
         </div>
         <div className={`${styles.grid_section__item__back}`}>
           {/* <div className={styles.grid_section__item__icon}></div> */}
@@ -30,12 +34,14 @@ const GridSectionItem : FC<GridSectionItemProps> = (props) => {
           <h3 className={styles.grid_section__item__title}>
             {
           isHovered && <WindupChildren>
-            <Pace getPace={() => 40}>
-              <p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum </p>
+            <Pace getPace={() => 20}>
+              <p>{props.description}</p>
             </Pace>
           </WindupChildren>
             }
           </h3>
+
+          {props.button && <PrimaryButton text='LO QUIERO' />}
         </div>
       </div>
 

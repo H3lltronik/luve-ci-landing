@@ -3,7 +3,9 @@ import luvePageStyles from '../../../luve/LuvePage.module.scss'
 import services from '../../../../assets/data/services.json'
 import ContactSection from '../../../home/ContactSection/ContactSection'
 import { Services } from '../../../../types'
+
 import FinantialContents from './content/FinantialContents'
+import AccountantContents from './content/AccountantContents'
 
 const loadService = async (id: string): Promise<Services.Service | undefined> => {
   // const promise = fetch(`${process.env.BASE_FETCH_URL}/data/services.json`, {
@@ -33,8 +35,18 @@ export default async function ServicesPage (props: any) {
       </header>
 
       {
-        service.id === 'asd123' && (
+        service.id === '1' && (
           <FinantialContents service={service} />
+        )
+      }
+      {/* {
+        service.id === '2' && (
+          <FinantialContents service={service} />
+        )
+      } */}
+      {
+        service.id === '3' && (
+          <AccountantContents service={service} />
         )
       }
 

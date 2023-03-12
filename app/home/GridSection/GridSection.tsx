@@ -1,48 +1,43 @@
 import * as React from 'react'
 import styles from './GridSection.module.scss'
-import * as Icons from '../../common/Icons'
+
 import GridSectionItem from './GridSectionItem'
 
-const items = [
-  {
-    title: 'Solicitar Informacion',
-    description: 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ',
-    icon: <Icons.InfoIcon />
-  },
-  {
-    title: 'Integracion de Expediente',
-    description: 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ',
-    icon: <Icons.BoardTableIcon />
-  },
-  {
-    title: 'Análisis y Propuesta',
-    description: 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ',
-    icon: <Icons.GraphIcon />
-  },
-  {
-    title: 'Formalización',
-    description: 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ',
-    icon: <Icons.GroupIcon />
-  }
-]
-
-const GridSection = (props: any) => {
+type Item = {
+  title: string
+  description: React.ReactNode
+  icon?: React.ReactNode
+}
+interface GridSectionProps {
+  className?: string
+  items?: Item[]
+  title?: React.ReactNode
+  button?: boolean
+}
+const GridSection: React.FC<GridSectionProps> = (props) => {
+  const { className, items, title } = props
   return (
-    <div className={styles.grid_section__wrapper}>
+    <div className={`${className} ${styles.grid_section__wrapper}`}>
       <div className='content-container'>
-        <h2 className={styles.grid_section__title}>Proc<span className='red'>e</span>so de Financiami<span className='red'>e</span>nto</h2>
+        {
+          title && <h2 className={styles.grid_section__title}>{title}</h2>
+        }
         <section className={styles.grid_section}>
-          {items.map((item, index) => {
-            return (
-              <div className={`floating anim_delay_${index + 1}`} key={index}>
-                <GridSectionItem
-                  title={item.title}
-                  icon={item.icon}
-                  className={`${styles.grid_section__item}`}
-                />
-              </div>
-            )
-          })}
+          {items
+            ? items.map((item, index) => {
+              return (
+                <div className={`floating anim_delay_${index + 1}`} key={index}>
+                  <GridSectionItem
+                    title={item.title}
+                    icon={item.icon}
+                    button={props.button}
+                    description={item.description}
+                    className={`${styles.grid_section__item}`}
+                  />
+                </div>
+              )
+            })
+            : null}
         </section>
       </div>
     </div>

@@ -1,11 +1,353 @@
 [
   {
-    "id": "asd123",
+    "id": "1",
     "name": "Financiero",
     "slug": "financiero",
     "body": "El financiero es el que se encarga de la parte financiera de la empresa",
     "image": {
       "src": "https://media.istockphoto.com/id/1297832726/photo/portrait-of-a-smiling-young-businessman.jpg?s=612x612&w=0&k=20&c=32Qg7TnqfGkrDwTL3q0X0Kx9ab3JDzuqxzp4poH39zc=",
+      "alt": "image 0"
+    },
+    "priority": 1,
+    "items": [
+      {
+        "id": 1,
+        "title": "CREDITO AUTOMOTRIZ",
+        "slug": "credito-automotriz",
+        "order": 1,
+        "description": "Préstamo para adquisición de de unidades vehiculares nuevas y seminuevas (hasta 10 años ade antigüedad) con fines de uso particular, plataformas y de trabajo.",
+        "targets": ["DUEÑOS DE MICRO NEGOCIOS", "ASALARIADOS", "PYMES"],
+        "features": [
+          {
+            "title": "Unidades Nuevas <br>y <br>Seminuevas <br>(Hasta 5 años)",
+            "icon": {
+              "type": "lottie",
+              "name": "GainsAnim"
+            }
+          },
+          {
+            "title": "Unidades Nuevas <br>y <br>Seminuevas <br>(Hasta 5 años)",
+            "icon": {
+              "type": "lottie",
+              "name": "WalletAnim"
+            }
+          },
+          {
+            "title": "Unidades Nuevas <br>y <br>Seminuevas <br>(Hasta 5 años)",
+            "icon": {
+              "type": "lottie",
+              "name": "NewShineAnim"
+            }
+          },
+          {
+            "title": "Unidades Nuevas <br>y <br>Seminuevas <br>(Hasta 5 años)",
+            "icon": {
+              "type": "lottie",
+              "name": "WorkAnim"
+            }
+          }
+        ],
+        "requirements": [
+          {
+            "title": "INE",
+            "icon": {
+              "type": "lottie",
+              "name": "GainsAnim"
+            }
+          },
+          {
+            "title": "COMPROBANTE DE DOMICILIO RECIENTE",
+            "icon": {
+              "type": "lottie",
+              "name": "WalletAnim"
+            }
+          },
+          {
+            "title": "INGRESOS DE 3 MESES",
+            "icon": {
+              "type": "lottie",
+              "name": "NewShineAnim"
+            }
+          },
+          {
+            "title": "(VISITA OCULAR)",
+            "icon": {
+              "type": "lottie",
+              "name": "WorkAnim"
+            }
+          }
+        ],
+        "images": [
+          {
+            "src": "https://picsum.photos/760/460?image=0",
+            "alt": "image 0"
+          },
+          {
+            "src": "https://picsum.photos/760/460?image=1",
+            "alt": "image 1"
+          },
+          {
+            "src": "https://picsum.photos/760/460?image=2",
+            "alt": "image 2"
+          },
+          {
+            "src": "https://picsum.photos/760/460?image=3",
+            "alt": "image 3"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "ARRENDAMIENTO PURO",
+        "slug": "arrendamiento-puro",
+        "order": 2,
+        "description": "Préstamo para adquisición de de unidades vehiculares nuevas y seminuevas (hasta 10 años ade antigüedad) con fines de uso particular, plataformas y de trabajo.",
+        "targets": ["PFAE", "PF"],
+        "features": [
+          {
+            "title": "Unidades Nuevas <br>y <br>Seminuevas <br>(Hasta 5 años)",
+            "icon": {
+              "type": "lottie",
+              "name": "GainsAnim"
+            }
+          },
+          {
+            "title": "Unidades Nuevas <br>y <br>Seminuevas <br>(Hasta 5 años)",
+            "icon": {
+              "type": "lottie",
+              "name": "GainsAnim"
+            }
+          },
+          {
+            "title": "Unidades Nuevas <br>y <br>Seminuevas <br>(Hasta 5 años)",
+            "icon": {
+              "type": "lottie",
+              "name": "GainsAnim"
+            }
+          }
+        ],
+        "requirements": [
+          {
+            "title": "Confirmacion de <br>Minimo 6 <br>Meses",
+            "icon": {
+              "type": "lottie",
+              "name": "WalletAnim"
+            }
+          },
+          {
+            "title": "DOCUMENTACION DE EMPRESA Y REPRESENTANTE LEGAL",
+            "icon": {
+              "type": "lottie",
+              "name": "NewShineAnim"
+            }
+          },
+          {
+            "title": "SOLICITUD Y FORMATOS DE BURO",
+            "icon": {
+              "type": "lottie",
+              "name": "WorkAnim"
+            }
+          }
+        ],
+        "images": [
+          {
+            "src": "https://picsum.photos/760/460?image=0",
+            "alt": "image 0"
+          },
+          {
+            "src": "https://picsum.photos/760/460?image=1",
+            "alt": "image 1"
+          },
+          {
+            "src": "https://picsum.photos/760/460?image=2",
+            "alt": "image 2"
+          },
+          {
+            "src": "https://picsum.photos/760/460?image=3",
+            "alt": "image 3"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "name": "IT y Desarrolo de Software",
+    "slug": "it-y-desarrolo-de-software",
+    "body": "Lorem ipsum dollor sit amet dollor sit amet dollor sit amet dollor sit amet", 
+    "image": {
+      "src": "/images/pexels-tranmautritam-251225.jpg",
+      "alt": "image 0"
+    },
+    "priority": 1,
+    "items": [
+      {
+        "id": 1,
+        "title": "CREDITO AUTOMOTRIZ",
+        "slug": "credito-automotriz",
+        "order": 1,
+        "description": "Préstamo para adquisición de de unidades vehiculares nuevas y seminuevas (hasta 10 años ade antigüedad) con fines de uso particular, plataformas y de trabajo.",
+        "targets": ["DUEÑOS DE MICRO NEGOCIOS", "ASALARIADOS", "PYMES"],
+        "features": [
+          {
+            "title": "Unidades Nuevas <br>y <br>Seminuevas <br>(Hasta 5 años)",
+            "icon": {
+              "type": "lottie",
+              "name": "GainsAnim"
+            }
+          },
+          {
+            "title": "Unidades Nuevas <br>y <br>Seminuevas <br>(Hasta 5 años)",
+            "icon": {
+              "type": "lottie",
+              "name": "WalletAnim"
+            }
+          },
+          {
+            "title": "Unidades Nuevas <br>y <br>Seminuevas <br>(Hasta 5 años)",
+            "icon": {
+              "type": "lottie",
+              "name": "NewShineAnim"
+            }
+          },
+          {
+            "title": "Unidades Nuevas <br>y <br>Seminuevas <br>(Hasta 5 años)",
+            "icon": {
+              "type": "lottie",
+              "name": "WorkAnim"
+            }
+          }
+        ],
+        "requirements": [
+          {
+            "title": "INE",
+            "icon": {
+              "type": "lottie",
+              "name": "GainsAnim"
+            }
+          },
+          {
+            "title": "COMPROBANTE DE DOMICILIO RECIENTE",
+            "icon": {
+              "type": "lottie",
+              "name": "WalletAnim"
+            }
+          },
+          {
+            "title": "INGRESOS DE 3 MESES",
+            "icon": {
+              "type": "lottie",
+              "name": "NewShineAnim"
+            }
+          },
+          {
+            "title": "(VISITA OCULAR)",
+            "icon": {
+              "type": "lottie",
+              "name": "WorkAnim"
+            }
+          }
+        ],
+        "images": [
+          {
+            "src": "https://picsum.photos/760/460?image=0",
+            "alt": "image 0"
+          },
+          {
+            "src": "https://picsum.photos/760/460?image=1",
+            "alt": "image 1"
+          },
+          {
+            "src": "https://picsum.photos/760/460?image=2",
+            "alt": "image 2"
+          },
+          {
+            "src": "https://picsum.photos/760/460?image=3",
+            "alt": "image 3"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "ARRENDAMIENTO PURO",
+        "slug": "arrendamiento-puro",
+        "order": 2,
+        "description": "Préstamo para adquisición de de unidades vehiculares nuevas y seminuevas (hasta 10 años ade antigüedad) con fines de uso particular, plataformas y de trabajo.",
+        "targets": ["PFAE", "PF"],
+        "features": [
+          {
+            "title": "Unidades Nuevas <br>y <br>Seminuevas <br>(Hasta 5 años)",
+            "icon": {
+              "type": "lottie",
+              "name": "GainsAnim"
+            }
+          },
+          {
+            "title": "Unidades Nuevas <br>y <br>Seminuevas <br>(Hasta 5 años)",
+            "icon": {
+              "type": "lottie",
+              "name": "GainsAnim"
+            }
+          },
+          {
+            "title": "Unidades Nuevas <br>y <br>Seminuevas <br>(Hasta 5 años)",
+            "icon": {
+              "type": "lottie",
+              "name": "GainsAnim"
+            }
+          }
+        ],
+        "requirements": [
+          {
+            "title": "Confirmacion de <br>Minimo 6 <br>Meses",
+            "icon": {
+              "type": "lottie",
+              "name": "WalletAnim"
+            }
+          },
+          {
+            "title": "DOCUMENTACION DE EMPRESA Y REPRESENTANTE LEGAL",
+            "icon": {
+              "type": "lottie",
+              "name": "NewShineAnim"
+            }
+          },
+          {
+            "title": "SOLICITUD Y FORMATOS DE BURO",
+            "icon": {
+              "type": "lottie",
+              "name": "WorkAnim"
+            }
+          }
+        ],
+        "images": [
+          {
+            "src": "https://picsum.photos/760/460?image=0",
+            "alt": "image 0"
+          },
+          {
+            "src": "https://picsum.photos/760/460?image=1",
+            "alt": "image 1"
+          },
+          {
+            "src": "https://picsum.photos/760/460?image=2",
+            "alt": "image 2"
+          },
+          {
+            "src": "https://picsum.photos/760/460?image=3",
+            "alt": "image 3"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "name": "Servicios Contables",
+    "slug": "servicios-contables",
+    "body": "Lorem ipsum dollor sit amet dollor sit amet dollor sit amet dollor sit amet", 
+    "image": {
+      "src": "/images/pexels-mikhail-nilov-8297031.jpg",
       "alt": "image 0"
     },
     "priority": 1,
