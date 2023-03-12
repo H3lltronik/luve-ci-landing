@@ -13,6 +13,7 @@ type ServiceItemProps = {
 }
 const SubServiceItem: React.FC<ServiceItemProps> = (props) => {
   const { item } = props
+  console.log('item', item.targets)
   return (
     <div className={`${styles.home_services__item} ${props.inverted ? styles['home_services__item--inverse'] : ''}`}>
       <div className={styles.home_services__item__image}>
@@ -21,10 +22,12 @@ const SubServiceItem: React.FC<ServiceItemProps> = (props) => {
             ? (
               <ServicesSlider images={item.images} className={styles.home_services__slider} itemsClass={styles.home_services__slider_item} />
               )
-            : <div className='position_relative'>
-              <img src={item.images[0].src} alt='' />
-              <div className='luve_logo_watermark' />
-            </div>
+            : (
+              <div className='position_relative'>
+                <img src={item.images[0].src} alt='' />
+                <div className='luve_logo_watermark' />
+              </div>
+              )
         }
       </div>
       <div className={styles.home_services__item__wrapper}>
@@ -45,7 +48,7 @@ const SubServiceItem: React.FC<ServiceItemProps> = (props) => {
         </div>
 
         <div className={styles.home_services__item__button}>
-          <Link href={`/services/${item.id}/${item.slug}`}>
+          <Link href={`/services/items/${item.id}/${item.slug}`}>
             <PrimaryButton text={`${props.actionButtonText || 'MAS INFORMACION'} `} />
           </Link>
         </div>

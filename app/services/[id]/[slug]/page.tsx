@@ -4,16 +4,10 @@ import services from '../../../../assets/data/services.json'
 import ContactSection from '../../../home/ContactSection/ContactSection'
 import { Services } from '../../../../types'
 
-import FinantialContents from './content/FinantialContents'
-import AccountantContents from './content/AccountantContents'
+import FinantialContents from '../../content/FinantialContents'
+import AccountantContents from '../../content/AccountantContents'
 
 const loadService = async (id: string): Promise<Services.Service | undefined> => {
-  // const promise = fetch(`${process.env.BASE_FETCH_URL}/data/services.json`, {
-  //   next: {
-  //     revalidate: 60
-  //   }
-  // })
-  // const services: Services.Service[] = await promise.then((res) => res.json())
   const service = services.find((service) => service.id === id)
   return service
 }

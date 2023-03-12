@@ -1,9 +1,9 @@
 import { FunctionComponent } from 'react'
-import { Services } from '../../../../../types'
-import { GridSection } from '../../../../home'
-import SubServiceItem from '../../../../home/ServicesSection/SubServiceItem'
-import styles from '../../../ServicesPage.module.scss'
-import * as Icons from '../../../../common/Icons'
+import { Services } from '../../../types'
+import { GridSection } from '../../home'
+import SubServiceItem from '../../home/ServicesSection/SubServiceItem'
+import styles from '../ServicesPage.module.scss'
+import * as Icons from '../../common/Icons'
 
 const gridItems = [
   {

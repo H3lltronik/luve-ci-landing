@@ -28,6 +28,7 @@ const ServicesSlider: FC<ServicesSliderProps> = (props) => {
         delay: 2000,
         disableOnInteraction: false
       }}
+      pagination={{ clickable: true }}
       modules={[Autoplay, Pagination]}
     >
       {images.map((image, index) => (

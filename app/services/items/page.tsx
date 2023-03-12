@@ -1,7 +1,6 @@
 import { FunctionComponent } from 'react'
 
 interface ItemsPageProps {
-
 }
 
 const ItemsPage: FunctionComponent<ItemsPageProps> = () => {

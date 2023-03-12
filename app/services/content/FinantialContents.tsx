@@ -1,9 +1,9 @@
 import { FunctionComponent } from 'react'
-import { Services } from '../../../../../types'
-import { GridSection } from '../../../../home'
-import SubServiceItem from '../../../../home/ServicesSection/SubServiceItem'
-import styles from '../../../ServicesPage.module.scss'
-import * as Icons from '../../../../common/Icons'
+import { Services } from '../../../types'
+import { GridSection } from '../../home'
+import SubServiceItem from '../../home/ServicesSection/SubServiceItem'
+import styles from '../ServicesPage.module.scss'
+import * as Icons from '../../common/Icons'
 
 const gridItems = [
   {
@@ -30,6 +30,7 @@ const gridItems = [
 
 interface FinantialContentsProps {
     service: Services.Service
+    path?: string
 }
 
 const FinantialContents: FunctionComponent<FinantialContentsProps> = (props) => {
@@ -42,7 +43,14 @@ const FinantialContents: FunctionComponent<FinantialContentsProps> = (props) => 
 
       <section className={styles.area_page__items}>
         <h2 className={`${styles.underlined_title} ${styles.area_page__title}`}>Catalogo Financiero</h2>
-        <SubServiceItem item={service.items[0]} />
+        {/* <SubServiceItem item={service.items[0]} /> */}
+        {
+          service.items.map((item, index) => {
+            return (
+              <SubServiceItem item={item} key={index} inverted={index % 2 != 0} />
+            )
+          })
+        }
       </section>
     </div>
   )
