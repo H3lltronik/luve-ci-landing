@@ -12,7 +12,7 @@ export default function HomePage (options: any) {
       <main>
         <HeroSection />
 
-        <div className='content-container' style={{ marginTop: '20px' }}>
+        <div className='content-container'>
           <ServicesSection />
         </div>
 

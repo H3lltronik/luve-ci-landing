@@ -4,6 +4,7 @@ import { Roboto_Slab as roboto_Slab } from '@next/font/google'
 import { Footer } from './common/Footer'
 import React, { Suspense } from 'react'
 import dynamic from 'next/dynamic'
+import Script from 'next/script'
 const Header = dynamic(() => import('./common/Header/Header'), { ssr: false, loading: () => <p>Loading...</p> })
 
 const font = roboto_Slab({
@@ -27,6 +28,8 @@ export default function RootLayout ({
         </Suspense>
         {children}
         <Footer />
+
+        <Script src='http://localhost:3000/scripts/index.js' strategy='afterInteractive' />
       </body>
     </html>
   )

@@ -3,7 +3,7 @@
     "id": "1",
     "name": "Financiero",
     "slug": "financiero",
-    "body": "El financiero es el que se encarga de la parte financiera de la empresa",
+    "body": "Somos un grupo de expertos en nuestro campo, ofreciendote una asesoria integral, personalizada y con una evaluacion encaminada a formular recomendaciones",
     "image": {
       "src": "https://media.istockphoto.com/id/1297832726/photo/portrait-of-a-smiling-young-businessman.jpg?s=612x612&w=0&k=20&c=32Qg7TnqfGkrDwTL3q0X0Kx9ab3JDzuqxzp4poH39zc=",
       "alt": "image 0"
@@ -176,7 +176,7 @@
     "id": "2",
     "name": "IT y Desarrolo de Software",
     "slug": "it-y-desarrolo-de-software",
-    "body": "Lorem ipsum dollor sit amet dollor sit amet dollor sit amet dollor sit amet", 
+    "body": "Contamos con el mejor equipo para implementar soluciones a traves del desarrollo de software a la medida de las empresas, ofreciendote un codigo limpio, seguro y escalable.", 
     "image": {
       "src": "/images/pexels-tranmautritam-251225.jpg",
       "alt": "image 0"
@@ -347,7 +347,7 @@
     "id": "3",
     "name": "Servicios Contables",
     "slug": "servicios-contables",
-    "body": "Lorem ipsum dollor sit amet dollor sit amet dollor sit amet dollor sit amet", 
+    "body": "Somos una empresa especializada en las areas administrativas, contables y fiscales, con una atencion personalizada a cada cliente. Desarrollando estrategias de acuerdo a tus nececidades y metas", 
     "image": {
       "src": "/images/pexels-mikhail-nilov-8297031.jpg",
       "alt": "image 0"

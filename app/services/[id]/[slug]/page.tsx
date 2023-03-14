@@ -23,7 +23,7 @@ export default async function ServicesPage (props: any) {
       <header className={luvePageStyles.luve_page__header} style={{ backgroundImage: `url(${service.image.src})` }}>
         <h1>
           <span className={luvePageStyles.luve_page__header__subtitle}>Luve</span>
-          <span className={luvePageStyles.luve_page__header__title}>{service.name}</span>
+          <span className={`${luvePageStyles.luve_page__header__title} luve_red`}>{service.name}</span>
         </h1>
         <div className={luvePageStyles.luve_page__header___overlay} />
       </header>
