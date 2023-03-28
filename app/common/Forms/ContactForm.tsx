@@ -13,7 +13,7 @@ const ContactForm = () => {
     event.preventDefault()
     const result = await handleSubmit(event)
     console.log('result', result)
-    showToast(result.message || 'Success message')
+    showToast('Gracias por contactarnos, pronto nos pondremos en contacto contigo')
   }
 
   const showToast = (message: string) => {
