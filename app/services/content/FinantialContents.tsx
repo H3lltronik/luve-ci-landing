@@ -8,22 +8,22 @@ import * as Icons from '../../common/Icons'
 const gridItems = [
   {
     title: 'Solicitar Informacion',
-    description: 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ',
+    description: 'Este primer paso implica recopilar los datos y documentos necesarios para la solicitud de crédito, y registrarlos en el sistema para comenzar el proceso de evaluación de crédito.',
     icon: <Icons.InfoIcon />
   },
   {
     title: 'Integracion de Expediente',
-    description: 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ',
+    description: 'Alta en sistema Luve, se revisa el historial crediticio y se elabora el expediente completo para su evaluación.',
     icon: <Icons.BoardTableIcon />
   },
   {
     title: 'Análisis y Propuesta',
-    description: 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ',
+    description: 'Evaluación del crédito, se analizan los riesgos y se determina la capacidad de pago del solicitante. Se elabora una propuesta de crédito, que puede ser aceptada, rechazada o sujeta a condiciones.',
     icon: <Icons.GraphIcon />
   },
   {
     title: 'Formalización',
-    description: 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ',
+    description: 'Se formaliza el otorgamiento del crédito, se firma el contrato correspondiente y se entrega el monto del crédito al solicitante.',
     icon: <Icons.GroupIcon />
   }
 ]

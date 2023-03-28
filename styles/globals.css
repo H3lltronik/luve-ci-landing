@@ -372,3 +372,14 @@ ul p, ol p {
 .hamburger.active span:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
 }
+
+
+.swiper-pagination-bullet {
+  background: var(--secondary-color-200) !important;
+  opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  background: var(--primary-color-200) !important;
+}

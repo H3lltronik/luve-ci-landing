@@ -30,13 +30,13 @@ const ContactSection: React.FC<ContactSectionProps> = (props) => {
             <div className={styles.home_page__contact__list__item}>
               <Icons.PhoneIcon className={styles.home_page__contact__list__icon} />
               <strong className=''>
-                <Link href='tel:523317354536'>+52 33 1735 4536</Link>
+                <Link href='tel:523333624042'>+52 33 3362 4042</Link>
               </strong>
             </div>
             <div className={styles.home_page__contact__list__item}>
               <Icons.WhatsAppIcon className={styles.home_page__contact__list__icon} />
               <strong className=''>
-                <Link href='https://wa.me/523344515189&text=¡Hola%20Luve!%20👋👋%0AEstoy%20en%20tu%20sitio%20web%2C%20quisiera%20recibir%20mas%20informacion.'>+52 33 1735 4536</Link>
+                <Link href='https://wa.me/523344515189&text=¡Hola%20Luve!%20👋👋%0AEstoy%20en%20tu%20sitio%20web%2C%20quisiera%20recibir%20mas%20informacion.'>+52 33 4451 5189</Link>
               </strong>
             </div>
             <div className={styles.home_page__contact__list__item}>
@@ -48,7 +48,7 @@ const ContactSection: React.FC<ContactSectionProps> = (props) => {
           </div>
 
           <div className={styles.home_page__contact__map}>
-            <iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14927.672913581613!2d-103.34763907398695!3d20.713544891326215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428b0324420428d%3A0xe218a584caa8a4f7!2sOXXO%20GAS!5e0!3m2!1ses-419!2smx!4v1677644031648!5m2!1ses-419!2smx' allowFullScreen loading='lazy' referrerPolicy='no-referrer-when-downgrade' style={{ border: 0 }} />
+            <iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d784.533366781623!2d-103.3816750948716!3d20.71466470412939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428afca156ac4a1%3A0xb1afa32dd0e9b17f!2sJacarandas%2C%2045160%20Zapopan%2C%20Jal.!5e0!3m2!1ses-419!2smx!4v1679720076602!5m2!1ses-419!2smx' allowFullScreen loading='lazy' referrerPolicy='no-referrer-when-downgrade' style={{ border: 0 }} />
           </div>
         </div>
         <div className=''>

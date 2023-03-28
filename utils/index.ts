@@ -35,6 +35,48 @@ export function searchAndHighlightLUVE () {
   }
 }
 
+function highlightLuveLetters() {
+  const luveLetters = ['L', 'U', 'V', 'E'];
+
+  const elements = document.getElementsByClassName('luve_red_letters');
+
+  Array.from(elements).forEach((element) => {
+    const words = element.textContent.split(' ');
+
+    words.forEach((word) => {
+      // Ignore words that are less than 4 characters long
+      if (word.length < 4) {
+        return;
+      }
+
+      let letterIndex = -1;
+
+      // Find the index of the first "LUVE" letter in the word
+      for (let i = 0; i < word.length; i++) {
+        const letter = word.charAt(i).toUpperCase();
+
+        if (luveLetters.includes(letter)) {
+          letterIndex = i;
+          break;
+        }
+      }
+
+      // If no "LUVE" letter was found, highlight a random letter
+      if (letterIndex === -1) {
+        letterIndex = Math.floor(Math.random() * word.length);
+      }
+
+      // Highlight the selected letter by wrapping it in a span with the "luve_red_letter" class
+      const wordArray = word.split('');
+      wordArray[letterIndex] = `<span class="luve_red_letter">${word.charAt(letterIndex)}</span>`;
+      const highlightedWord = wordArray.join('');
+
+      element.innerHTML = element.innerHTML.replace(word, highlightedWord);
+    });
+  });
+}
+
+
 export function setCSSVariable (variable: string, value: string) {
   const root = document.querySelector(':root') as HTMLElement
   root.style.setProperty(`--${variable}`, value)

@@ -4,7 +4,7 @@ import styles from './Buttons.module.scss'
 import * as Icons from '../Icons'
 
 type IconButtonProps = {
-  icon: 'RightArrowIcon' | 'WordIcon' | 'InfoIcon' | 'GroupIcon' | 'GraphIcon' | 'BoardTableIcon' | 'WhatsAppIcon' | 'PhoneIcon' | 'ArrobaIcon' | 'WhatsAppIcon2' | 'TwitterIcon' | 'LinkedInIcon' | 'HamburgerIcon';
+  icon: 'RightArrowIcon' | 'WordIcon' | 'InfoIcon' | 'GroupIcon' | 'GraphIcon' | 'BoardTableIcon' | 'WhatsAppIcon' | 'PhoneIcon' | 'ArrobaIcon' | 'WhatsAppIcon2' | 'TwitterIcon' | 'LinkedInIcon' | 'HamburgerIcon' | 'FacebookIcon';
   className?: string;
 };
 // eslint-disable-next-line react/display-name
@@ -38,6 +38,8 @@ const IconButton = React.forwardRef<any, IconButtonProps>((props, ref) => {
       icon = <Icons.LinkedInIcon />
     } else if (props.icon === 'HamburgerIcon') {
       icon = <Icons.HamburgerIcon />
+    } else if (props.icon === 'FacebookIcon') {
+      icon = <Icons.FacebookIcon />
     }
 
     return icon

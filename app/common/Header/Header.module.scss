@@ -29,6 +29,7 @@
         top: 100%;
         padding: 0;
         opacity: 0;
+        // max-width: 500px;
         min-width: 200px;
         cursor: pointer;
         list-style: none;
@@ -53,6 +54,7 @@
     &_li {
       $ctx1: &;
       color: black;
+      // white-space: break-spaces;
       &_sub {
         white-space: nowrap;
         position: relative;

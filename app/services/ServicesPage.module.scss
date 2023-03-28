@@ -44,6 +44,7 @@
             line-height: 150%;
         }
         &_row {
+            width: 100%;
         }
         &_grid {
             gap: 5rem;
@@ -107,7 +108,7 @@
 .area_page {
     text-align: center;
     &__title {
-        margin-bottom: 50px !important;
+        margin: 50px 0 !important;
     }
     &__items {
         padding-top: 3rem;

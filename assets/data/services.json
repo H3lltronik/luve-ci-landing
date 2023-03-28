@@ -80,20 +80,12 @@
         ],
         "images": [
           {
-            "src": "https://picsum.photos/760/460?image=0",
-            "alt": "image 0"
+            "src": "/images/services/financial/pexels-pixabay-164634.jpg",
+            "alt": "Credito automotriz"
           },
           {
-            "src": "https://picsum.photos/760/460?image=1",
-            "alt": "image 1"
-          },
-          {
-            "src": "https://picsum.photos/760/460?image=2",
-            "alt": "image 2"
-          },
-          {
-            "src": "https://picsum.photos/760/460?image=3",
-            "alt": "image 3"
+            "src": "/images/services/financial/pexels-pixabay-164634.jpg",
+            "alt": "Credito automotriz"
           }
         ]
       },
@@ -114,14 +106,21 @@
             }
           },
           {
-            "title": "Unidades Nuevas <br>y <br>Seminuevas <br>(Hasta 5 años)",
+            "title": "PLAZOS HASTA 36 MESES SEMINUEVOS",
             "icon": {
               "type": "lottie",
               "name": "GainsAnim"
             }
           },
           {
-            "title": "Unidades Nuevas <br>y <br>Seminuevas <br>(Hasta 5 años)",
+            "title": "PLAZOS HASTA 60 MESES EN NUEVOS",
+            "icon": {
+              "type": "lottie",
+              "name": "GainsAnim"
+            }
+          },
+          {
+            "title": "PAGO INICIAL DESDE 15%",
             "icon": {
               "type": "lottie",
               "name": "GainsAnim"
@@ -138,6 +137,227 @@
           },
           {
             "title": "DOCUMENTACION DE EMPRESA Y REPRESENTANTE LEGAL",
+            "icon": {
+              "type": "lottie",
+              "name": "NewShineAnim"
+            }
+          },
+          {
+            "title": "SOLICITUD Y FORMATOS DE BURO",
+            "icon": {
+              "type": "lottie",
+              "name": "WorkAnim"
+            }
+          }
+        ],
+        "images": [
+          {
+            "src": "/images/services/financial/pexels-photomix-company-95687.jpg",
+            "alt": "Arrendamiento puro"
+          },
+          {
+            "src": "/images/services/financial/pexels-quintin-gellar-2199293.jpg",
+            "alt": "Arrendamiento puro"
+          },
+          {
+            "src": "/images/services/financial/pexels-adhitya-andanu-1539097.jpg",
+            "alt": "Arrendamiento puro"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "ARRENDAMIENTO PURO Y FINANCIERO",
+        "slug": "arrendamiento-puro-y-financiero",
+        "type": "financial",
+        "order": 3,
+        "description": "Préstamo para adquisición de de unidades vehiculares nuevas y seminuevas (hasta 10 años ade antigüedad) con fines de uso particular, plataformas y de trabajo.",
+        "targets": ["PFAE", "PM"],
+        "features": [
+          {
+            "title": "UNIDADES NUEVAS Y SEMINUEVAS *(AÑOS BAJO CONSIDERACION)",
+            "icon": {
+              "type": "lottie",
+              "name": "GainsAnim"
+            }
+          },
+          {
+            "title": "PLAZOS HASTA 48 MESES SEMINUEVOS",
+            "icon": {
+              "type": "lottie",
+              "name": "GainsAnim"
+            }
+          },
+          {
+            "title": "PAGO INICIAL DESDE 15%",
+            "icon": {
+              "type": "lottie",
+              "name": "GainsAnim"
+            }
+          }
+        ],
+        "requirements": [
+          {
+            "title": "CONFORMACION DE MINIMO 6 MESES *",
+            "icon": {
+              "type": "lottie",
+              "name": "WalletAnim"
+            }
+          },
+          {
+            "title": "DOCUMENTACION DE EMPRESA Y REPRESENTANTE LEGAL *",
+            "icon": {
+              "type": "lottie",
+              "name": "NewShineAnim"
+            }
+          },
+          {
+            "title": "SOLICITUD Y FORMATOS DE BURO",
+            "icon": {
+              "type": "lottie",
+              "name": "WorkAnim"
+            }
+          }
+        ],
+        "images": [
+          {
+            "src": "https://picsum.photos/760/460?image=0",
+            "alt": "image 0"
+          },
+          {
+            "src": "https://picsum.photos/760/460?image=1",
+            "alt": "image 1"
+          },
+          {
+            "src": "https://picsum.photos/760/460?image=2",
+            "alt": "image 2"
+          },
+          {
+            "src": "https://picsum.photos/760/460?image=3",
+            "alt": "image 3"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "CREDITO PYME TRAD. Y REVOLVENTE",
+        "slug": "credito-pyme-trad-y-revolvente",
+        "type": "financial",
+        "order": 4,
+        "description": "Préstamo para adquisición de de unidades vehiculares nuevas y seminuevas (hasta 10 años ade antigüedad) con fines de uso particular, plataformas y de trabajo.",
+        "targets": ["PFAE", "PF (EMPRESAS)"],
+        "features": [
+          {
+            "title": "GARANTIA HIPOTECARIA (GAVAMEN Y SIN GRAVAMEN)",
+            "icon": {
+              "type": "lottie",
+              "name": "GainsAnim"
+            }
+          },
+          {
+            "title": "DESDE 200 MIL HASTA 30 MILLONES",
+            "icon": {
+              "type": "lottie",
+              "name": "GainsAnim"
+            }
+          },
+          {
+            "title": "PLAZOS HASTA MESES",
+            "icon": {
+              "type": "lottie",
+              "name": "GainsAnim"
+            }
+          },
+          {
+            "title": "FLEXIBILIDAD DE BURO",
+            "icon": {
+              "type": "lottie",
+              "name": "GainsAnim"
+            }
+          }
+        ],
+        "requirements": [
+          {
+            "title": "CONFORMACION DE MINIMO 12 MESES",
+            "icon": {
+              "type": "lottie",
+              "name": "WalletAnim"
+            }
+          },
+          {
+            "title": "DOCUMENTACION DE EMPRESA Y REPRESENTANTE LEGAL *",
+            "icon": {
+              "type": "lottie",
+              "name": "NewShineAnim"
+            }
+          },
+          {
+            "title": "SOLICITUD Y FORMATOS DE BURO",
+            "icon": {
+              "type": "lottie",
+              "name": "WorkAnim"
+            }
+          }
+        ],
+        "images": [
+          {
+            "src": "/images/services/financial/pexels-essow-936722.jpg",
+            "alt": "Pyme"
+          },
+          {
+            "src": "/images/services/financial/pexels-andrea-piacquadio-3760081.jpg",
+            "alt": "Tradeo"
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "title": "BACK TO BACK",
+        "slug": "back-to-back",
+        "type": "financial",
+        "order": 5,
+        "description": "Préstamo para adquisición de de unidades vehiculares nuevas y seminuevas (hasta 10 años ade antigüedad) con fines de uso particular, plataformas y de trabajo.",
+        "targets": ["PFAE", "PF (EMPRESAS)"],
+        "features": [
+          {
+            "title": "RENDIMIENTOS DE LA INVERSION",
+            "icon": {
+              "type": "lottie",
+              "name": "GainsAnim"
+            }
+          },
+          {
+            "title": "DESDE 100 MIL HASTA 7 MILLONES",
+            "icon": {
+              "type": "lottie",
+              "name": "GainsAnim"
+            }
+          },
+          {
+            "title": "PLAZOS HASTA 48 MESES",
+            "icon": {
+              "type": "lottie",
+              "name": "GainsAnim"
+            }
+          },
+          {
+            "title": "FLEXIBILIDAD DE BURO",
+            "icon": {
+              "type": "lottie",
+              "name": "GainsAnim"
+            }
+          }
+        ],
+        "requirements": [
+          {
+            "title": "CONFORMACION DE MINIMO 12 MESES",
+            "icon": {
+              "type": "lottie",
+              "name": "WalletAnim"
+            }
+          },
+          {
+            "title": "DOCUMENTACION DE EMPRESA Y REPRESENTANTE LEGAL *",
             "icon": {
               "type": "lottie",
               "name": "NewShineAnim"
@@ -345,8 +565,8 @@
   },
   {
     "id": "3",
-    "name": "Servicios Contables",
-    "slug": "servicios-contables",
+    "name": "Asesoria Contable y Fiscal ",
+    "slug": "asesoria-contable-y-fiscal",
     "body": "Somos una empresa especializada en las areas administrativas, contables y fiscales, con una atencion personalizada a cada cliente. Desarrollando estrategias de acuerdo a tus nececidades y metas", 
     "image": {
       "src": "/images/pexels-mikhail-nilov-8297031.jpg",

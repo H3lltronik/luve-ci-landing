@@ -37,6 +37,7 @@
         $ctx: &;
         gap: $gap;
         display: flex;
+        max-height: 500px;
         align-items: center;
         text-transform: capitalize;
         &__hr {
@@ -54,6 +55,7 @@
         }
         &__image {
             width: 50%;
+            overflow: hidden;
             align-self: stretch;
             img {
                 width: 100%;

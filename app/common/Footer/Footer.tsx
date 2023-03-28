@@ -5,6 +5,9 @@ import IconButton from '../Buttons/IconButton'
 import styles from './Footer.module.scss'
 
 const Footer = (props: any) => {
+  let whatsappMsg = encodeURIComponent('¡Hola Luve! Estoy en tu sitio web, quisiera recibir mas información.')
+  whatsappMsg = `?text=${whatsappMsg}`
+
   return (
     <footer className={styles.footer}>
       <div className={`${styles.footer__container} content-container`}>
@@ -13,9 +16,16 @@ const Footer = (props: any) => {
             <Image src='/logos/logo_luve.svg' alt='Luve logo' width={90} height={70} />
           </div>
           <div className={styles.footer__logo__icons}>
-            <IconButton icon='TwitterIcon' />
-            <IconButton className={styles.footer__whatsapp} icon='WhatsAppIcon' />
-            <IconButton className='' icon='LinkedInIcon' />
+            <Link href='https://www.facebook.com/LuveGF' target='_blank' rel='noreferrer'>
+              <IconButton icon='FacebookIcon' />
+            </Link>
+            <Link href={`https://wa.me/523344515189${whatsappMsg}`} target='_blank' rel='noreferrer'>
+              <IconButton className={styles.footer__whatsapp} icon='WhatsAppIcon' />
+            </Link>
+
+            <Link href='https://www.linkedin.com/in/luve-ci-a0a56826b/' target='_blank' rel='noreferrer'>
+              <IconButton className='' icon='LinkedInIcon' />
+            </Link>
           </div>
         </div>
         <div className={styles.footer__links}>

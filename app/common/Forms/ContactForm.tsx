@@ -1,14 +1,16 @@
 'use client'
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React from 'react'
 import style from './ContactForm.module.scss'
 import contactData from '../../../assets/data/states.json'
+import { handleSubmit } from './api'
 
 const ContactForm = () => {
   return (
     <div className={style.contact_form}>
       <h2>Formulario de contacto</h2>
-      <form>
+      {/* on submit */}
+      <form onSubmit={handleSubmit}>
         <input name='nombre' required type='text' placeholder='Nombre completo' />
         <input name='email' required type='email' placeholder='Correo electronico' />
         <input name='phone' required type='text' placeholder='Telefono celular' />
@@ -20,7 +22,7 @@ const ContactForm = () => {
           ))}
         </select>
         <input name='giro' required type='text' placeholder='Giro de la empresa' />
-        <select name='Servicios a solicitar' id='service'>
+        <select name='service' id='service'>
           {contactData.services.map((state) => (
             <option key={state.value} value={state.label}>
               {state.label}
