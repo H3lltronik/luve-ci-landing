@@ -1,16 +1,34 @@
 'use client'
 import Link from 'next/link'
-import React from 'react'
+import React, { useRef, useState } from 'react'
 import style from './ContactForm.module.scss'
 import contactData from '../../../assets/data/states.json'
 import { handleSubmit } from './api'
+import ToastNotification from '../Notifications/ToastNotification'
 
 const ContactForm = () => {
+  const toastRef = useRef<null | { toast:(message: string) => void }>(null)
+
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    const result = await handleSubmit(event)
+    console.log('result', result)
+    showToast(result.message || 'Success message')
+  }
+
+  const showToast = (message: string) => {
+    if (toastRef.current) {
+      toastRef.current.toast('Success message')
+    }
+  }
+
   return (
     <div className={style.contact_form}>
+      <ToastNotification message='' ref={toastRef} />
+
       <h2>Formulario de contacto</h2>
       {/* on submit */}
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={onSubmit}>
         <input name='nombre' required type='text' placeholder='Nombre completo' />
         <input name='email' required type='email' placeholder='Correo electronico' />
         <input name='phone' required type='text' placeholder='Telefono celular' />

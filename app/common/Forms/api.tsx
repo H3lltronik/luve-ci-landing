@@ -33,8 +33,11 @@ export const handleSubmit = async function (event: React.FormEvent<HTMLFormEleme
     } else {
       console.error('Something went wrong')
     }
+
+    return await response.json()
   } catch (error) {
     console.error(error)
+    return error
   }
 }
 

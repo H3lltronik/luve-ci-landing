@@ -23,7 +23,7 @@ const transporter = nodemailer.createTransport({
 
 const getMailOptions = () => ({
   from: 'contacto@luveci.com',
-  to: ['esau.egs1@gmail.com', 'contacto@luveci.com'],
+  to: ['esau.egs1@gmail.com', 'contacto@luveci.com', 'soto-7@hotmail.com'],
   subject: 'Nuevo correo de contacto',
   html: 'This is a test email sent using Next.js and Zoho mail!'
 })
