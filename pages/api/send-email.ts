@@ -9,7 +9,7 @@ export default async function handler (req: NextApiRequest, res: NextApiResponse
 
   try {
     const { body } = req
-    // await sendContactEmail(body)
+    await sendContactEmail(body)
     res.status(200).json({ message: 'Email sent successfully' })
   } catch (error) {
     console.error(error)
