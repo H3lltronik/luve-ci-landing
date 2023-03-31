@@ -79,11 +79,11 @@
       width: 80% !important;
       height: auto !important;
       position: relative !important;
-      transform: translate(7px, 0);
+      transform: translate(5px, -30%);
       &__container {
-        height: 100vh;
+        height: 50vh;
         display: flex;
-        align-items: center;
+        align-items: flex-start;
 
         @media (max-width: 768px) {
           height: 50vh;
@@ -233,4 +233,12 @@
       }
     }
   }
+}
+
+.home_first_container {
+  overflow: hidden;
+  padding-bottom: 50vh;
+}
+.home_second_container {
+
 }

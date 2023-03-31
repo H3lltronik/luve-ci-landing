@@ -22,6 +22,7 @@ const ServicesSection = (props: any) => {
   } = useLuveStore()
   const [headerHeight, setHeaderHeight] = useState(0)
   const [logoPageScroll, setLogoPageScroll] = useState(false)
+  const sectionRef = React.useRef<HTMLElement>(null)
 
   // SCROLL EVENTS
   useEffect(() => {
@@ -46,15 +47,13 @@ const ServicesSection = (props: any) => {
 
   // GETTING HEIGHTS AND SETTING CSS VARIABLE
   useEffect(() => {
-    const objFromTop = logoAnimElTop
-    const objHeight = logoAnimElHeight
-    const logoFromTop = objFromTop - window.innerHeight * 2.45
-    const maxHeight = logoFromTop + objHeight / 3
+    let maxHeight = sectionRef.current?.getBoundingClientRect().height || 0
+    maxHeight += (window.innerHeight * 0.5) + 10
 
     setLineMaxHeight(maxHeight)
     setCSSVariable('services-line-max-height', `${maxHeight}px`)
     return () => {}
-  }, [logoAnimElHeight, logoAnimElTop, setLineMaxHeight])
+  }, [sectionRef, setLineMaxHeight])
 
   // SCROLL EVENT FULL PAGE SCROLL
   useEffect(() => {
@@ -66,7 +65,7 @@ const ServicesSection = (props: any) => {
       })
       setLogoPageScroll(true)
     }
-  }, [headerHeight, scrollValue, serviceSectionHeight])
+  }, [headerHeight, logoPageScroll, scrollValue, serviceSectionHeight])
 
   const LineHeightScrollEvent = (scrollValue: number) => {
     setScrollValue(scrollValue)
@@ -75,7 +74,7 @@ const ServicesSection = (props: any) => {
       document.querySelector('#home_services')?.clientHeight || 0
     )
 
-    const scrollStart = (window.innerHeight * 1.7)
+    const scrollStart = (window.innerHeight * 0.5)
     if (scrollValue >= scrollStart) {
       setPageScroll(scrollValue - scrollStart)
       setCSSVariable(
@@ -89,7 +88,7 @@ const ServicesSection = (props: any) => {
   }
 
   return (
-    <section className={styles.home_services} id='home_services'>
+    <section ref={sectionRef} className={styles.home_services} id='home_services'>
       <div className={styles.home_services__bullet} />
       <div className={styles.home_services__line} />
       {services.map((data, index) => (
