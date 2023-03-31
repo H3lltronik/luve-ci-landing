@@ -21,7 +21,7 @@ export default function FirstModule (props: ModuleProps) {
                 financiamiento para toda
               </p>
               <p className={styles.horizontal_module__section__text_2}>
-                MiPyme en México, demanda tiempo, dedicación y acudir a
+                PyMes en México, demanda tiempo, dedicación y acudir a
                 diversas instituciones.
               </p>
             </Pace>

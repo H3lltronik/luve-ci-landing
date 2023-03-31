@@ -12,19 +12,22 @@ interface ContactData {
 }
 
 const transporter = nodemailer.createTransport({
-  host: 'smtp.zoho.com',
-  port: 465,
+  host: process.env.MAIL_HOST,
+  port: process.env.MAIL_PORT as unknown as number,
   secure: true,
   auth: {
-    user: 'contacto@luveci.com',
-    pass: 'luv3_@c1'
+    user: process.env.MAIL_AUTH_USER,
+    pass: process.env.MAIL_AUTH_PASSWORD
   }
 })
 
+let mailTo = [process.env.MAIL_TO || '']
+if (Array.isArray(process.env.MAIL_TO)) { mailTo = process.env.MAIL_TO.split(',').map(x => x.trim()) as string[] }
+
 const getMailOptions = () => ({
-  from: 'contacto@luveci.com',
-  to: ['esau.egs1@gmail.com', 'contacto@luveci.com', 'soto-7@hotmail.com'],
-  subject: 'Nuevo correo de contacto',
+  from: process.env.MAIL_FROM,
+  to: mailTo,
+  subject: process.env.MAIL_SUBJECT,
   html: 'This is a test email sent using Next.js and Zoho mail!'
 })
 

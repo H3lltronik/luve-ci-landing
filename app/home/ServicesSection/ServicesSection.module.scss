@@ -90,7 +90,7 @@
         &__target {
             gap: 1ex;
             display: flex;
-            align-self: start;
+            align-self: flex-start;
         }
         &__button {
             margin: 50px auto;
@@ -178,7 +178,7 @@
             &__target {
                 gap: 1ex;
                 display: flex;
-                align-self: start;
+                align-self: flex-start;
                 flex-wrap: wrap;
             }
             &__button {

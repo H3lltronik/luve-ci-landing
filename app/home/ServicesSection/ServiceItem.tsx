@@ -13,7 +13,7 @@ type ServiceItemProps = {
 const ServiceItem: React.FC<ServiceItemProps> = (props) => {
   const { item } = props
   return (
-    <div className={`${styles.home_services__item} ${props.inverted ? styles['home_services__item--inverse'] : ''}`}>
+    <div data-aos='fade-down' className={`${styles.home_services__item} ${props.inverted ? styles['home_services__item--inverse'] : ''}`}>
       <div className={styles.home_services__item__image}>
         <div className='position_relative'>
           <img src={item.image.src} alt='' />

@@ -5,6 +5,8 @@ import { Footer } from './common/Footer'
 import React, { Suspense } from 'react'
 import dynamic from 'next/dynamic'
 import Script from 'next/script'
+import AOSInitializer from './common/Animation/AOS'
+
 const Header = dynamic(() => import('./common/Header/Header'), { ssr: false, loading: () => <p>Loading...</p> })
 
 const font = roboto_Slab({
@@ -23,6 +25,8 @@ export default function RootLayout ({
     <html data-theme='theme-light'>
       <head />
       <body className={font.variable}>
+        <AOSInitializer />
+
         <Suspense>
           <Header />
         </Suspense>

@@ -6,6 +6,9 @@ import styles from './Buttons.module.scss'
 const SimpleButton = React.forwardRef<any>((props: any, ref) => {
   return (
     <div
+      data-aos={props['data-aos']}
+      data-aos-offset={props['data-aos-offset']}
+      data-aos-delay={props['data-aos-delay']}
       ref={ref}
       className={`${props.className} ${styles.simple_button__wrapper}`}
     >

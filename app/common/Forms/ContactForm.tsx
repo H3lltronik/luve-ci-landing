@@ -7,18 +7,22 @@ import { handleSubmit } from './api'
 import ToastNotification from '../Notifications/ToastNotification'
 
 const ContactForm = () => {
+  const [lockedButton, setLockedButton] = useState(false)
   const toastRef = useRef<null | { toast:(message: string) => void }>(null)
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    setLockedButton(true)
     event.preventDefault()
     const result = await handleSubmit(event)
-    console.log('result', result)
+    if (result.message) event.target.reset()
+
     showToast('Gracias por contactarnos, pronto nos pondremos en contacto contigo')
+    setLockedButton(false)
   }
 
   const showToast = (message: string) => {
     if (toastRef.current) {
-      toastRef.current.toast('Success message')
+      toastRef.current.toast(message)
     }
   }
 
@@ -64,7 +68,7 @@ const ContactForm = () => {
           </label>
         </div>
 
-        <input type='submit' value='Enviar' />
+        <input type='submit' value='Enviar' disabled={lockedButton} />
       </form>
     </div>
   )

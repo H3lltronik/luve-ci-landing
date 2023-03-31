@@ -63,8 +63,8 @@ const PartnersSection = () => {
           />
         </div>
       </div>
-      <h2>En ascociacion con:</h2>
-      <div className={`${styles.home_page__partners} content-container'`}>
+      <h2 data-aos='fade-up'>En ascociacion con:</h2>
+      <div data-aos='fade-down' className={`${styles.home_page__partners} content-container'`}>
         <LogosCarousel />
       </div>
     </section>
