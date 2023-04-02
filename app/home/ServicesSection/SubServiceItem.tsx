@@ -13,7 +13,6 @@ type ServiceItemProps = {
 }
 const SubServiceItem: React.FC<ServiceItemProps> = (props) => {
   const { item } = props
-  console.log('item', item.targets)
   return (
     <div className={`${styles.home_services__item} ${props.inverted ? styles['home_services__item--inverse'] : ''}`}>
       <div className={styles.home_services__item__image}>

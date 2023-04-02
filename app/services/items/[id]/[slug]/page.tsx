@@ -22,7 +22,6 @@ const loadItem = async (id: any): Promise<Services.Item | undefined> => {
 export default async function ItemPage (props: any) {
   const { params } = props
   const item = await loadItem(params.id)
-  console.log('item', item)
 
   return (
     <main className={styles.services_page}>

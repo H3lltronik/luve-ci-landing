@@ -38,7 +38,7 @@ export const getLinks = async (): Promise<Header.Data> => {
   const services: Services.Service[] = JSON.parse(fs.readFileSync('./assets/data/services.json', 'utf8'))
 
   servicesItem.children = services.map((service, index) => ({
-    label: service.name,
+    label: service.title,
     path: `/services/${service.id}/${service.slug}`,
     type: 'link',
     priority: index
