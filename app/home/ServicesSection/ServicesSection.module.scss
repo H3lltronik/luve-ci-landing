@@ -42,7 +42,6 @@
         text-transform: capitalize;
 
         &, &__image {
-            min-height: 400px;
         }
         &__hr {
             display: none;
@@ -59,7 +58,6 @@
         }
         &__image {
             width: 50%;
-            height: 100%;
             overflow: hidden;
             align-self: stretch;
             background-size: cover;

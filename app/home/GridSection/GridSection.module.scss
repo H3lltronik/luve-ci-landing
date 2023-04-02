@@ -9,7 +9,6 @@
   &__item {
     width: 20vw;
     color: white;
-    min-height: 400px;
     max-width: 300px;
     text-align: center;
     position: relative;
@@ -20,6 +19,9 @@
     transform: perspective(1000px);
     box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.55);
     // small static hovering effect
+    &, &__image {
+      min-height: 400px;
+    }
 
     &__small {
       position: absolute;
