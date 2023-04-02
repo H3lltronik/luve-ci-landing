@@ -32,18 +32,22 @@ const SubServiceItem: React.FC<ServiceItemProps> = (props) => {
       <div className={styles.home_services__item__wrapper}>
         <div className={styles.home_services__item__content}>
           <h2 className={styles.home_services__item__title}>{item.title}</h2>
-          <p className={styles.home_services__item__text}>{item.description}</p>
+          <p className={styles.home_services__item__text} dangerouslySetInnerHTML={{ __html: item.description }} />
 
-          <div className={styles.home_services__item__target}>
-            <strong style={{ whiteSpace: 'nowrap' }}>Dirigido a:</strong>
-            <ul>
-              {item.targets.map((target, index) => (
-                <li key={target}>
-                  <strong>{target} {(index < item.targets.length - 2) ? ',' : ''}</strong>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {
+            item.targets.length > 0 && (
+              <div className={styles.home_services__item__target}>
+                <strong style={{ whiteSpace: 'nowrap' }}>Dirigido a:</strong>
+                <ul>
+                  {item.targets.map((target, index) => (
+                    <li key={target}>
+                      <strong>{target} {(index < item.targets.length - 2) ? ',' : ''}</strong>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )
+          }
         </div>
 
         <div className={styles.home_services__item__button}>

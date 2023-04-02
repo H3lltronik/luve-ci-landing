@@ -20,7 +20,7 @@ const cashAnimOpts = { ...commonSettings, animationData: cashAnim }
 const gainsAnimOpts = { ...commonSettings, animationData: gainsAnim }
 const newShineAnimOpts = { ...commonSettings, animationData: newShineAnim, loop: true }
 const workAnimOpts = { ...commonSettings, animationData: workAnim }
-const walletAnimpts = { ...commonSettings, animationData: walletAnim }
+const walletAnimOpts = { ...commonSettings, animationData: walletAnim }
 const softwareAnimOpts = { ...commonSettings, animationData: softwareAnim, loop: true }
 
 const CrashAnim = (props: any) => {

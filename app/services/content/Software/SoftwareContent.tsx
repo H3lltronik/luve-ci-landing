@@ -60,7 +60,7 @@ export default function SoftwareContent () {
 
       <div className={`${styles.software_content__experts} content-container`}>
         <InViewComponent>
-          <GrowingBorder>
+          <GrowingBorder duration={0.3}>
             <p className={styles.software_content__experts__text}>
               <span>Con nuestro grupo de ingenieros, expertos en vanguardia tecnológica, <br />somos capaces de ofrecerte un</span>
             </p>
@@ -70,7 +70,7 @@ export default function SoftwareContent () {
       </div>
 
       <div className='content-container' style={{ overflow: 'hidden' }}>
-        <ServicesSection services={softwareServices?.items} />
+        <ServicesSection type='subservices' subservices={softwareServices?.items} />
       </div>
 
     </section>

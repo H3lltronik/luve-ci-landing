@@ -52,7 +52,7 @@ const AccountantContents: FunctionComponent<AccountantContentsProps> = (props) =
       </div>
 
       <div className='content-container' style={{ overflow: 'hidden' }}>
-        <ServicesSection services={accountantServices?.items} />
+        <ServicesSection type='subservices' subservices={accountantServices?.items} />
       </div>
     </div>
   )

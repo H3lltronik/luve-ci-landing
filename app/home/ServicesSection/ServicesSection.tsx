@@ -6,15 +6,18 @@ import { useEffect, useState } from 'react'
 import useLuveStore from '../../../store'
 import { setCSSVariable } from '../../../utils'
 import { Services } from '../../../types'
+import SubServiceItem from './SubServiceItem'
 
 let _lineHeightScrollE: any = null
 
 interface ServicesSectionProps {
   children?: React.ReactNode
-  services: Services.Service[]
+  type: 'services' | 'subservices'
+  services?: Services.Service[],
+  subservices?: Services.Item[]
 }
 const ServicesSection : React.FunctionComponent<ServicesSectionProps> = (props) => {
-  const { services } = props
+  const { services, subservices, type } = props
   const {
     serviceSectionHeight,
     scrollValue,
@@ -91,15 +94,21 @@ const ServicesSection : React.FunctionComponent<ServicesSectionProps> = (props) 
     }
   }
 
-  if (!services) { return null }
+  if (!services && !subservices) { return null }
 
   return (
     <section ref={sectionRef} className={styles.home_services} id='home_services'>
       <div className={styles.home_services__bullet} />
       <div className={styles.home_services__line} />
-      {services.map((data, index) => (
-        <ServiceItem item={data} key={index} inverted={index % 2 !== 0} />
-      ))}
+      {
+        type === 'services'
+          ? services?.map((data, index) => (
+            <ServiceItem item={data} key={index} inverted={index % 2 !== 0} />
+          ))
+          : subservices?.map((data, index) => (
+            <SubServiceItem item={data} key={index} inverted={index % 2 !== 0} />
+          ))
+      }
     </section>
   )
 }

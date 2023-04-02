@@ -23,32 +23,42 @@ export default async function ItemPage (props: any) {
   const { params } = props
   const item = await loadItem(params.id)
 
+  if (!item) {
+    return <div>Item not found</div>
+  }
+
   return (
     <main className={styles.services_page}>
       <div className={`${styles.services_page__container} content-container`}>
         <SubServiceItem item={item} actionButtonText='¡LO QUIERO!' slider />
 
-        <div className={styles.services_page__content}>
-          <div className={styles.services_page__content_row}>
-            <h2 className={styles.underlined_title}>CARACTERISTICAS</h2>
-            <div className={`${styles.services_page__content_grid} content-container`}>
-              {
-                item.features.map((feature, index) => (
-                  <div className={styles.services_page__content_grid_item} key={index}>
-                    <LottieIcons.LottieIcon icon={feature.icon.name} className={styles['lottie-icon']} />
-                    <h3 dangerouslySetInnerHTML={{ __html: feature.title }} />
-                  </div>
-                ))
-              }
+        {
+          item.features.length > 0 && (
+            <div className={styles.services_page__content}>
+              <div className={styles.services_page__content_row}>
+                <h2 className={styles.underlined_title}>CARACTERISTICAS</h2>
+                <div className={`${styles.services_page__content_grid} content-container`}>
+                  {
+                  item.features.map((feature, index) => (
+                    <div className={styles.services_page__content_grid_item} key={index}>
+                      <LottieIcons.LottieIcon icon={feature.icon.name} className={styles['lottie-icon']} />
+                      <h3 dangerouslySetInnerHTML={{ __html: feature.title }} />
+                    </div>
+                  ))
+                }
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
+          )
+        }
 
-        <div className={styles.services_page__content}>
-          <div className={styles.services_page__content_row}>
-            <h2 className={styles.underlined_title}>REQUISITOS</h2>
-            <div className={`${styles.services_page__content_grid} content-container`}>
-              {
+        {
+          item.requirements.length > 0 && (
+            <div className={styles.services_page__content}>
+              <div className={styles.services_page__content_row}>
+                <h2 className={styles.underlined_title}>REQUISITOS</h2>
+                <div className={`${styles.services_page__content_grid} content-container`}>
+                  {
                 item.requirements.map((requirement, index) => (
                   <div className={styles.services_page__content_grid_item} key={index}>
                     <LottieIcons.LottieIcon icon={requirement.icon.name} className={styles['lottie-icon']} />
@@ -56,9 +66,11 @@ export default async function ItemPage (props: any) {
                   </div>
                 ))
               }
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
+          )
+        }
 
       </div>
 
