@@ -7,6 +7,7 @@ import { getOffset } from '../../../utils'
 import styles from '../../Page.module.scss'
 import { useIsClient } from '../../utils/hooks/IsClient'
 import LogosCarousel from '../ServicesSection/LogosCarousel'
+import { InViewComponent } from '../../common/Animation/InViewComponent'
 
 const lottieOptions = {
   loop: false,
@@ -54,13 +55,15 @@ const PartnersSection = () => {
       <div className={styles.home_page__logo_anim__image__container}>
         {/* <Image id='logo-anim' className={styles.home_page__logo_anim__image} src={logoGif.src} alt='Luve Logo' fill /> */}
         <div id='logo-anim' ref={onRefChange} className={styles.home_page__logo_anim__image}>
-          <Lottie
-            options={lottieOptions}
-            // className={styles.home_page__logo_anim__lottie}
-            width={lottieAnimWidth}
-            isStopped={!paused}
-            isPaused={false}
-          />
+          <InViewComponent>
+            <Lottie
+              options={lottieOptions}
+              // className={styles.home_page__logo_anim__lottie}
+              width={lottieAnimWidth}
+              isStopped={false}
+              isPaused={false}
+            />
+          </InViewComponent>
         </div>
       </div>
       <h2 data-aos='fade-up'>En ascociacion con:</h2>

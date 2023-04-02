@@ -18,7 +18,11 @@ export const HeaderNav : React.FunctionComponent<HeaderNavProps> = (props) => {
   const { links } = props
   const ref = useRef<any>()
   const setMobileMenuOpened = useHeaderStore(store => store.setMobileMenuOpened)
-  useOnClickOutside(ref, () => setMobileMenuOpened(false))
+  useOnClickOutside(ref, () => handleOutsideClick())
+
+  const handleOutsideClick = () => {
+    setMobileMenuOpened(false)
+  }
 
   return (
     <div ref={ref}>
@@ -51,7 +55,7 @@ const ListItem = ({ link } : any) => {
   const setMobileMenuOpened = useHeaderStore(store => store.setMobileMenuOpened)
 
   const handleClick = () => {
-    setMobileMenuOpened(false)
+    if (!link.children) { setMobileMenuOpened(false) }
   }
 
   return (
