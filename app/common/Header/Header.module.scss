@@ -54,6 +54,7 @@
     &_li {
       $ctx1: &;
       color: black;
+      user-select: none;
       // white-space: break-spaces;
       &_sub {
         white-space: nowrap;

@@ -43,7 +43,6 @@ const PartnersSection = () => {
   }, [isClient])
 
   useEffect(() => {
-    console.log('pageScroll', pageScroll)
     if (pageScroll >= lineMaxHeight && pageScroll !== 0 && lineMaxHeight !== 0) {
       setPaused(true)
       setLineGrowthEnabled(false)
