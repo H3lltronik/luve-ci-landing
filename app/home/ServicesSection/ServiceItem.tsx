@@ -22,8 +22,8 @@ const ServiceItem: React.FC<ServiceItemProps> = (props) => {
       </div>
       <div className={styles.home_services__item__wrapper}>
         <div className={styles.home_services__item__content}>
-          <h2 className={styles.home_services__item__title}>{item.name}</h2>
-          <p className={styles.home_services__item__text}>{item.body}</p>
+          <h2 className={styles.home_services__item__title}>{item.title}</h2>
+          <p className={styles.home_services__item__text} dangerouslySetInnerHTML={{ __html: item.description }} />
         </div>
 
         <div className={styles.home_services__item__button}>

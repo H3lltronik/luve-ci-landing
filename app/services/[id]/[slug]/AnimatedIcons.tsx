@@ -6,6 +6,7 @@ import * as gainsAnim from '../../../../assets/animations/gains_anim.json'
 import * as newShineAnim from '../../../../assets/animations/new_shine_anim.json'
 import * as workAnim from '../../../../assets/animations/work_anim.json'
 import * as walletAnim from '../../../../assets/animations/cash_in_wallet.json'
+import * as softwareAnim from '../../../../assets/animations/97525-code-dark.json'
 
 const commonSettings = {
   loop: false,
@@ -19,7 +20,8 @@ const cashAnimOpts = { ...commonSettings, animationData: cashAnim }
 const gainsAnimOpts = { ...commonSettings, animationData: gainsAnim }
 const newShineAnimOpts = { ...commonSettings, animationData: newShineAnim, loop: true }
 const workAnimOpts = { ...commonSettings, animationData: workAnim }
-const walletAnimOpts = { ...commonSettings, animationData: walletAnim }
+const walletAnimpts = { ...commonSettings, animationData: walletAnim }
+const softwareAnimOpts = { ...commonSettings, animationData: softwareAnim, loop: true }
 
 const CrashAnim = (props: any) => {
   const [paused, setPaused] = useState(true)
@@ -91,6 +93,20 @@ const WalletAnim = (props: any) => {
   )
 }
 
+const SoftwareAnim = (props: any) => {
+  const [paused, setPaused] = useState(true)
+
+  return (
+    <div className={props.className ? props.className : ''}>
+      <Lottie
+        options={softwareAnimOpts}
+        isStopped={!paused}
+        isPaused={false}
+      />
+    </div>
+  )
+}
+
 type LottieIconProps = {
   className?: String
   icon: String
@@ -109,7 +125,9 @@ const LottieIcon : React.FC<LottieIconProps> = (props: any) => {
                 ? <WorkAnim className={props.className} />
                 : props.icon === 'WalletAnim'
                   ? <WalletAnim className={props.className} />
-                  : null
+                  : props.icon === 'SoftwareAnim'
+                    ? <SoftwareAnim className={props.className} />
+                    : null
       }
     </>
   )

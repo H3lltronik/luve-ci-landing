@@ -6,6 +6,7 @@ import PartnersSection from './home/PartnersSection/PartnersSection'
 import ContactSection from './home/ContactSection/ContactSection'
 import { IsClientCtxProvider } from './utils/hooks/IsClient'
 import styles from './Page.module.scss'
+import services from '../assets/data/services.json'
 
 export default function HomePage (options: any) {
   return (
@@ -14,7 +15,7 @@ export default function HomePage (options: any) {
         <HeroSection />
 
         <div className={`${styles.home_first_container} content-container`}>
-          <ServicesSection />
+          <ServicesSection services={services} />
         </div>
 
         <div className='content-container'>

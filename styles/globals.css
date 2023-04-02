@@ -167,6 +167,9 @@ ul p, ol p {
 .red {
   color: var(--primary-color-200);
 }
+.black {
+  color: var(--neutral-color-300);
+}
 
 .debug {
   position: fixed;
@@ -220,6 +223,24 @@ ul p, ol p {
   }
   100% {
       transform: translate(-50%, 0) scale(0.95);
+      box-shadow: 0 0 0 0 rgba(204, 16, 52, 0);
+  }
+}
+
+.pulse-relative {
+  animation: pulse-relative 1s ease-in-out infinite;
+}
+@keyframes pulse-relative {
+  0% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(204, 16, 52, 0.4);
+  }
+  70% {
+      transform: scale(1);
+      box-shadow: 0 0 0 10px rgba(204, 16, 52, 0);
+  }
+  100% {
+      transform: scale(0.95);
       box-shadow: 0 0 0 0 rgba(204, 16, 52, 0);
   }
 }

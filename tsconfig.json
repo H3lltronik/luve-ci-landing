@@ -30,7 +30,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-, "app/common/Forms/ContactForm.module.scss", "app/api/header.ts"  ],
+, "app/common/Forms/ContactForm.module.scss", "app/api/header.ts", "app/common/Animation/GrowingBorder/GrowingBorder.module.scss"  ],
   "exclude": [
     "node_modules"
   ]

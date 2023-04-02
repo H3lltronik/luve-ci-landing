@@ -41,13 +41,14 @@ export declare module Services {
         features: Feature[];
         requirements: Requirement[];
         images: Image[];
+        image?: Image;
     }
 
     export interface Service {
         id: string;
-        name: string;
+        title: string;
         slug: string;
-        body: string;
+        description: string;
         image: Image;
         priority: number;
         items: Item[];

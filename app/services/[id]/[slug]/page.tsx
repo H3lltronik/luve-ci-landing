@@ -6,6 +6,7 @@ import { Services } from '../../../../types'
 
 import FinantialContents from '../../content/FinantialContents'
 import AccountantContents from '../../content/AccountantContents'
+import SoftwareContent from '../../content/Software/SoftwareContent'
 
 const loadService = async (id: string): Promise<Services.Service | undefined> => {
   const service = services.find((service) => service.id === id)
@@ -33,11 +34,11 @@ export default async function ServicesPage (props: any) {
           <FinantialContents service={service} />
         )
       }
-      {/* {
+      {
         service.id === '2' && (
-          <FinantialContents service={service} />
+          <SoftwareContent />
         )
-      } */}
+      }
       {
         service.id === '3' && (
           <AccountantContents service={service} />

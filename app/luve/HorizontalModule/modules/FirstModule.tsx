@@ -15,7 +15,7 @@ export default function FirstModule (props: ModuleProps) {
           className={styles.horizontal_module__section__text_content}
         >
           <WindupChildren>
-            <Pace getPace={() => 20}>
+            <Pace getPace={() => 5}>
               <p className={styles.horizontal_module__section__text_3}>
                 El difícil acceso a los diversos instrumentos de
                 financiamiento para toda

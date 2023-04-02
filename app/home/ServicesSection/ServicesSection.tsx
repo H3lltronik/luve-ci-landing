@@ -5,16 +5,20 @@ import styles from './ServicesSection.module.scss'
 import { useEffect, useState } from 'react'
 import useLuveStore from '../../../store'
 import { setCSSVariable } from '../../../utils'
-import services from '../../../assets/data/services.json'
+import { Services } from '../../../types'
 
 let _lineHeightScrollE: any = null
-const ServicesSection = (props: any) => {
+
+interface ServicesSectionProps {
+  children?: React.ReactNode
+  services: Services.Service[]
+}
+const ServicesSection : React.FunctionComponent<ServicesSectionProps> = (props) => {
+  const { services } = props
   const {
     serviceSectionHeight,
     scrollValue,
     setPageScroll,
-    logoAnimElHeight,
-    logoAnimElTop,
     setLineMaxHeight,
     lineGrowthEnabled,
     setServiceSectionHeight,
@@ -87,16 +91,14 @@ const ServicesSection = (props: any) => {
     }
   }
 
+  if (!services) { return null }
+
   return (
     <section ref={sectionRef} className={styles.home_services} id='home_services'>
       <div className={styles.home_services__bullet} />
       <div className={styles.home_services__line} />
       {services.map((data, index) => (
-        <ServiceItem
-          item={data}
-          key={index}
-          inverted={index % 2 !== 0}
-        />
+        <ServiceItem item={data} key={index} inverted={index % 2 !== 0} />
       ))}
     </section>
   )

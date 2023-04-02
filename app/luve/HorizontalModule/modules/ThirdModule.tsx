@@ -15,7 +15,7 @@ export default function ThirdModule (props: ModuleProps) {
           className={styles.horizontal_module__section__text_content}
         >
           <WindupChildren>
-            <Pace getPace={() => 20}>
+            <Pace getPace={() => 5}>
               <p className={styles.horizontal_module__section__text_3}>
                 15 años de experiencia nos respaldan.
               </p>

@@ -15,7 +15,7 @@ export default function SecondModule (props: ModuleProps) {
           className={styles.horizontal_module__section__text_content}
         >
           <WindupChildren>
-            <Pace getPace={() => 20}>
+            <Pace getPace={() => 5}>
               <p className={styles.horizontal_module__section__text_3}>
                 Nos dedicamos a la asesoría integral, para ayudar a los
                 empresarios a enfocar

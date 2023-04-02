@@ -1,0 +1,73 @@
+$border-width: 5px;
+
+.border_animation_container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+}
+
+.border_item {
+  width: 0%;
+  height: $border-width;
+  position: absolute;
+}
+
+.top_middle_to_right {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  transform-origin: left;
+  width: 1px;
+  background: var(--primary-color-200);
+}
+
+.top_middle_to_left {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 1px;
+  background: var(--primary-color-200);
+  transform-origin: right;
+}
+
+.top_left_to_bottom {
+  top: 0;
+  left: 0%;
+
+  height: 1px;
+  width: $border-width;
+  background: var(--primary-color-200);
+  transform-origin: top;
+}
+
+.top_right_to_bottom {
+  top: 0;
+  right: 0%;
+
+  height: 1px;
+  width: $border-width;
+  background: var(--primary-color-200);
+  transform-origin: top;
+}
+.bottom_left_to_middle {
+  bottom: 0;
+  left: 0%;
+
+  height: $border-width;
+  width: 1px;
+  background: var(--primary-color-200);
+  transform-origin: left;
+}
+
+.bottom_right_to_middle {
+  bottom: 0;
+  right: 0%;
+
+  height: $border-width;
+  width: 1px;
+  background: var(--primary-color-200);
+  transform-origin: right;
+}

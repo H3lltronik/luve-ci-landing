@@ -13,9 +13,13 @@ interface GridSectionProps {
   items?: Item[]
   title?: React.ReactNode
   button?: boolean
+  hover?: boolean
 }
 const GridSection: React.FC<GridSectionProps> = (props) => {
   const { className, items, title } = props
+  let { hover } = props
+  if (hover === undefined) hover = true
+
   return (
     <div className={`${className} ${styles.grid_section__wrapper}`}>
       <div className='content-container'>
@@ -33,6 +37,7 @@ const GridSection: React.FC<GridSectionProps> = (props) => {
                     button={props.button}
                     description={item.description}
                     className={`${styles.grid_section__item}`}
+                    hover={hover}
                   />
                 </div>
               )
