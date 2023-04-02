@@ -57,6 +57,7 @@
         &__image {
             width: 50%;
             overflow: hidden;
+            max-height: 400px;
             align-self: stretch;
             background-size: cover;
             background-position: center;

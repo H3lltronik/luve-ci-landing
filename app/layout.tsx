@@ -6,6 +6,7 @@ import React, { Suspense } from 'react'
 import dynamic from 'next/dynamic'
 import Script from 'next/script'
 import AOSInitializer from './common/Animation/AOS'
+import Preloader from './common/Preloader/Preloader'
 
 const Header = dynamic(() => import('./common/Header/Header'), { ssr: false, loading: () => <p>Loading...</p> })
 
@@ -26,14 +27,15 @@ export default function RootLayout ({
       <head />
       <body className={font.variable}>
         <AOSInitializer />
+        <Preloader />
 
-        <Suspense>
+        <Suspense fallback={<>Loading...</>}>
           <Header />
+          {children}
+          <Footer />
         </Suspense>
-        {children}
-        <Footer />
 
-        <Script src='http://localhost:3000/scripts/index.js' strategy='afterInteractive' />
+        {/* <Script src='http://localhost:3000/scripts/index.js' strategy='afterInteractive' /> */}
       </body>
     </html>
   )
