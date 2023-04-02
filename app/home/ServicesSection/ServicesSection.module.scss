@@ -37,10 +37,13 @@
         $ctx: &;
         gap: $gap;
         display: flex;
-        max-height: 600px;
-        max-height: fit-content;
         align-items: center;
+        max-height: fit-content;
         text-transform: capitalize;
+
+        &, &__image {
+            min-height: 400px;
+        }
         &__hr {
             display: none;
         }
@@ -56,8 +59,8 @@
         }
         &__image {
             width: 50%;
+            height: 100%;
             overflow: hidden;
-            max-height: 400px;
             align-self: stretch;
             background-size: cover;
             background-position: center;

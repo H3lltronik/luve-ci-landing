@@ -14,7 +14,7 @@ export default function HomePage (options: any) {
       <main>
         <HeroSection />
 
-        <div className={`${styles.home_first_container} content-container`}>
+        <div id='services-section' className={`${styles.home_first_container} content-container`}>
           <ServicesSection type='services' services={services} />
         </div>
 

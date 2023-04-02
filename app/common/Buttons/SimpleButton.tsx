@@ -11,6 +11,7 @@ const SimpleButton = React.forwardRef<any>((props: any, ref) => {
       data-aos-delay={props['data-aos-delay']}
       ref={ref}
       className={`${props.className} ${styles.simple_button__wrapper}`}
+      onClick={props.onClick}
     >
       <button className={styles.simple_button}>
         <p>CONOCE MAS</p>

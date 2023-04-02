@@ -31,9 +31,17 @@ const Contents = () => {
   useEffect(() => {
     if (!isClient) return
     window.addEventListener('load', removePreloader)
+    // Add a interval to check when the page is loaded
+    const interval = setInterval(() => {
+      if (document.readyState === 'complete') {
+        removePreloader()
+        clearInterval(interval)
+      }
+    }, 100)
 
     return () => {
       window.removeEventListener('load', removePreloader)
+      clearInterval(interval)
     }
   }, [isClient])
 

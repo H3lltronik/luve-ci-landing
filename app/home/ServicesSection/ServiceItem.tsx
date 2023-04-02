@@ -14,11 +14,11 @@ const ServiceItem: React.FC<ServiceItemProps> = (props) => {
   const { item } = props
   return (
     <div data-aos='fade-down' className={`${styles.home_services__item} ${props.inverted ? styles['home_services__item--inverse'] : ''}`}>
-      <div className={styles.home_services__item__image}>
-        <div className='position_relative'>
-          <img src={item.image.src} alt='' />
-          <div className='luve_logo_watermark' />
-        </div>
+      <div
+        className={`${styles.home_services__item__image} position_relative`}
+        style={{ backgroundImage: `url(${item.image.src})` }}
+      >
+        <div className='luve_logo_watermark' />
       </div>
       <div className={styles.home_services__item__wrapper}>
         <div className={styles.home_services__item__content}>
