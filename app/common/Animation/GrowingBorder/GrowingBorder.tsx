@@ -1,5 +1,5 @@
 'use client'
-import React, { useLayoutEffect, useRef, useState } from 'react'
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import styles from './GrowingBorder.module.scss'
 import { motion } from 'framer-motion'
 
@@ -17,6 +17,20 @@ export const GrowingBorder : React.FunctionComponent<GrowingBorderProps> = (prop
     if (ref.current) {
       setWidth(ref.current.offsetWidth)
       setHeight(ref.current.offsetHeight)
+    }
+  }, [ref])
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (ref.current) {
+        setWidth(ref.current.offsetWidth)
+        setHeight(ref.current.offsetHeight)
+      }
+    }
+
+    window.addEventListener('resize', handleResize)
+    return () => {
+      window.removeEventListener('resize', handleResize)
     }
   }, [ref])
 

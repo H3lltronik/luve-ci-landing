@@ -30,7 +30,7 @@
         }
     }
     &__title_2 {
-        
+
     }
     &__subtitle {
         font-size: 38px;
@@ -77,9 +77,115 @@
     }
 }
 
+// media query
+@media (max-width: 1400px) {
+    .software_content {
+        &__title {
+            &__light {
+                font-size: 40px;
+            }
+            &__bold {
+                font-size: 50px;
+            }
+        }
+        &__subtitle {
+            font-size: 30px;
+        }
+        &__small {
+            font-size: 16px;
+        }
+        &__experts {
+            &__text {
+                font-size: 16px;
+            }
+            &__text_bold {
+                font-size: 30px;
+            }
+        }
+    }
+}
 
+// media query at 1032
+@media (max-width: 1032px) {
+    .software_content {
+        &__title {
+            &__light {
+                font-size: 30px;
+            }
+            &__bold {
+                font-size: 40px;
+            }
+        }
+        &__subtitle {
+            font-size: 25px;
+        }
+        &__small {
+            font-size: 14px;
+        }
+        &__experts {
+            &__text {
+                font-size: 14px;
+            }
+            &__text_bold {
+                font-size: 25px;
+            }
+        }
+    }
+}
 
+// media query at 828
+@media (max-width: 828px) {
+    .software_content {
+        &__top, &__row {
+            flex-direction: column;
+        }
+        &__title {
+            &__light {
+                margin-top: 20px;
+                font-size: 25px;
+                line-height: 25px;
+            }
+            &__bold {
+                font-size: 35px;
+            }
+            &__container {
+                gap: 0px;
+                margin-top: 50px;
+            }
+        }
+        &__anim_icon {
+            max-width: 500px;
+        }
+        &__subtitle {
+            font-size: 20px;
+        }
+        &__small {
+            font-size: 12px;
+        }
+        &__experts {
+            &__text {
+                font-size: 12px;
+            }
+            &__text_bold {
+                font-size: 20px;
+            }
+        }
+    }
+}
 
+// media query at 400
+@media (max-width: 400px) {
+    .software_content {
+        &__title {
+            &__bold {
+                font-size: 30px;
+            }
+        }
+        &__subtitle {
+            font-size: 15px;
+        }
+    }
+}
 
 
 

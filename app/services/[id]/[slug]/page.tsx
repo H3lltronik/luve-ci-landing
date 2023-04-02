@@ -16,7 +16,6 @@ const loadService = async (id: string): Promise<Services.Service | undefined> =>
 export default async function ServicesPage (props: any) {
   const { params } = props
   const service = await loadService(params.id)
-  console.log('service', service)
   if (!service) return (<div style={{ marginTop: '200px' }}>Service not found</div>)
 
   return (
@@ -24,7 +23,7 @@ export default async function ServicesPage (props: any) {
       <header className={luvePageStyles.luve_page__header} style={{ backgroundImage: `url(${service.image.src})` }}>
         <h1>
           <span className={luvePageStyles.luve_page__header__subtitle}>Luve</span>
-          <span className={`${luvePageStyles.luve_page__header__title} luve_red`}>{service.name}</span>
+          <span className={`${luvePageStyles.luve_page__header__title} luve_red`}>{service.title}</span>
         </h1>
         <div className={luvePageStyles.luve_page__header___overlay} />
       </header>

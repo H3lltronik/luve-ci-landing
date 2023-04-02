@@ -404,3 +404,13 @@ ul p, ol p {
   opacity: 1;
   background: var(--primary-color-200) !important;
 }
+
+.d-none {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .d-md-none {
+    display: none;
+  }
+}

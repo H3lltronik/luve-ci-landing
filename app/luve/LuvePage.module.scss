@@ -35,6 +35,14 @@
             line-height: 110%;
             text-align: center;
             color: var(--neutral-color-50);
+            // media query at 600px
+            @media (max-width: 600px) {
+                font-size: 40px;
+            }
+            // media query at 400px
+            @media (max-width: 400px) {
+                font-size: 30px;
+            }
         }
 
         &__subtitle {

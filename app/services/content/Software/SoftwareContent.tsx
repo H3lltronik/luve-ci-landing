@@ -22,8 +22,8 @@ export default function SoftwareContent () {
         <div className={styles.software_content__title__container}>
           <div className={`${styles.software_content__red_dot} pulse-relative`} />
           <h1 className={styles.software_content__title}>
-            <span className={styles.software_content__title__light}>Realiza tu</span><br />
-            <span className={styles.software_content__title__bold}>Software Empresarial</span>
+            <div className={styles.software_content__title__light}>Realiza tu</div>
+            <div className={styles.software_content__title__bold}>Software Empresarial</div>
           </h1>
 
           <h2 className={`${styles.software_content__subtitle} red`}>
