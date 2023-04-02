@@ -56,7 +56,7 @@ const HorizontalModule = (props: any) => {
       handleScroll()
     }
 
-    const debouncedHandleScroll = debounce(handleScroll, 100)
+    const debouncedHandleScroll = debounce(handleScroll, 5)
 
     window.addEventListener('scroll', debouncedHandleScroll, { passive: true })
     window.addEventListener('resize', handleResize)
