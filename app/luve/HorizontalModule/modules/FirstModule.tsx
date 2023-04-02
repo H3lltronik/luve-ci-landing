@@ -20,7 +20,7 @@ export default function FirstModule (props: ModuleProps) {
                 El difícil acceso a los diversos instrumentos de
                 financiamiento para toda
               </p>
-              <p className={styles.horizontal_module__section__text_2}>
+              <p className={styles.horizontal_module__section__text_3}>
                 PyMes en México, demanda tiempo, dedicación y acudir a
                 diversas instituciones.
               </p>

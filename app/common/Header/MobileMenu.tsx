@@ -1,7 +1,6 @@
 'use client'
 import React, { useEffect, useRef } from 'react'
 import styles from './Header.module.scss'
-import { useOnClickOutside } from '../../utils/hooks/useOnClickOutside'
 import useHeaderStore from '../../../store/headerStore'
 
 export default function MobileMenu (props: any) {

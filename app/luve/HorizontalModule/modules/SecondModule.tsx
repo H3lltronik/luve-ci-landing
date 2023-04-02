@@ -23,7 +23,7 @@ export default function SecondModule (props: ModuleProps) {
               <p className={styles.horizontal_module__section__text_3}>
                 sus esfuerzos en una sola dirección y presentarle
               </p>
-              <p className={styles.horizontal_module__section__text_1}>
+              <p className={styles.horizontal_module__section__text_3}>
                 la opción mas adecuada.
               </p>
             </Pace>

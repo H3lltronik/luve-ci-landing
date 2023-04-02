@@ -19,7 +19,7 @@ export default function FifthModule (props: ModuleProps) {
               <p className={styles.horizontal_module__section__text_3}>
                 Cada empresa es única y requiere un instrumento a su medida.
               </p>
-              <p className={styles.horizontal_module__section__text_2}>
+              <p className={styles.horizontal_module__section__text_3}>
                 ACERCATE, TE ASESORAMOS DE MANERA INTEGRAL
               </p>
             </Pace>

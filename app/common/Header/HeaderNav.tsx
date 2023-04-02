@@ -21,14 +21,14 @@ export const HeaderNav : React.FunctionComponent<HeaderNavProps> = (props) => {
   useOnClickOutside(ref, () => setMobileMenuOpened(false))
 
   return (
-    <>
-      <div className='page-header' ref={ref}>
+    <div ref={ref}>
+      <div className='page-header'>
         <div className={styles.header_container}>
           <Link href='/'>
             <LuveLogo className={styles.header_logo} />
           </Link>
 
-          <nav className={styles.header_nav}>
+          <nav className={styles.header_nav} id='test'>
             <ul className={styles.header_nav_ul}>{renderList(links)}</ul>
           </nav>
 
@@ -40,30 +40,44 @@ export const HeaderNav : React.FunctionComponent<HeaderNavProps> = (props) => {
         </div>
       </div>
 
-      <MobileMenuItems links={links} />
-    </>
+      <nav id='mobile_nav' className={styles.header_mobile_nav}>
+        <ul className={styles.header_nav_ul}>{renderList(links)}</ul>
+      </nav>
+    </div>
+  )
+}
+
+const ListItem = ({ link } : any) => {
+  const setMobileMenuOpened = useHeaderStore(store => store.setMobileMenuOpened)
+
+  const handleClick = () => {
+    setMobileMenuOpened(false)
+  }
+
+  return (
+    <Fragment key={link.path}>
+      {link.children
+        ? (
+          <li className={`${styles.header_nav_li} ${styles.header_nav_li_sub}`} onClick={handleClick}>
+            <span>{link.label}</span>
+            <ul className={styles.header_nav_ul_sub}>
+              {renderList(link.children)}
+            </ul>
+          </li>
+          )
+        : (
+          <Link href={link.path} key={link.path}>
+            <li className={styles.header_nav_li} onClick={handleClick}>
+              <span>{link.label}</span>
+            </li>
+          </Link>
+          )}
+    </Fragment>
   )
 }
 
 function renderList (items: HeaderType.Link[]) {
-  return items.map((link) => {
-    return (
-      <Fragment key={link.path}>
-        {link.children
-          ? (
-            <li className={`${styles.header_nav_li} ${styles.header_nav_li_sub}`}>
-              <span>{link.label}</span>
-              <ul className={styles.header_nav_ul_sub}>
-                {renderList(link.children)}
-              </ul>
-            </li>
-            )
-          : (
-            <Link href={link.path} key={link.path}>
-              <li className={styles.header_nav_li}>{link.label}</li>
-            </Link>
-            )}
-      </Fragment>
-    )
+  return items.map((link, index) => {
+    return <ListItem link={link} key={index} />
   })
 }
