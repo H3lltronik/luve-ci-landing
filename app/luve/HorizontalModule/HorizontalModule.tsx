@@ -8,6 +8,7 @@ import ThirdModule from './modules/ThirdModule'
 import FourthModule from './modules/FourthModule'
 import FifthModule from './modules/FifthModule'
 import { useIsClient } from '../../utils/hooks/IsClient'
+import { debounce } from 'lodash'
 
 const ITEMS_COUNT = 5
 const HEADER_HEIGHT = 80
@@ -55,13 +56,17 @@ const HorizontalModule = (props: any) => {
       handleScroll()
     }
 
-    window.addEventListener('scroll', handleScroll)
+    const debouncedHandleScroll = debounce(handleScroll, 100)
+
+    window.addEventListener('scroll', debouncedHandleScroll, { passive: true })
     window.addEventListener('resize', handleResize)
     return () => {
       window.removeEventListener('scroll', handleScroll)
       window.removeEventListener('resize', handleResize)
     }
   }, [container, isClient])
+
+  if (!isClient) return <></>
 
   return (
     <section ref={container} className={styles.horizontal_module__container}>
@@ -70,19 +75,19 @@ const HorizontalModule = (props: any) => {
           <div className={`${styles.horizontal_module__red_dot} pulse`} />
           <div className={styles.horizontal_module__progress} />
 
-          {scrollPosition >= 0 && (
+          {scrollPosition >= 0 && scrollPosition < window.innerHeight * 1 && (
             <FirstModule />
           )}
 
-          {isClient && scrollPosition >= window.innerHeight * 1 && (
+          {isClient && scrollPosition >= window.innerHeight * 1 && scrollPosition < window.innerHeight * 2 && (
             <SecondModule />
           )}
 
-          {isClient && scrollPosition >= window.innerHeight * 2 && (
+          {isClient && scrollPosition >= window.innerHeight * 2 && scrollPosition < window.innerHeight * 3 && (
             <ThirdModule />
           )}
 
-          {isClient && scrollPosition >= window.innerHeight * 3 && (
+          {isClient && scrollPosition >= window.innerHeight * 3 && scrollPosition < window.innerHeight * 4 && (
             <FourthModule />
           )}
 
