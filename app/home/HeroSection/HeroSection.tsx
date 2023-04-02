@@ -38,7 +38,7 @@ const HeroSection = () => {
     <div className={styles.home_page__video_hero__outer}>
       <div className={styles.home_page__video_hero_wrapper}>
         <div className={styles.home_page__video_hero}>
-          <LazyLoad offset={100}>
+          <LazyLoad offset={100} className="full-size">
             <video loop autoPlay muted>
               <source src='/hero-video.webm' />
             </video>
