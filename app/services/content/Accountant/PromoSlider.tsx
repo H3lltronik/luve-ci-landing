@@ -7,6 +7,7 @@ import { Image } from '../../types'
 import 'swiper/css'
 import 'swiper/css/autoplay'
 import 'swiper/css/pagination'
+import styles from './AccountantContents.module.scss'
 
 const imageSizes = `
 (max-width: 768px) 100vw,
@@ -22,31 +23,33 @@ interface PromoSliderProps {
 const PromoSlider: FC<PromoSliderProps> = (props) => {
   const { images, className, itemsClass } = props
   return (
-    <Swiper
-      spaceBetween={50} slidesPerView={1} className={className} loop
-      autoplay={{
-        delay: 2000,
-        disableOnInteraction: false
-      }}
-      pagination={{ clickable: true }}
-      modules={[Autoplay, Pagination]}
-    >
-      {images.map((image, index) => (
-        <SwiperSlide className={itemsClass} key={index}>
-          <div className='position_relative'>
-            <NextImage
-              src={image.src}
-              alt={image.alt}
-              height={760}
-              width={460}
-              sizes={imageSizes}
-              style={{ height: '100%', width: '100%' }}
-            />
-            <div className='luve_logo_watermark' />
-          </div>
-        </SwiperSlide>
-      ))}
-    </Swiper>
+    <div className={styles.promotional_slider}>
+      <Swiper
+        spaceBetween={50} slidesPerView={1} className={className} loop
+        autoplay={{
+          delay: 2000,
+          pauseOnMouseEnter: true
+        }}
+        pagination={{ clickable: true }}
+        modules={[Autoplay, Pagination]}
+      >
+        {images.map((image, index) => (
+          <SwiperSlide className={itemsClass} key={index}>
+            <div className='position_relative'>
+              <NextImage
+                src={image.src}
+                alt={image.alt}
+                height={760}
+                width={460}
+                sizes={imageSizes}
+                style={{ height: '100%', width: '100%' }}
+              />
+              <div className='luve_logo_watermark' />
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
   )
 }
 
