@@ -31,6 +31,12 @@ export declare module Services {
         alt: string;
     }
 
+    export interface Meta {
+        title: string;
+        description: string;
+        keywords: string;
+    }
+
     export interface Item {
         id: number;
         title: string;
@@ -42,6 +48,7 @@ export declare module Services {
         requirements: Requirement[];
         images: Image[];
         image?: Image;
+        meta: Meta
     }
 
     export interface Service {
@@ -52,6 +59,7 @@ export declare module Services {
         image: Image;
         priority: number;
         items: Item[];
+        meta: Meta
     }
 
 }

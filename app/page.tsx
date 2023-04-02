@@ -8,6 +8,9 @@ import { IsClientCtxProvider } from './utils/hooks/IsClient'
 import styles from './Page.module.scss'
 import services from '../assets/data/services.json'
 
+export const metadata = {
+  title: 'My Page Title'
+}
 export default function HomePage (options: any) {
   return (
     <ParallaxProvider>

@@ -23,7 +23,7 @@ export default function RootLayout ({
   children: React.ReactNode;
 }) {
   return (
-    <html data-theme='theme-light'>
+    <html data-theme='theme-light' lang='es'>
       <head />
       <body className={font.variable}>
         <AOSInitializer />

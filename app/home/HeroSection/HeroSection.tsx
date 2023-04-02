@@ -4,6 +4,10 @@ import { SimpleButton } from '../../common/Buttons'
 import { useParallax } from 'react-scroll-parallax'
 import { LuveLogo } from '../../common/Logo'
 import DelayedWindup from '../../common/Animation/DelayedWindup'
+import dynamic from 'next/dynamic'
+const LazyLoad = dynamic(() => import('react-lazyload'), {
+  ssr: false
+})
 
 const HeroSection = () => {
   const ref = useParallax({
@@ -34,9 +38,11 @@ const HeroSection = () => {
     <div className={styles.home_page__video_hero__outer}>
       <div className={styles.home_page__video_hero_wrapper}>
         <div className={styles.home_page__video_hero}>
-          <video loop autoPlay muted>
-            <source src='/hero-video.webm' />
-          </video>
+          <LazyLoad offset={100}>
+            <video loop autoPlay muted>
+              <source src='/hero-video.webm' />
+            </video>
+          </LazyLoad>
         </div>
         <LuveLogo className={styles.home_page__video_hero_content_logo} />
         <div className={styles.home_page__video_hero_content}>
