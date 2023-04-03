@@ -37,6 +37,7 @@
         $ctx: &;
         gap: $gap;
         display: flex;
+        min-height: 400px;
         align-items: center;
         max-height: fit-content;
         text-transform: capitalize;

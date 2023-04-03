@@ -81,6 +81,7 @@
 @media (max-width: 1400px) {
     .software_content {
         &__title {
+            line-height: 55px;
             &__light {
                 font-size: 40px;
             }
@@ -109,6 +110,7 @@
 @media (max-width: 1032px) {
     .software_content {
         &__title {
+            line-height: 45px;
             &__light {
                 font-size: 30px;
             }
@@ -140,6 +142,7 @@
             flex-direction: column;
         }
         &__title {
+            line-height: 40px;
             &__light {
                 margin-top: 20px;
                 font-size: 25px;
@@ -177,6 +180,7 @@
 @media (max-width: 400px) {
     .software_content {
         &__title {
+            line-height: 40px;
             &__bold {
                 font-size: 30px;
             }
