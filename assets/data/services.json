@@ -23,35 +23,35 @@
         "order": 1,
         "meta": {
           "title": "Servicio de credito automotriz",
-          "keywords": "Préstamo para adquisición de de unidades vehiculares nuevas y seminuevas (hasta 10 años ade antigüedad) con fines de uso particular, plataformas y de trabajo.",
-          "description": "Préstamo para adquisición de de unidades vehiculares nuevas y seminuevas (hasta 10 años ade antigüedad) con fines de uso particular, plataformas y de trabajo."
+          "keywords": "Préstamo para adquisición de de unidades vehiculares nuevas y seminuevas (hasta 10 años de antigüedad) con fines de uso particular y de trabajo.",
+          "description": "Préstamo para adquisición de de unidades vehiculares nuevas y seminuevas (hasta 10 años de antigüedad) con fines de uso particular y de trabajo."
         },
-        "description": "Préstamo para adquisición de de unidades vehiculares nuevas y seminuevas (hasta 10 años ade antigüedad) con fines de uso particular, plataformas y de trabajo.",
-        "targets": ["DUEÑOS DE MICRO NEGOCIOS", "ASALARIADOS", "PYMES"],
+        "description": "Préstamo para adquisición de de unidades vehiculares nuevas y seminuevas con fines de uso particular y de trabajo. Para <strong>autos</strong> en general y <strong>camiones</strong>, unidades nuevas y seminuevas hasta <strong>10</strong> años de<strong> antigüedad</strong>, plazos hasta <strong>60</strong> meses*",
+        "targets": ["ASALARIADOS", "INDEPENDIENTES", "PYMES"],
         "features": [
           {
-            "title": "Unidades Nuevas <br>y <br>Seminuevas <br>(Hasta 5 años)",
+            "title": "Unidades Nuevas <br>y <br>Seminuevas <br>(Hasta 10 años)",
             "icon": {
               "type": "lottie",
               "name": "GainsAnim"
             }
           },
           {
-            "title": "Unidades Nuevas <br>y <br>Seminuevas <br>(Hasta 5 años)",
+            "title": "Plazos <br>(Hasta 60 meses)",
             "icon": {
               "type": "lottie",
               "name": "WalletAnim"
             }
           },
           {
-            "title": "Unidades Nuevas <br>y <br>Seminuevas <br>(Hasta 5 años)",
+            "title": "Enganche desde<br>Seminuevas <br>20 %",
             "icon": {
               "type": "lottie",
               "name": "NewShineAnim"
             }
           },
           {
-            "title": "Unidades Nuevas <br>y <br>Seminuevas <br>(Hasta 5 años)",
+            "title": "Buro no <br>determinante",
             "icon": {
               "type": "lottie",
               "name": "WorkAnim"
@@ -107,35 +107,35 @@
         "order": 2,
         "meta": {
           "title": "Arrendamiento puro",
-          "keywords": "Préstamo para adquisición de de unidades vehiculares nuevas y seminuevas (hasta 10 años ade antigüedad) con fines de uso particular, plataformas y de trabajo.",
-          "description": "Préstamo para adquisición de de unidades vehiculares nuevas y seminuevas (hasta 10 años ade antigüedad) con fines de uso particular, plataformas y de trabajo."
+          "keywords": "Préstamo para adquisición de de unidades vehiculares nuevas y seminuevas (hasta 10 años de antigüedad) con fines de uso particular y de trabajo.",
+          "description": "Préstamo para adquisición de de unidades vehiculares nuevas y seminuevas (hasta 10 años de antigüedad) con fines de uso particular y de trabajo."
         },
-        "description": "Préstamo para adquisición de de unidades vehiculares nuevas y seminuevas (hasta 10 años ade antigüedad) con fines de uso particular, plataformas y de trabajo.",
-        "targets": ["PFAE", "PF"],
+        "description": "Préstamo para adquisición de activos con beneficios fiscales de deduccion hasta el 100% <br><br>• Maquinaria de construccion <br>• Maquinaria industrial <br>• Equipo de oficina <br>• Autos <br>• Camiones <br>• Paneles solares <br>• <strong>Y mas</strong>",
+        "targets": ["PFAE", "RESICO", "PYMES", "GRANDES EMPRESAS"],
         "features": [
           {
-            "title": "Unidades Nuevas <br>y <br>Seminuevas <br>(Hasta 5 años)",
+            "title": "Unidades Nuevas <br>y <br>Seminuevas <br>(Hasta 10 años)*",
             "icon": {
               "type": "lottie",
               "name": "GainsAnim"
             }
           },
           {
-            "title": "PLAZOS HASTA 36 MESES SEMINUEVOS",
+            "title": "Plazos hasta <br>60 meses*",
             "icon": {
               "type": "lottie",
               "name": "GainsAnim"
             }
           },
           {
-            "title": "PLAZOS HASTA 60 MESES EN NUEVOS",
+            "title": "Flexibilidad en buro<br>Y constitucion",
             "icon": {
               "type": "lottie",
               "name": "GainsAnim"
             }
           },
           {
-            "title": "PAGO INICIAL DESDE 15%",
+            "title": "Pago inicial <br>desde 10%",
             "icon": {
               "type": "lottie",
               "name": "GainsAnim"
@@ -144,21 +144,21 @@
         ],
         "requirements": [
           {
-            "title": "Confirmacion de <br>Minimo 6 <br>Meses",
+            "title": "Conformacion de <br>Minimo 6 <br>Meses",
             "icon": {
               "type": "lottie",
               "name": "WalletAnim"
             }
           },
           {
-            "title": "DOCUMENTACION DE EMPRESA Y REPRESENTANTE LEGAL",
+            "title": "Documentacion de empresa y representante legal",
             "icon": {
               "type": "lottie",
               "name": "NewShineAnim"
             }
           },
           {
-            "title": "SOLICITUD Y FORMATOS DE BURO",
+            "title": "Solicitud Y Formatos de Buro",
             "icon": {
               "type": "lottie",
               "name": "WorkAnim"
@@ -182,34 +182,41 @@
       },
       {
         "id": 3,
-        "title": "ARRENDAMIENTO PURO Y FINANCIERO",
-        "slug": "arrendamiento-puro-y-financiero",
+        "title": "ARRENDAMIENTO FINANCIERO",
+        "slug": "arrendamiento-financiero",
         "type": "financial",
         "order": 3,
         "meta": {
-          "title": "Arrendamiento puro y financiero",
-          "keywords": "Préstamo para adquisición de de unidades vehiculares nuevas y seminuevas (hasta 10 años ade antigüedad) con fines de uso particular, plataformas y de trabajo.",
-          "description": "Préstamo para adquisición de de unidades vehiculares nuevas y seminuevas (hasta 10 años ade antigüedad) con fines de uso particular, plataformas y de trabajo."
+          "title": "Arrendamiento financiero",
+          "keywords": "Préstamo para adquisición de de unidades vehiculares nuevas y seminuevas (hasta 10 años de antigüedad) con fines de uso particular, plataformas y de trabajo.",
+          "description": "Préstamo para adquisición de de unidades vehiculares nuevas y seminuevas (hasta 10 años de antigüedad) con fines de uso particular, plataformas y de trabajo."
         },
-        "description": "Préstamo para adquisición de de unidades vehiculares nuevas y seminuevas (hasta 10 años ade antigüedad) con fines de uso particular, plataformas y de trabajo.",
+        "description": "Préstamo para adquisición de activos con beneficios fiscales de deduccion hasta el 100% <br><br>• Maquinaria de construccion <br>• Maquinaria industrial <br>• Equipo de oficina <br>• Autos <br>• Camiones <br>• Paneles solares <br>• <strong>Y mas</strong>",
         "targets": ["PFAE", "PM"],
         "features": [
           {
-            "title": "UNIDADES NUEVAS Y SEMINUEVAS *(AÑOS BAJO CONSIDERACION)",
+            "title": "Unidades Nuevas <br>y <br>Seminuevas <br>(Hasta 10 años)*",
             "icon": {
               "type": "lottie",
               "name": "GainsAnim"
             }
           },
           {
-            "title": "PLAZOS HASTA 48 MESES SEMINUEVOS",
+            "title": "Plazos hasta <br>60 meses*",
             "icon": {
               "type": "lottie",
               "name": "GainsAnim"
             }
           },
           {
-            "title": "PAGO INICIAL DESDE 15%",
+            "title": "Flexibilidad en buro<br>Y constitucion",
+            "icon": {
+              "type": "lottie",
+              "name": "GainsAnim"
+            }
+          },
+          {
+            "title": "Pago inicial <br>desde 10%",
             "icon": {
               "type": "lottie",
               "name": "GainsAnim"
@@ -218,21 +225,21 @@
         ],
         "requirements": [
           {
-            "title": "CONFORMACION DE MINIMO 6 MESES *",
+            "title": "Conformacion de <br>Minimo 6 <br>Meses",
             "icon": {
               "type": "lottie",
               "name": "WalletAnim"
             }
           },
           {
-            "title": "DOCUMENTACION DE EMPRESA Y REPRESENTANTE LEGAL *",
+            "title": "Documentacion de empresa y representante legal",
             "icon": {
               "type": "lottie",
               "name": "NewShineAnim"
             }
           },
           {
-            "title": "SOLICITUD Y FORMATOS DE BURO",
+            "title": "Solicitud Y Formatos de Buro",
             "icon": {
               "type": "lottie",
               "name": "WorkAnim"
@@ -266,35 +273,35 @@
         "order": 4,
         "meta": {
           "title": "Credito pyme",
-          "keywords": "Préstamo para adquisición de de unidades vehiculares nuevas y seminuevas (hasta 10 años ade antigüedad) con fines de uso particular, plataformas y de trabajo.",
-          "description": "Préstamo para adquisición de de unidades vehiculares nuevas y seminuevas (hasta 10 años ade antigüedad) con fines de uso particular, plataformas y de trabajo."
+          "keywords": "Préstamo para adquisición de de unidades vehiculares nuevas y seminuevas (hasta 10 años de antigüedad) con fines de uso particular, plataformas y de trabajo.",
+          "description": "Préstamo para adquisición de de unidades vehiculares nuevas y seminuevas (hasta 10 años de antigüedad) con fines de uso particular, plataformas y de trabajo."
         },
-        "description": "Préstamo para adquisición de de unidades vehiculares nuevas y seminuevas (hasta 10 años ade antigüedad) con fines de uso particular, plataformas y de trabajo.",
-        "targets": ["PFAE", "PF (EMPRESAS)"],
+        "description": "Linea de liquidez para capital de trabajo, pago de pasivos con y sin garantia hipotecaria que puede ser <strong>redisponible</strong>",
+        "targets": ["PF", "PFAE", "EMPRESAS"],
         "features": [
           {
-            "title": "GARANTIA HIPOTECARIA (GAVAMEN Y SIN GRAVAMEN)",
+            "title": "Unidades Nuevas <br>y <br>Seminuevas <br>(Hasta 10 años)*",
             "icon": {
               "type": "lottie",
               "name": "GainsAnim"
             }
           },
           {
-            "title": "DESDE 200 MIL HASTA 30 MILLONES",
+            "title": "Plazos hasta <br>60 meses*",
             "icon": {
               "type": "lottie",
               "name": "GainsAnim"
             }
           },
           {
-            "title": "PLAZOS HASTA MESES",
+            "title": "Flexibilidad en buro<br>Y constitucion",
             "icon": {
               "type": "lottie",
               "name": "GainsAnim"
             }
           },
           {
-            "title": "FLEXIBILIDAD DE BURO",
+            "title": "Pago inicial <br>desde 10%",
             "icon": {
               "type": "lottie",
               "name": "GainsAnim"
@@ -303,21 +310,21 @@
         ],
         "requirements": [
           {
-            "title": "CONFORMACION DE MINIMO 12 MESES",
+            "title": "Conformacion de <br>Minimo 6 <br>Meses",
             "icon": {
               "type": "lottie",
               "name": "WalletAnim"
             }
           },
           {
-            "title": "DOCUMENTACION DE EMPRESA Y REPRESENTANTE LEGAL *",
+            "title": "Documentacion de empresa y representante legal",
             "icon": {
               "type": "lottie",
               "name": "NewShineAnim"
             }
           },
           {
-            "title": "SOLICITUD Y FORMATOS DE BURO",
+            "title": "Solicitud Y Formatos de Buro",
             "icon": {
               "type": "lottie",
               "name": "WorkAnim"
@@ -337,41 +344,34 @@
       },
       {
         "id": 5,
-        "title": "BACK TO BACK",
-        "slug": "back-to-back",
+        "title": "FACTORAJE",
+        "slug": "factoring",
         "type": "financial",
         "order": 5,
         "meta": {
           "title": "back to back",
-          "keywords": "Préstamo para adquisición de de unidades vehiculares nuevas y seminuevas (hasta 10 años ade antigüedad) con fines de uso particular, plataformas y de trabajo.",
-          "description": "Préstamo para adquisición de de unidades vehiculares nuevas y seminuevas (hasta 10 años ade antigüedad) con fines de uso particular, plataformas y de trabajo."
+          "keywords": "Préstamo para adquisición de de unidades vehiculares nuevas y seminuevas (hasta 10 años de antigüedad) con fines de uso particular, plataformas y de trabajo.",
+          "description": "Préstamo para adquisición de de unidades vehiculares nuevas y seminuevas (hasta 10 años de antigüedad) con fines de uso particular, plataformas y de trabajo."
         },
-        "description": "Préstamo para adquisición de de unidades vehiculares nuevas y seminuevas (hasta 10 años ade antigüedad) con fines de uso particular, plataformas y de trabajo.",
-        "targets": ["PFAE", "PF (EMPRESAS)"],
+        "description": "Una opción de <strong>financiamiento</strong> basada en la facturación de tus clientes, que te permite obtener liquidez de manera rápida y eficiente.",
+        "targets": ["PYME", "EMPRESAS"],
         "features": [
           {
-            "title": "RENDIMIENTOS DE LA INVERSION",
+            "title": "Factoraje silencioso",
             "icon": {
               "type": "lottie",
               "name": "GainsAnim"
             }
           },
           {
-            "title": "DESDE 100 MIL HASTA 7 MILLONES",
+            "title": "Plazos hasta <br>36 meses*",
             "icon": {
               "type": "lottie",
               "name": "GainsAnim"
             }
           },
           {
-            "title": "PLAZOS HASTA 48 MESES",
-            "icon": {
-              "type": "lottie",
-              "name": "GainsAnim"
-            }
-          },
-          {
-            "title": "FLEXIBILIDAD DE BURO",
+            "title": "Monto hasta<br>$5,000,000",
             "icon": {
               "type": "lottie",
               "name": "GainsAnim"
@@ -380,21 +380,21 @@
         ],
         "requirements": [
           {
-            "title": "CONFORMACION DE MINIMO 12 MESES",
+            "title": "Conformacion de <br>Minimo 2 <br>Años",
             "icon": {
               "type": "lottie",
               "name": "WalletAnim"
             }
           },
           {
-            "title": "DOCUMENTACION DE EMPRESA Y REPRESENTANTE LEGAL *",
+            "title": "Documentacion de empresa y representante legal",
             "icon": {
               "type": "lottie",
               "name": "NewShineAnim"
             }
           },
           {
-            "title": "SOLICITUD Y FORMATOS DE BURO",
+            "title": "Solicitud Y Formatos de Buro",
             "icon": {
               "type": "lottie",
               "name": "WorkAnim"

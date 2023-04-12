@@ -40,6 +40,7 @@ const SubServiceItem: React.FC<ServiceItemProps> = (props) => {
                   {item.targets.map((target, index) => (
                     <li key={target}>
                       <strong>{target} {(index < item.targets.length - 2) ? ',' : ''}</strong>
+                      <strong>{(index === item.targets.length - 2) ? 'Y' : ''}</strong>
                     </li>
                   ))}
                 </ul>

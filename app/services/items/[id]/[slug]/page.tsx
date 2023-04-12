@@ -30,7 +30,7 @@ export default async function ItemPage (props: any) {
   return (
     <main className={styles.services_page}>
       <div className={`${styles.services_page__container} content-container`}>
-        <SubServiceItem item={item} actionButtonText='¡LO QUIERO!' slider />
+        <SubServiceItem item={item} actionButtonText='¡INICIA TU TRAMITE!' slider />
 
         {
           item.features.length > 0 && (
