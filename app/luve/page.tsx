@@ -6,17 +6,12 @@ import homeStyles from '../Page.module.scss'
 import ContactSection from '../home/ContactSection/ContactSection'
 import HorizontalModule from './HorizontalModule/HorizontalModule'
 import { IsClientCtxProvider } from '../utils/hooks/IsClient'
+import InnerPageHeader from '../common/InnerPageHeader/InnerPageHeader'
 
 export default function LuvePage () {
   return (
     <main>
-      <header className={styles.luve_page__header} style={{ backgroundImage: `url(${image.src})` }}>
-        <h1>
-          <span className={styles.luve_page__header__subtitle}>Luve</span>
-          <span className={styles.luve_page__header__title}><span className='red'>C</span>onsultoría <span className='red'>I</span>ntegral</span>
-        </h1>
-        <div className={styles.luve_page__header___overlay} />
-      </header>
+      <InnerPageHeader image={{ src: image.src, alt: '' }} title='Luve' subtitle='Consultoria Integral' />
 
       <div className='content-container'>
         <IsClientCtxProvider>

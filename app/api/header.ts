@@ -17,10 +17,16 @@ const headerData: Header.Data = {
       priority: 2
     },
     {
+      label: 'Blog',
+      path: '/blog',
+      type: 'link',
+      priority: 4
+    },
+    {
       label: 'Contacto',
       path: '/contact',
       type: 'link',
-      priority: 4
+      priority: 5
     }
   ]
 }

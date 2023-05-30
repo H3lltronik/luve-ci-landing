@@ -1,0 +1,58 @@
+.tag,
+.text {
+  border-radius: 20px;
+}
+
+.text {
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 130%;
+  padding: 5px 20px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.tag {
+  display: inline-block;
+  border: 1px solid var(--primary-color-200);
+  background-color: var(--primary-color-200);
+}
+
+.big {
+  border-radius: 50px;
+}
+
+.bigText {
+  padding: 20px 30px;
+  font-size: 18px;
+}
+
+.flat {
+  background-color: transparent;
+}
+
+.flatText {
+  color: var(--primary-color-200);
+}
+
+.tag, .text {
+  transition: all 0.3s ease-in-out;
+}
+
+.tag:hover {
+  background-color: transparent;
+  border: 1px solid var(--primary-color-200);
+  color: var(--primary-color-200);
+}
+.tag:hover .text {
+  color: var(--primary-color-200);
+}
+
+.flat:hover {
+  background-color: var(--primary-color-200);
+}
+.flat:hover .text {
+  color: white;
+}

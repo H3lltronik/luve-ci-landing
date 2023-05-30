@@ -1,0 +1,81 @@
+// the header must have a backdrop
+.header {
+    z-index: 0;
+    height: 300px;
+    display: flex;
+    color: white;
+    margin-top: 80px;
+    position: relative;
+    align-items: center;
+    background-size: cover;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-position: 100% 25%;
+    h1 {
+        display: flex;
+        align-items: left;
+        flex-direction: column;
+        justify-content: center;
+    }
+    &__container {
+        gap: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+    &___overlay {
+        content: "";
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: -1;
+        height: 100%;
+        position: absolute;
+        background: rgba(0, 0, 0, 0.5)
+    }
+
+    &__title {
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 110%;
+        color: var(--neutral-color-50);
+        // media query at 600px
+        @media (max-width: 600px) {
+            font-size: 40px;
+        }
+        // media query at 400px
+        @media (max-width: 400px) {
+            font-size: 30px;
+        }
+    }
+
+    &__subtitle {
+        font-size: 50px;
+        font-weight: 100;
+        line-height: 110%;
+        margin-bottom: 0px;
+        color: var(--neutral-color-50);
+    }
+}
+
+.red_dot {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: var(--primary-color-200);
+    animation: palpitation 5s infinite;
+}
+
+// palpitation animation
+@keyframes palpitation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

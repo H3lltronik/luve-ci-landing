@@ -7,6 +7,7 @@ import { Services } from '../../../../types'
 import FinantialContents from '../../content/FinantialContents'
 import AccountantContents from '../../content/AccountantContents'
 import SoftwareContent from '../../content/Software/SoftwareContent'
+import InnerPageHeader from '../../../common/InnerPageHeader/InnerPageHeader'
 
 const loadService = async (id: string): Promise<Services.Service | undefined> => {
   const service = services.find((service) => service.id === id)
@@ -20,13 +21,7 @@ export default async function ServicesPage (props: any) {
 
   return (
     <main className={styles.services_page}>
-      <header className={luvePageStyles.luve_page__header} style={{ backgroundImage: `url(${service.image.src})` }}>
-        <h1>
-          <span className={luvePageStyles.luve_page__header__subtitle}>Luve</span>
-          <span className={`${luvePageStyles.luve_page__header__title} luve_red`}>{service.title}</span>
-        </h1>
-        <div className={luvePageStyles.luve_page__header___overlay} />
-      </header>
+      <InnerPageHeader image={{ src: service.image.src, alt: '' }} title='Luve' subtitle={service.title} />
 
       {
         service.id === '1' && (
