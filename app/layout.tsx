@@ -1,12 +1,12 @@
 import '../styles/globals.css'
 // eslint-disable-next-line camelcase
 import { Roboto_Slab as roboto_Slab } from '@next/font/google'
-import { Footer } from './common/Footer'
-import React, { Suspense } from 'react'
 import dynamic from 'next/dynamic'
-import Script from 'next/script'
+import React, { Suspense } from 'react'
 import AOSInitializer from './common/Animation/AOS'
+import { Footer } from './common/Footer'
 import Preloader from './common/Preloader/Preloader'
+import FacebookPixel from './components/FacebookPixel'
 
 const Header = dynamic(() => import('./common/Header/Header'), { ssr: false, loading: () => <p>Loading...</p> })
 
@@ -33,6 +33,8 @@ export default function RootLayout ({
           <Header />
           {children}
           <Footer />
+
+          <FacebookPixel pixelId='1991900941244667' />
         </Suspense>
 
         {/* <Script src='http://localhost:3000/scripts/index.js' strategy='afterInteractive' /> */}
