@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const ConsentBanner: React.FC = () => {
   const [showBanner, setShowBanner] = useState(false)
@@ -13,7 +13,9 @@ const ConsentBanner: React.FC = () => {
   }, [])
 
   const handleAccept = () => {
-    window.gtag('consent', 'update', {
+    window.dataLayer = window.dataLayer || []
+    window.dataLayer.push({
+      event: 'consent_update',
       ad_storage: 'granted',
       analytics_storage: 'granted'
     })
@@ -22,6 +24,12 @@ const ConsentBanner: React.FC = () => {
   }
 
   const handleReject = () => {
+    window.dataLayer = window.dataLayer || []
+    window.dataLayer.push({
+      event: 'consent_update',
+      ad_storage: 'denied',
+      analytics_storage: 'denied'
+    })
     localStorage.setItem('consent', 'denied')
     setShowBanner(false)
   }
