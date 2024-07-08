@@ -146,6 +146,7 @@ export const ContactDialogForm = (props: Props) => {
                     text='ENVIAR'
                     htmlType='submit'
                     className='inline-block'
+                    disabled={loading}
                   />
                 </div>
               </Form.Item>
