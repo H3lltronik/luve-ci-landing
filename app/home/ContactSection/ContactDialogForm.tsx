@@ -13,9 +13,6 @@ type Props = {
 };
 export const ContactDialogForm = (props: Props) => {
   const [isModalOpen, setIsModalOpen] = useState(false)
-  const [name, setName] = useState('')
-  const [phone, setPhone] = useState('')
-  const [errors, setErrors] = useState({})
   const contentRef = useRef(null)
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 })
   const [sent, setSent] = useState(false)
@@ -27,6 +24,10 @@ export const ContactDialogForm = (props: Props) => {
       setDimensions({ width: clientWidth, height: clientHeight })
     }
   }, [isModalOpen])
+
+  useEffect(() => {
+    if (props.isModalOpen) { setIsModalOpen(true) }
+  }, [props.isModalOpen])
 
   const handleOk = () => {
     setIsModalOpen(false)
