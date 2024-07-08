@@ -36,7 +36,7 @@ export default function InnerPageHeader (props: InnerPageHeaderProps) {
     >
       <div className={styles.header__container}>
         <div className={styles.red_dot} />
-        <h1>
+        <h1 style={{ flex: 1 }}>
           <span className={styles.header__subtitle}>{title}</span>
           <span className={styles.header__title}>
             {subtitleWordFirstLetterRed()}

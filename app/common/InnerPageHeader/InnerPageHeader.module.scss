@@ -22,6 +22,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        padding: 0 10px;
 
     }
     &___overlay {
@@ -40,6 +41,9 @@
         font-weight: 700;
         line-height: 110%;
         color: var(--neutral-color-50);
+        white-space: normal;
+        word-break: break-word;
+        overflow-wrap: break-word;
         // media query at 600px
         @media (max-width: 600px) {
             font-size: 40px;

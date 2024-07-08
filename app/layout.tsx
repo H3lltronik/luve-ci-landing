@@ -11,6 +11,7 @@ import { URLContactDialog } from './components/URLContactDialog'
 import GoogleAnalytics from './components/GoogleAnalytics'
 import GoogleTagManagerHead from './components/GoogleTagManagerHead'
 import GoogleTagManagerBody from './components/GoogleTagManagerBody'
+import ConsentBanner from './components/ConsentBanner'
 
 const Header = dynamic(() => import('./common/Header/Header'), { ssr: false, loading: () => <p>Loading...</p> })
 
@@ -47,6 +48,8 @@ export default function RootLayout ({
           <GoogleAnalytics trackingId={GOOGLE_ANALYTICS_TRACKING_ID} />
           <GoogleTagManagerHead gtmId={GOOGLE_TAG_MANAGER_ID} />
           <GoogleTagManagerBody gtmId={GOOGLE_TAG_MANAGER_ID} />
+
+          <ConsentBanner />
         </Suspense>
 
         {/* <Script src='http://localhost:3000/scripts/index.js' strategy='afterInteractive' /> */}
