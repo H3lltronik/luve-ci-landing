@@ -1,23 +1,27 @@
-import React from 'react'
-import { GridSection } from '../../../home'
 import * as Icons from '../../../common/Icons'
+import { GridSection } from '../../../home'
 import luveStyles from '../../../luve/LuvePage.module.scss'
 
 const gridItems = [
   {
-    title: 'Sitios web',
+    title: 'Sitios web (Landing, Portafolios, Blogs, etc)',
     description: '',
-    icon: <Icons.InfoIcon />
+    icon: <Icons.World3Icon />
   },
   {
-    title: <div>Aplicaciones <br /> de escritorio</div>,
+    title: 'Tiendas en linea',
     description: '',
-    icon: <Icons.BoardTableIcon />
+    icon: <Icons.ShopIcon />
   },
   {
-    title: 'Aplicaciones móviles',
+    title: <div>Aplicaciones <br /> de escritorio y moviles</div>,
     description: '',
-    icon: <Icons.GraphIcon />
+    icon: <Icons.MobileIcon />
+  },
+  {
+    title: 'ERPs y modulos empresariales (Facturacion)',
+    description: '',
+    icon: <Icons.LaptopIcon />
   }
 ]
 

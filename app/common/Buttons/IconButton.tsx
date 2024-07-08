@@ -40,6 +40,14 @@ const IconButton = React.forwardRef<any, IconButtonProps>((props, ref) => {
       icon = <Icons.HamburgerIcon />
     } else if (props.icon === 'FacebookIcon') {
       icon = <Icons.FacebookIcon />
+    } else if (props.icon === 'World3Icon') {
+      icon = <Icons.World3Icon />
+    } else if (props.icon === 'MobileIcon') {
+      icon = <Icons.MobileIcon />
+    } else if (props.icon === 'LaptopIcon') {
+      icon = <Icons.LaptopIcon />
+    } else if (props.icon === 'ShopIcon') {
+      icon = <Icons.ShopIcon />
     }
 
     return icon

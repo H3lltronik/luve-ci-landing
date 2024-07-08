@@ -1,9 +1,10 @@
-import React from 'react'
-import { ContactForm } from '../../common/Forms'
-import styles from '../../Page.module.scss'
-import * as Icons from '../../common/Icons'
 import Link from 'next/link'
+import React from 'react'
+import messengerLogo from '../../../assets/messenger_logo.png'
 import IconButton from '../../common/Buttons/IconButton'
+import { ContactForm } from '../../common/Forms'
+import * as Icons from '../../common/Icons'
+import styles from '../../Page.module.scss'
 
 type ContactSectionProps = {
   className?: string
@@ -58,6 +59,11 @@ const ContactSection: React.FC<ContactSectionProps> = (props) => {
 
       <Link href={`https://wa.me/523344515189${whatsappMsg}`} target='_blank' rel='noreferrer'>
         <IconButton className={styles.home_page__floating_whatsapp} icon='WhatsAppIcon2' />
+      </Link>
+      <Link href='https://m.me/107987504244709' target='_blank' rel='noreferrer'>
+        <div className={`${styles.home_page__floating_messenger}`}>
+          <img src={messengerLogo.src} alt="" />
+        </div>
       </Link>
     </section>
   )

@@ -10,6 +10,7 @@ type ServiceItemProps = {
   slider?: Boolean,
   item: Services.Item
   actionButtonText?: string
+  buttonComponent?: React.ReactNode
 }
 const SubServiceItem: React.FC<ServiceItemProps> = (props) => {
   const { item } = props
@@ -50,9 +51,14 @@ const SubServiceItem: React.FC<ServiceItemProps> = (props) => {
         </div>
 
         <div className={styles.home_services__item__button}>
-          <Link href={`/services/items/${item.id}/${item.slug}`}>
-            <PrimaryButton text={`${props.actionButtonText || 'MAS INFORMACION'} `} />
-          </Link>
+          {
+            props.buttonComponent
+              ? props.buttonComponent
+              : <Link href={`/services/items/${item.id}/${item.slug}`}>
+                <PrimaryButton text={`${props.actionButtonText || 'MAS INFORMACION'} `} />
+                </Link>
+          }
+
         </div>
 
         <div className={styles.home_services__item__hr}>
