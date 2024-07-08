@@ -11,6 +11,9 @@
     p {
         font-size: 16px !important;
     }
+    &__disabled {
+        opacity: 0.5;
+    }
     &_wrapper {
         position: relative;
         &:hover {

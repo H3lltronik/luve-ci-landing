@@ -11,7 +11,7 @@ type PrimaryButtonProps = {
 }
 const PrimaryButton: React.FC<PrimaryButtonProps> = (props) => {
   return (
-    <div className={`${styles['primary-button_wrapper']} ${props.className}`}>
+    <div className={`${styles['primary-button_wrapper']} ${props.className} ${props.disabled ? styles['primary-button__disabled'] : ''}`}>
       <button className={styles['primary-button']} onClick={props.disabled ? () => {} : props.onClick} type={props.htmlType} disabled={props.disabled}>
         <p>{props.text}</p>
       </button>
