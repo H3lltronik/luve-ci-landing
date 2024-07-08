@@ -1,0 +1,75 @@
+// ContactDialogForm.module.scss
+.modalContainer {
+  display: flex;
+  flex-direction: row;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.imageContainer {
+  flex: 1;
+  img {
+    width: 100%;
+    height: auto;
+  }
+  @media (max-width: 768px) {
+    height: 30%;
+  }
+}
+
+.contentContainer {
+  flex: 1;
+  padding: 20px 50px;
+  @media (max-width: 768px) {
+    padding: 10px;
+  }
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup {
+  margin-bottom: 15px;
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+}
+
+.submitButton {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  &:hover {
+    background-color: #0056b3;
+  }
+}

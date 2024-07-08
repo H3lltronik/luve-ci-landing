@@ -1,6 +1,8 @@
 import React from 'react'
 
-export const handleSubmit = async function (event: React.FormEvent<HTMLFormElement>) {
+export const handleSubmit = async function (
+  event: React.FormEvent<HTMLFormElement>
+) {
   event.preventDefault()
 
   const form = event.currentTarget
@@ -42,5 +44,47 @@ export const handleSubmit = async function (event: React.FormEvent<HTMLFormEleme
 }
 
 const validateForm = (data: any) => {
+  return true
+}
+
+export const handleQuickContactSubmit = async function (
+  event: React.FormEvent<HTMLFormElement>
+) {
+  event.preventDefault()
+
+  const form = event.currentTarget
+  const formData = new FormData(form)
+  const payload = {
+    name: formData.get('name') as string,
+    phone: formData.get('phone') as string
+  }
+
+  if (!validateQuickContactForm(payload)) return
+
+  try {
+    const response = await fetch('/api/send-quick-contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    })
+
+    if (response.ok) {
+      console.log('Email sent successfully')
+    } else {
+      console.error('Something went wrong')
+    }
+
+    return await response.json()
+  } catch (error) {
+    console.error(error)
+    return error
+  }
+}
+
+function validateQuickContactForm (data: any) {
+  if (!data.name) return false
+  if (!data.phone) return false
   return true
 }

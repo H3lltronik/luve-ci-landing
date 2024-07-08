@@ -7,6 +7,7 @@ import AOSInitializer from './common/Animation/AOS'
 import { Footer } from './common/Footer'
 import Preloader from './common/Preloader/Preloader'
 import FacebookPixel from './components/FacebookPixel'
+import { URLContactDialog } from './components/URLContactDialog'
 
 const Header = dynamic(() => import('./common/Header/Header'), { ssr: false, loading: () => <p>Loading...</p> })
 
@@ -28,6 +29,7 @@ export default function RootLayout ({
       <body className={font.variable}>
         <AOSInitializer />
         <Preloader />
+        <URLContactDialog />
 
         <Suspense fallback={<>Loading...</>}>
           <Header />

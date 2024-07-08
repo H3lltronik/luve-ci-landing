@@ -67,3 +67,38 @@ function generateContactEmail (json: ContactData) {
     `
   return template
 }
+
+interface QuickContactData {
+  name: string;
+  phone: string;
+}
+
+export const sendQuickContactEmail = async (data: QuickContactData) => {
+  try {
+    const options = getMailOptions()
+    options.html = generateQuickContactEmail(data)
+
+    const info = await transporter.sendMail(options)
+    return info
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+function generateQuickContactEmail (json: QuickContactData) {
+  const template = `
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <meta charset="utf-8">
+          <title>Correo de contacto</title>
+        </head>
+        <body>
+          <h1>Contact Email</h1>
+          <p>Nombre: ${json.name}</p>
+          <p>Tel electrónicofono: ${json.phone}</p>
+        </body>
+      </html>
+    `
+  return template
+} 

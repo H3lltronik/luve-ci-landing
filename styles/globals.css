@@ -2,7 +2,7 @@
   --primary-color-200: #e31937;
   --primary-color-dimmer: #e73c4f;
 
-  --neutral-color-50: #F5F6F9;
+  --neutral-color-50: #f5f6f9;
   --neutral-color-200: #6d6e71;
   --neutral-color-300: #262626;
 
@@ -10,8 +10,26 @@
 
   --services-line-height: 0px;
   --services-line-max-height: 0px;
+}
 
-  
+.h3-modal-reset .ant-modal-content {
+  padding: 0 !important;
+}
+
+.h3-modal-reset .ant-modal {
+  width: 80% !important;
+  max-width: 1000px !important;
+}
+
+@media (max-width: 768px) {
+  .h3-modal-reset .ant-modal {
+    width: 90% !important;
+    max-width: 300px !important;
+  }
+}
+
+.inline-block {
+  display: inline-block;
 }
 
 :root[data-theme="theme-dark"] {
@@ -70,7 +88,8 @@ h3 {
   line-height: 120%;
 }
 
-p, h4 {
+p,
+h4 {
   font-family: var(--font-roboto-slab);
   font-style: normal;
   font-weight: 400;
@@ -93,7 +112,8 @@ p, h4 {
     font-size: 25px;
   }
 
-  p, h4 {
+  p,
+  h4 {
     font-size: 20px;
   }
 }
@@ -111,7 +131,8 @@ p, h4 {
     font-size: 25px;
   }
 
-  p, h4 {
+  p,
+  h4 {
     font-size: 20px;
   }
 }
@@ -129,19 +150,18 @@ p, h4 {
     font-size: 20px;
   }
 
-  p, h4 {
+  p,
+  h4 {
     font-size: 18px;
   }
 }
 
-
-
-ul p, ol p {
+ul p,
+ol p {
   margin: 0;
 }
 
 .page-container {
-
 }
 
 .content-container {
@@ -187,7 +207,6 @@ ul p, ol p {
   justify-content: center;
 }
 
-
 .floating {
   position: relative;
   display: inline-block;
@@ -214,16 +233,16 @@ ul p, ol p {
 }
 @keyframes pulse {
   0% {
-      transform: translate(-50%, 0) scale(0.95);
-      box-shadow: 0 0 0 0 rgba(204, 16, 52, 0.4);
+    transform: translate(-50%, 0) scale(0.95);
+    box-shadow: 0 0 0 0 rgba(204, 16, 52, 0.4);
   }
   70% {
-      transform: translate(-50%, 0) scale(1);
-      box-shadow: 0 0 0 10px rgba(204, 16, 52, 0);
+    transform: translate(-50%, 0) scale(1);
+    box-shadow: 0 0 0 10px rgba(204, 16, 52, 0);
   }
   100% {
-      transform: translate(-50%, 0) scale(0.95);
-      box-shadow: 0 0 0 0 rgba(204, 16, 52, 0);
+    transform: translate(-50%, 0) scale(0.95);
+    box-shadow: 0 0 0 0 rgba(204, 16, 52, 0);
   }
 }
 
@@ -232,16 +251,16 @@ ul p, ol p {
 }
 @keyframes pulse-relative {
   0% {
-      transform: scale(0.95);
-      box-shadow: 0 0 0 0 rgba(204, 16, 52, 0.4);
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(204, 16, 52, 0.4);
   }
   70% {
-      transform: scale(1);
-      box-shadow: 0 0 0 10px rgba(204, 16, 52, 0);
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(204, 16, 52, 0);
   }
   100% {
-      transform: scale(0.95);
-      box-shadow: 0 0 0 0 rgba(204, 16, 52, 0);
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(204, 16, 52, 0);
   }
 }
 
@@ -280,7 +299,6 @@ ul p, ol p {
   animation-delay: 0.8s;
 }
 
-
 .position_relative {
   position: relative;
 }
@@ -292,7 +310,7 @@ ul p, ol p {
   opacity: 1;
   width: 100px !important;
   height: 50px !important;
-  background-image: url('https://luveci.com/logos/logo_luve.svg');
+  background-image: url("https://luveci.com/logos/logo_luve.svg");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -337,21 +355,6 @@ ul p, ol p {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .hamburger {
   display: inline-block;
   cursor: pointer;
@@ -394,7 +397,6 @@ ul p, ol p {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-
 .swiper-pagination-bullet {
   background: var(--secondary-color-200) !important;
   opacity: 0.5;
@@ -424,14 +426,6 @@ ul p, ol p {
   margin-inline-end: 0px !important;
   padding-inline-start: 40px !important;
 }
-
-
-
-
-
-
-
-
 
 .preloader {
   position: fixed;
