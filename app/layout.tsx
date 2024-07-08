@@ -6,14 +6,17 @@ import React, { Suspense } from 'react'
 import AOSInitializer from './common/Animation/AOS'
 import { Footer } from './common/Footer'
 import Preloader from './common/Preloader/Preloader'
-import FacebookPixel from './components/FacebookPixel'
-import { URLContactDialog } from './components/URLContactDialog'
-import GoogleAnalytics from './components/GoogleAnalytics'
-import GoogleTagManagerHead from './components/GoogleTagManagerHead'
-import GoogleTagManagerBody from './components/GoogleTagManagerBody'
 import ConsentBanner from './components/ConsentBanner'
+import FacebookPixel from './components/FacebookPixel'
+import GoogleAnalytics from './components/GoogleAnalytics'
+import GoogleTagManagerBody from './components/GoogleTagManagerBody'
+import GoogleTagManagerHead from './components/GoogleTagManagerHead'
+import { URLContactDialog } from './components/URLContactDialog'
 
-const Header = dynamic(() => import('./common/Header/Header'), { ssr: false, loading: () => <p>Loading...</p> })
+const Header = dynamic(() => import('./common/Header/Header'), {
+  ssr: false,
+  loading: () => <p>Loading...</p>
+})
 
 const font = roboto_Slab({
   weight: ['100', '200', '400'],
@@ -33,8 +36,13 @@ export default function RootLayout ({
 
   return (
     <html data-theme='theme-light' lang='es'>
-      <head />
+      <head>
+        <GoogleTagManagerHead gtmId={GOOGLE_TAG_MANAGER_ID} />
+      </head>
       <body className={font.variable}>
+        <GoogleTagManagerBody gtmId={GOOGLE_TAG_MANAGER_ID} />
+        <FacebookPixel pixelId={FACEBOOK_PIXEL_ID} />
+        <GoogleAnalytics trackingId={GOOGLE_ANALYTICS_TRACKING_ID} />
         <AOSInitializer />
         <Preloader />
         <URLContactDialog />
@@ -43,11 +51,6 @@ export default function RootLayout ({
           <Header />
           {children}
           <Footer />
-
-          <FacebookPixel pixelId={FACEBOOK_PIXEL_ID} />
-          <GoogleAnalytics trackingId={GOOGLE_ANALYTICS_TRACKING_ID} />
-          <GoogleTagManagerHead gtmId={GOOGLE_TAG_MANAGER_ID} />
-          <GoogleTagManagerBody gtmId={GOOGLE_TAG_MANAGER_ID} />
 
           <ConsentBanner />
         </Suspense>
