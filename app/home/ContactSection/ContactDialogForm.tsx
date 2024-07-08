@@ -96,7 +96,7 @@ export const ContactDialogForm = (props: Props) => {
               <Confetti width={dimensions.width} height={dimensions.height} />
             )}
             <h2 className={styles.title}>
-              Aprovecha esta oferta limitada {dimensions.width}
+              Aprovecha esta oferta limitada
             </h2>
             <p className={styles.description}>
               Adquiere una sesion de diagnostico de escalabilidad sin costo
