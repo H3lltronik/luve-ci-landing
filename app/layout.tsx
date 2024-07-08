@@ -9,6 +9,8 @@ import Preloader from './common/Preloader/Preloader'
 import FacebookPixel from './components/FacebookPixel'
 import { URLContactDialog } from './components/URLContactDialog'
 import GoogleAnalytics from './components/GoogleAnalytics'
+import GoogleTagManagerHead from './components/GoogleTagManagerHead'
+import GoogleTagManagerBody from './components/GoogleTagManagerBody'
 
 const Header = dynamic(() => import('./common/Header/Header'), { ssr: false, loading: () => <p>Loading...</p> })
 
@@ -24,6 +26,10 @@ export default function RootLayout ({
 }: {
   children: React.ReactNode;
 }) {
+  const FACEBOOK_PIXEL_ID = '1991900941244667'
+  const GOOGLE_ANALYTICS_TRACKING_ID = 'G-HM54QYM96L'
+  const GOOGLE_TAG_MANAGER_ID = 'GTM-P38WG78P'
+
   return (
     <html data-theme='theme-light' lang='es'>
       <head />
@@ -37,8 +43,10 @@ export default function RootLayout ({
           {children}
           <Footer />
 
-          <FacebookPixel pixelId='1991900941244667' />
-          <GoogleAnalytics trackingId='G-HM54QYM96L' />
+          <FacebookPixel pixelId={FACEBOOK_PIXEL_ID} />
+          <GoogleAnalytics trackingId={GOOGLE_ANALYTICS_TRACKING_ID} />
+          <GoogleTagManagerHead gtmId={GOOGLE_TAG_MANAGER_ID} />
+          <GoogleTagManagerBody gtmId={GOOGLE_TAG_MANAGER_ID} />
         </Suspense>
 
         {/* <Script src='http://localhost:3000/scripts/index.js' strategy='afterInteractive' /> */}
