@@ -1,19 +1,26 @@
 'use client'
 import { Form, Input, message, Modal, Spin } from 'antd'
-import { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Confetti from 'react-confetti'
 import successImage from '../../../assets/success.jpg'
 import { PrimaryButton } from '../../common/Buttons'
 import { handleQuickContactSubmit } from '../../common/Forms/api'
 import styles from './ContactDialogForm.module.scss'
 
-type Props = {
-  isModalOpen?: boolean;
+declare global {
+  interface Window {
+    gtag: (...args: any[]) => void;
+  }
+}
+
+interface Props {
+  isModalOpen: boolean;
   disableOpenButton?: boolean;
-};
-export const ContactDialogForm = (props: Props) => {
+}
+
+export const ContactDialogForm: React.FC<Props> = (props) => {
   const [isModalOpen, setIsModalOpen] = useState(false)
-  const contentRef = useRef(null)
+  const contentRef = useRef<HTMLDivElement>(null)
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 })
   const [sent, setSent] = useState(false)
   const [loading, setLoading] = useState(false)
@@ -26,7 +33,15 @@ export const ContactDialogForm = (props: Props) => {
   }, [isModalOpen])
 
   useEffect(() => {
-    if (props.isModalOpen) { setIsModalOpen(true) }
+    if (props.isModalOpen) {
+      setIsModalOpen(true)
+      if (typeof window !== 'undefined' && window.gtag) {
+        window.gtag('event', 'modal_open', {
+          event_category: 'engagement',
+          event_label: 'Contact Form Modal Opened'
+        })
+      }
+    }
   }, [props.isModalOpen])
 
   const handleOk = () => {
@@ -39,6 +54,12 @@ export const ContactDialogForm = (props: Props) => {
 
   const handleOpen = () => {
     setIsModalOpen(true)
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'modal_open', {
+        event_category: 'engagement',
+        event_label: 'Contact Form Modal Opened'
+      })
+    }
   }
 
   const onFinish = (values: any) => {
@@ -51,17 +72,36 @@ export const ContactDialogForm = (props: Props) => {
       phone: values.phone,
       url: window.location.href
     })
-    setLoading(false)
-    setSent(true)
-
-    setTimeout(() => {
-      setIsModalOpen(false)
-    }, 5000)
+      .then(() => {
+        setLoading(false)
+        setSent(true)
+        if (typeof window !== 'undefined' && window.gtag) {
+          window.gtag('event', 'form_submission', {
+            event_category: 'engagement',
+            event_label: 'Contact Form Submitted',
+            value: values
+          })
+        }
+        setTimeout(() => {
+          setIsModalOpen(false)
+        }, 5000)
+      })
+      .catch(() => {
+        setLoading(false)
+        message.error('Hubo un error al enviar el formulario, por favor inténtalo de nuevo.')
+      })
   }
 
   const onFinishFailed = (errorInfo: any) => {
     console.log('Failed:', errorInfo)
     message.error('Por favor completa todos los campos requeridos')
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'form_submission_failed', {
+        event_category: 'engagement',
+        event_label: 'Contact Form Submission Failed',
+        value: errorInfo
+      })
+    }
   }
 
   return (
