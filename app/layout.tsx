@@ -8,6 +8,7 @@ import { Footer } from './common/Footer'
 import Preloader from './common/Preloader/Preloader'
 import FacebookPixel from './components/FacebookPixel'
 import { URLContactDialog } from './components/URLContactDialog'
+import GoogleAnalytics from './components/GoogleAnalytics'
 
 const Header = dynamic(() => import('./common/Header/Header'), { ssr: false, loading: () => <p>Loading...</p> })
 
@@ -37,6 +38,7 @@ export default function RootLayout ({
           <Footer />
 
           <FacebookPixel pixelId='1991900941244667' />
+          <GoogleAnalytics trackingId='G-HM54QYM96L' />
         </Suspense>
 
         {/* <Script src='http://localhost:3000/scripts/index.js' strategy='afterInteractive' /> */}
