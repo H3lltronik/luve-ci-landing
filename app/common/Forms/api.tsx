@@ -47,19 +47,16 @@ const validateForm = (data: any) => {
   return true
 }
 
+export type QuickContactData = {
+  name: string;
+  phone: string;
+  url: string;
+};
+
 export const handleQuickContactSubmit = async function (
-  event: React.FormEvent<HTMLFormElement>
+  data: QuickContactData
 ) {
-  event.preventDefault()
-
-  const form = event.currentTarget
-  const formData = new FormData(form)
-  const payload = {
-    name: formData.get('name') as string,
-    phone: formData.get('phone') as string
-  }
-
-  if (!validateQuickContactForm(payload)) return
+  if (!validateQuickContactForm(data)) return
 
   try {
     const response = await fetch('/api/send-quick-contact', {
@@ -67,7 +64,7 @@ export const handleQuickContactSubmit = async function (
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(payload)
+      body: JSON.stringify(data)
     })
 
     if (response.ok) {
@@ -83,8 +80,9 @@ export const handleQuickContactSubmit = async function (
   }
 }
 
-function validateQuickContactForm (data: any) {
+function validateQuickContactForm (data: QuickContactData) {
   if (!data.name) return false
   if (!data.phone) return false
+  if (!data.url) return false
   return true
 }

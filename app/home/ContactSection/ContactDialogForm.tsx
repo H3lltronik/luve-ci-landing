@@ -1,6 +1,7 @@
 'use client'
-import { message, Modal } from 'antd'
-import { useEffect, useState } from 'react'
+import { Form, Input, message, Modal, Spin } from 'antd'
+import { useEffect, useRef, useState } from 'react'
+import Confetti from 'react-confetti'
 import successImage from '../../../assets/success.jpg'
 import { PrimaryButton } from '../../common/Buttons'
 import { handleQuickContactSubmit } from '../../common/Forms/api'
@@ -15,10 +16,17 @@ export const ContactDialogForm = (props: Props) => {
   const [name, setName] = useState('')
   const [phone, setPhone] = useState('')
   const [errors, setErrors] = useState({})
+  const contentRef = useRef(null)
+  const [dimensions, setDimensions] = useState({ width: 0, height: 0 })
+  const [sent, setSent] = useState(false)
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
-    if (props.isModalOpen) setIsModalOpen(props.isModalOpen)
-  }, [props.isModalOpen])
+    if (contentRef.current) {
+      const { clientWidth, clientHeight } = contentRef.current
+      setDimensions({ width: clientWidth, height: clientHeight })
+    }
+  }, [isModalOpen])
 
   const handleOk = () => {
     setIsModalOpen(false)
@@ -32,32 +40,32 @@ export const ContactDialogForm = (props: Props) => {
     setIsModalOpen(true)
   }
 
-  const handleSubmit = (e: any) => {
-    e.preventDefault()
-    const errors: any = {}
-    if (!name) {
-      errors.name = 'Nombre es requerido'
-      message.error('Nombre es requerido')
-    }
-    if (!phone) {
-      errors.phone = 'Teléfono es requerido'
-      message.error('Telefono es requerido')
-    }
-    setErrors(errors)
+  const onFinish = (values: any) => {
+    message.success('Gracias por tu registro, te contactaremos a la brevedad')
 
-    if (Object.keys(errors).length === 0) {
-      handleQuickContactSubmit(e)
+    setLoading(true)
+    setSent(false)
+    handleQuickContactSubmit({
+      name: values.name,
+      phone: values.phone,
+      url: window.location.href
+    })
+    setLoading(false)
+    setSent(true)
 
+    setTimeout(() => {
       setIsModalOpen(false)
-      message.success(
-        'Gracias por tu registro, te contactaremos a la brevedad'
-      )
-    }
+    }, 5000)
+  }
+
+  const onFinishFailed = (errorInfo: any) => {
+    console.log('Failed:', errorInfo)
+    message.error('Por favor completa todos los campos requeridos')
   }
 
   return (
     <>
-      {props.disableOpenButton && (
+      {!props.disableOpenButton && (
         <PrimaryButton onClick={handleOpen} text='¡INICIA TU TRAMITE!' />
       )}
       <Modal
@@ -82,44 +90,65 @@ export const ContactDialogForm = (props: Props) => {
               alt='Descuento'
             />
           </div>
-          <div className={styles.contentContainer}>
-            <h2 className={styles.title}>Aprovecha esta oferta limitada</h2>
+          <div className={styles.contentContainer} ref={contentRef}>
+            {sent && (
+              <Confetti width={dimensions.width} height={dimensions.height} />
+            )}
+            <h2 className={styles.title}>
+              Aprovecha esta oferta limitada {dimensions.width}
+            </h2>
             <p className={styles.description}>
               Adquiere una sesion de diagnostico de escalabilidad sin costo
             </p>
-            <form onSubmit={handleSubmit} className={styles.form}>
-              <div className={styles.formGroup}>
-                <label htmlFor='name'>Nombre</label>
-                <input
-                  type='text'
-                  id='name'
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                />
-                {errors.name && (
-                  <span className={styles.error}>{errors.name}</span>
-                )}
-              </div>
-              <div className={styles.formGroup}>
-                <label htmlFor='phone'>Teléfono</label>
-                <input
-                  type='text'
-                  id='phone'
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                />
-                {errors.phone && (
-                  <span className={styles.error}>{errors.phone}</span>
-                )}
-              </div>
-              <div className='inline-block'>
-                <PrimaryButton
-                  text='ENVIAR'
-                  onClick={handleSubmit}
-                  className='inline-block'
-                />
-              </div>
-            </form>
+            <Form
+              name='contact'
+              onFinish={onFinish}
+              onFinishFailed={onFinishFailed}
+              className={styles.form}
+            >
+              {loading && (
+                <div
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    zIndex: 100,
+                    backgroundColor: 'rgba(0, 0, 0, 0.2)',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center'
+                  }}
+                >
+                  <Spin spinning={loading} />
+                </div>
+              )}
+
+              <Form.Item
+                label='Nombre'
+                name='name'
+                rules={[{ required: true, message: 'Nombre es requerido' }]}
+              >
+                <Input placeholder='Ingresa tu nombre' />
+              </Form.Item>
+              <Form.Item
+                label='Teléfono'
+                name='phone'
+                rules={[{ required: true, message: 'Teléfono es requerido' }]}
+              >
+                <Input placeholder='Ingresa tu telefono' />
+              </Form.Item>
+              <Form.Item>
+                <div className='inline-block'>
+                  <PrimaryButton
+                    text='ENVIAR'
+                    htmlType='submit'
+                    className='inline-block'
+                  />
+                </div>
+              </Form.Item>
+            </Form>
           </div>
         </div>
       </Modal>

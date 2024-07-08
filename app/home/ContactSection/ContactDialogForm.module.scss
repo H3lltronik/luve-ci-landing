@@ -20,6 +20,7 @@
 
 .contentContainer {
   flex: 1;
+  position: relative;
   padding: 20px 50px;
   @media (max-width: 768px) {
     padding: 10px;
@@ -37,8 +38,10 @@
 }
 
 .form {
+  position: relative;
   display: flex;
   flex-direction: column;
+  padding: 10px;
 }
 
 .formGroup {

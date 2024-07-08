@@ -41,7 +41,7 @@ export default async function ItemPage (props: any) {
           slider
           buttonComponent={
             <>
-              <ContactDialogForm />
+              <ContactDialogForm disableOpenButton={false} />
             </>
           }
         />

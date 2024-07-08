@@ -71,6 +71,7 @@ function generateContactEmail (json: ContactData) {
 interface QuickContactData {
   name: string;
   phone: string;
+  url: string;
 }
 
 export const sendQuickContactEmail = async (data: QuickContactData) => {
@@ -96,7 +97,8 @@ function generateQuickContactEmail (json: QuickContactData) {
         <body>
           <h1>Contact Email</h1>
           <p>Nombre: ${json.name}</p>
-          <p>Tel electrónicofono: ${json.phone}</p>
+          <p>Telefono: ${json.phone}</p>
+          <p>URL: ${json.url}</p>
         </body>
       </html>
     `
