@@ -18,7 +18,7 @@ export default function InnerPageHeader (props: InnerPageHeaderProps) {
       if (word.length > 0) {
         result.push(
           <>
-            <span className={(word.length > 1) ? 'red' : ''}>{word[0]}</span>
+            <span className={word.length > 1 ? 'red' : ''}>{word[0]}</span>
             {word.slice(1)}
             &nbsp;
           </>
@@ -31,8 +31,11 @@ export default function InnerPageHeader (props: InnerPageHeaderProps) {
 
   return (
     <header
-      className={styles.header}
-      style={{ backgroundImage: `url(${image.src})`, backgroundPosition: 'center' }}
+      className={`${styles.header} mb-[2rem] md:mb-[4rem]`}
+      style={{
+        backgroundImage: `url(${image.src})`,
+        backgroundPosition: 'center'
+      }}
     >
       <div className={styles.header__container}>
         <div className={styles.red_dot} />

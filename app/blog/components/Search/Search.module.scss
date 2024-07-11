@@ -1,46 +1,59 @@
 .container {
+  border-radius: 20px;
+  padding: 10px 20px;
+  width: 400px;
+  max-width: 90vw;
+  background-color: white;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  border: 2px solid white;
+  transition: all 0.3s ease-in-out;
+
+  @media (max-width: 768px) {
+    width: 250px;
+    padding: 5px 10px;
+  }
+
+  &_wrapper {
     top: 100%;
     left: 50%;
     position: absolute;
-    border-radius: 20px;
-    padding: 10px 20px;
-    width: 400px;
-    background-color: white;
     transform: translate(-50%, -50%);
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-    border: 2px solid white;
-    transition: all 0.3s ease-in-out;
-    
-    svg path {
-        transition: all 0.5s ease-in-out;
-    }
+  }
 
-    &__wrapper {
-        display: flex;
-        position: relative;
+  svg path {
+    transition: all 0.5s ease-in-out;
+  }
+
+  &__wrapper {
+    display: flex;
+    position: relative;
+  }
+  &__active {
+    border: 2px solid var(--primary-color-200);
+    svg path {
+      fill: var(--primary-color-200);
     }
-    &__active {
-        border: 2px solid var(--primary-color-200);
-        svg path {
-            fill: var(--primary-color-200);
-        }
-        scale: 1.01;
-    }
+    scale: 1.01;
+  }
 }
 
 .input {
-    width: 100%;
-    border: none;
-    outline: none;
-    font-size: 20px;
-    margin-left: 30px;
-    background-color: transparent;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  margin-left: 30px;
+  background-color: transparent;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
 }
 
 .icon {
-    left: 0;
-    top: 50%;
-    font-size: 20px;
-    position: absolute;
-    transform: translate(-10%, -50%);
+  left: 0;
+  top: 50%;
+  font-size: 20px;
+  position: absolute;
+  transform: translate(-10%, -50%);
 }

@@ -1,0 +1,6 @@
+{
+    "watch": ["data/graphql/**/*.ts"],
+    "ext": "ts",
+    "exec": "npx graphql-codegen"
+  }
+  

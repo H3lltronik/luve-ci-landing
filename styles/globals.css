@@ -1,3 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "../node_modules/ckeditor5/dist/ckeditor5-content.css";
+
+/* video, image, figure, etc, etc all those things should be display: inline */
+.ck-content video,
+.ck-content figure,
+.ck-content img,
+.ck-content .image,
+.ck-content .image-inline {
+  display: inline;
+}
+
 :root[data-theme="theme-light"] {
   --primary-color-200: #e31937;
   --primary-color-dimmer: #e73c4f;
@@ -262,6 +276,22 @@ ol p {
     transform: scale(0.95);
     box-shadow: 0 0 0 0 rgba(204, 16, 52, 0);
   }
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.line-clamp-4 {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* fade up animation and class */
