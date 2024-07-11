@@ -1,10 +1,11 @@
 'use client'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import React, { useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import { Autoplay } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/swiper-bundle.css'
+import { v4 as uuidv4 } from 'uuid'
 
 type BlogCardImagesProps = {
   imageUrl: string;
@@ -18,6 +19,15 @@ const BlogCardImages: React.FC<BlogCardImagesProps> = ({
   hoverImages
 }) => {
   const [isHovered, setIsHovered] = useState(false)
+
+  const imagesWithID = useMemo(() => {
+    return hoverImages?.map((img, index) => {
+      return {
+        id: uuidv4(),
+        url: img
+      }
+    })
+  }, [hoverImages])
 
   return (
     <div
@@ -48,10 +58,10 @@ const BlogCardImages: React.FC<BlogCardImagesProps> = ({
             autoplay={{ delay: 2000 }}
             modules={[Autoplay]}
           >
-            {hoverImages.map((img, index) => (
-              <SwiperSlide key={index} className='h-full w-full relative'>
+            {imagesWithID?.map((img, index) => (
+              <SwiperSlide key={img.id} className='h-full w-full relative'>
                 <Image
-                  src={img}
+                  src={img.url}
                   alt={`${imageAlt} ${index + 1}`}
                   fill
                   className='object-cover'

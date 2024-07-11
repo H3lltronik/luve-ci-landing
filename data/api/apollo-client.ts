@@ -1,37 +1,20 @@
-import { ApolloClient, HttpLink, InMemoryCache } from "@apollo/client";
+import { ApolloClient, HttpLink, InMemoryCache } from '@apollo/client'
 
 const cache = new InMemoryCache({
-  typePolicies: {
-    BlogEntry: {
-      fields: {
-        attributes: {
-          merge(existing = {}, incoming) {
-            return { ...existing, ...incoming };
-          },
-        },
-      },
-    },
-    Tag: {
-      keyFields: ["slug"],
-      fields: {
-        attributes: {
-          merge(existing, incoming) {
-            return { ...existing, ...incoming };
-          },
-        },
-      },
-    },
-  },
-});
+  typePolicies: ['Tag', 'BlogEntry', 'Author'].reduce(
+    (acc, type) => ({ ...acc, [type]: { merge: true } }),
+    {}
+  )
+})
 
 const apolloClient = new ApolloClient({
   link: new HttpLink({
-    uri: "http://localhost:1337/graphql",
+    uri: `${process.env.NEXT_PUBLIC_STRAPI_GRAPHQL_URL}`,
     headers: {
-      Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_API_TOKEN}`,
-    },
+      Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_API_TOKEN}`
+    }
   }),
-  cache,
-});
+  cache
+})
 
-export default apolloClient;
+export default apolloClient

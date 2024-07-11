@@ -19,13 +19,13 @@ export default async function BlogsPage ({
     variables: {
       title: searchParams.search,
       tagSlugs: splittedTags.length > 0 ? splittedTags : undefined
-    }
+    },
   })
 
   return (
     <div className='mb-[5rem]'>
       <section className='mb-[5rem]'>
-        {/* <BlogHighlightedBanner /> */}
+        <BlogHighlightedBanner />
       </section>
 
       <section className='content-container'>

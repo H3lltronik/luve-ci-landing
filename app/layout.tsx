@@ -12,6 +12,7 @@ import GoogleAnalytics from './components/GoogleAnalytics'
 import GoogleTagManagerBody from './components/GoogleTagManagerBody'
 import GoogleTagManagerHead from './components/GoogleTagManagerHead'
 import { URLContactDialog } from './components/URLContactDialog'
+// import { SpeedInsights } from '@vercel/speed-insights/next'
 
 const Header = dynamic(() => import('./common/Header/Header'), {
   ssr: false,
@@ -46,6 +47,7 @@ export default function RootLayout ({
         <AOSInitializer />
         <Preloader />
         <URLContactDialog />
+        {/* <SpeedInsights /> */}
 
         <Suspense fallback={<>Loading...</>}>
           <Header />
