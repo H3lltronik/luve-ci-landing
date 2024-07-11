@@ -95,6 +95,9 @@
     &__icon {
       text-align: center;
       font-size: 120px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       color: var(--primary-color-200);
     }
     &__title {

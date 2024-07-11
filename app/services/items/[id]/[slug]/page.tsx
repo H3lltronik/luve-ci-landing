@@ -6,6 +6,7 @@ import ContactSection from '../../../../home/ContactSection/ContactSection'
 import SubServiceItem from '../../../../home/ServicesSection/SubServiceItem'
 import styles from '../../../ServicesPage.module.scss'
 import * as LottieIcons from '../../../[id]/[slug]/AnimatedIcons'
+import type { Metadata, ResolvingMetadata } from 'next'
 
 interface ItemPageProps {}
 
@@ -17,6 +18,24 @@ const loadItem = async (id: any): Promise<Services.Item | undefined> => {
         return item
       }
     }
+  }
+}
+
+type Props = {
+  params: { id: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+export async function generateMetadata (
+  { params, searchParams }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const item = await loadItem(params.id)
+
+  return {
+    title: item ? item.meta.title : 'Not found',
+    description: item ? item.meta.description : 'Not found',
+    keywords: item ? item.meta.keywords : 'Not found'
   }
 }
 

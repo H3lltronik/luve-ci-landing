@@ -4,8 +4,29 @@ import { GET_BLOG_POSTS } from '../../data/graphql/queries'
 import { GetBlogPostsQuery } from '../../data/graphql/types'
 import { BlogEntryCard } from './BlogEntryCard'
 import BlogHighlightedBanner from './BlogHighlightedBanner'
+import type { Metadata } from 'next'
 require('dayjs/locale/es')
 dayjs.locale('es')
+
+export async function generateMetadata (): Promise<Metadata> {
+  return {
+    title: 'Blog - Luve CI',
+    description: 'Blog de Luve CI',
+    keywords: 'blog, luve, ci, desarrollo, programación, tecnología',
+    robots: 'index, follow',
+    authors: {
+      name: 'Luve CI'
+    },
+    other: {
+      'og:title': 'Blog - Luve CI',
+      'og:description': 'Blog de Luve CI',
+      'og:image': '/images/luve-ci-logo.png',
+      'og:site_name': 'Luve CI',
+      'og:type': 'website',
+      'og:url': 'https://luveci.com/blog'
+    }
+  }
+}
 
 export default async function BlogsPage ({
   searchParams

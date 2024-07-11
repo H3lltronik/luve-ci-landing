@@ -8,10 +8,44 @@ import FinantialContents from '../../content/FinantialContents'
 import AccountantContents from '../../content/AccountantContents'
 import SoftwareContent from '../../content/Software/SoftwareContent'
 import InnerPageHeader from '../../../common/InnerPageHeader/InnerPageHeader'
+import type { Metadata, ResolvingMetadata } from 'next'
 
 const loadService = async (id: string): Promise<Services.Service | undefined> => {
   const service = services.find((service) => service.id === id)
   return service
+}
+
+// export default async function Head ({ params } : any) {
+//   const service = await loadService(params.id)
+//   const title = `${service ? service.meta.title : 'Not found'}`
+//   const description = service ? service.meta.description : 'Not found'
+
+//   return (
+//     <>
+//       <title>{title}</title>
+
+//       <meta name='description' content={description} />
+//       <HeaderCommons />
+//     </>
+//   )
+// }
+
+type Props = {
+  params: { id: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+export async function generateMetadata (
+  { params, searchParams }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const service = await loadService(params.id)
+
+  return {
+    title: service ? service.meta.title : 'Not found',
+    description: service ? service.meta.description : 'Not found',
+    keywords: service ? service.meta.keywords : 'Not found'
+  }
 }
 
 export default async function ServicesPage (props: any) {
