@@ -3,6 +3,7 @@
 
 import React, { useEffect } from 'react'
 import Script from 'next/script'
+import Image from 'next/image'
 
 interface FacebookPixelProps {
   pixelId: string;
@@ -53,9 +54,10 @@ const FacebookPixel: React.FC<FacebookPixelProps> = ({ pixelId }) => {
         }}
       />
       <noscript>
-        <img
-          height='1'
-          width='1'
+        <Image
+          alt='Facebook Pixel'
+          height={1}
+          width={1}
           style={{ display: 'none' }}
           src={`https://www.facebook.com/tr?id=${pixelId}&ev=PageView&noscript=1`}
         />
@@ -66,7 +68,7 @@ const FacebookPixel: React.FC<FacebookPixelProps> = ({ pixelId }) => {
 
 export const trackEvent = (eventName: string, eventData?: Record<string, any>) => {
   if (typeof window !== 'undefined' && (window as any).fbq) {
-    (window as any).fbq('track', eventName, eventData);
+    (window as any).fbq('track', eventName, eventData)
   }
 }
 

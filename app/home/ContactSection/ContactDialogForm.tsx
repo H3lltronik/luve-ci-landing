@@ -1,5 +1,6 @@
 'use client'
 import { Form, Input, message, Modal, Spin } from 'antd'
+import Image from 'next/image'
 import React, { useEffect, useRef, useState } from 'react'
 import Confetti from 'react-confetti'
 import successImage from '../../../assets/success.jpg'
@@ -8,6 +9,7 @@ import { handleQuickContactSubmit } from '../../common/Forms/api'
 import styles from './ContactDialogForm.module.scss'
 
 declare global {
+  // eslint-disable-next-line no-unused-vars
   interface Window {
     gtag: (...args: any[]) => void;
   }
@@ -121,7 +123,7 @@ export const ContactDialogForm: React.FC<Props> = (props) => {
       >
         <div className={styles.modalContainer}>
           <div className={styles.imageContainer}>
-            <img
+            <Image
               style={{
                 width: '100%',
                 height: '100%',

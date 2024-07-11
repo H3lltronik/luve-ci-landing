@@ -7,7 +7,6 @@ import { PrimaryButton } from '../Buttons'
 import { LuveLogo } from '../Logo'
 import styles from './Header.module.scss'
 import MobileMenu from './MobileMenu'
-import { MobileMenuItems } from './MobileMenuItems'
 import useHeaderStore from '../../../store/headerStore'
 import { useOnClickOutside } from '../../utils/hooks/useOnClickOutside'
 

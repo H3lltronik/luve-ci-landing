@@ -20,7 +20,7 @@ const lottieOptions = {
 
 const PartnersSection = () => {
   const { lineMaxHeight, pageScroll, setLogoAnimElHeight, setLogoAnimElTop, setLineGrowthEnabled } = useLuveStore()
-  const [paused, setPaused] = useState(false)
+  const [, setPaused] = useState(false)
   const onRefChange = useCallback((node: any) => {
     if (node != null) {
       setLogoAnimElHeight(node.clientHeight)

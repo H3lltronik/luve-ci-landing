@@ -40,7 +40,7 @@ export default async function BlogsPage ({
     variables: {
       title: searchParams.search,
       tagSlugs: splittedTags.length > 0 ? splittedTags : undefined
-    },
+    }
   })
 
   return (

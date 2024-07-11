@@ -24,7 +24,7 @@ const walletAnimOpts = { ...commonSettings, animationData: walletAnim }
 const softwareAnimOpts = { ...commonSettings, animationData: softwareAnim, loop: true }
 
 const CrashAnim = (props: any) => {
-  const [paused, setPaused] = useState(true)
+  const [paused] = useState(true)
 
   return (
     <div className={props.className ? props.className : ''}>
@@ -38,7 +38,7 @@ const CrashAnim = (props: any) => {
 }
 
 const GainsAnim = (props: any) => {
-  const [paused, setPaused] = useState(true)
+  const [paused] = useState(true)
 
   return (
     <div className={props.className ? props.className : ''}>
@@ -52,7 +52,7 @@ const GainsAnim = (props: any) => {
 }
 
 const NewShineAnim = (props: any) => {
-  const [paused, setPaused] = useState(true)
+  const [paused] = useState(true)
 
   return (
     <div className={props.className ? props.className : ''}>
@@ -66,7 +66,7 @@ const NewShineAnim = (props: any) => {
 }
 
 const WorkAnim = (props: any) => {
-  const [paused, setPaused] = useState(true)
+  const [paused] = useState(true)
 
   return (
     <div className={props.className ? props.className : ''}>
@@ -80,7 +80,7 @@ const WorkAnim = (props: any) => {
 }
 
 const WalletAnim = (props: any) => {
-  const [paused, setPaused] = useState(true)
+  const [paused] = useState(true)
 
   return (
     <div className={props.className ? props.className : ''}>
@@ -94,7 +94,7 @@ const WalletAnim = (props: any) => {
 }
 
 const SoftwareAnim = (props: any) => {
-  const [paused, setPaused] = useState(true)
+  const [paused] = useState(true)
 
   return (
     <div className={props.className ? props.className : ''}>

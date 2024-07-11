@@ -62,7 +62,7 @@ const ContactSection: React.FC<ContactSectionProps> = (props) => {
       </Link>
       <Link href='https://m.me/107987504244709' target='_blank' rel='noreferrer'>
         <div className={`${styles.home_page__floating_messenger}`}>
-          <img src={messengerLogo.src} alt="" />
+          <img src={messengerLogo.src} alt='' />
         </div>
       </Link>
     </section>

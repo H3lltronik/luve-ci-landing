@@ -34,7 +34,7 @@ export default function LuvePage () {
             <div className={styles.luve_page__underlined_title}>
               <h2>¿A DÓNDE QUEREMOS LLEGAR?</h2>
             </div>
-            <p>Queremos ser la primera y mejor opción para las pymes al pensar en financiamiento, asesoría y gestión contable y de servicios de IT. <br /><br />Conservando nuestro sentido del honor, humanidad y confianza, por sobre cualquier negocio, Buscando ofrecer solo las mejores opciones en beneficio y crecimiento de nuestros clientes; las PyMEs de México.</p>
+            <p>Queremos ser la primera y mejor opción para las pymes al pensar en financiamiento, asesoría y gestión contable y de servicios de IT. <br /><br />Conservando nuestro sentido del honor, humanidad y confianza, por sobre cualquier negocio, Buscando ofrecer solo las mejores opciones en beneficio y crecimiento de nuestros clientes; las PyMEs de México.</p>
           </div>
           <div className={styles.luve_page__row__item}>
             <div className={styles.luve_page__underlined_title}>
@@ -63,7 +63,7 @@ export default function LuvePage () {
             <div className={styles.luve_page__title}>
               <h2>Empatia</h2>
             </div>
-            <p>Hacia la necesidad real de nuestros clientes, Vemos primero que la conveniencia sea real para el cte. antes de otorgarle opciones de crédito y servicio.</p>
+            <p>Hacia la necesidad real de nuestros clientes, Vemos primero que la conveniencia sea real para el cte. antes de otorgarle opciones de crédito y servicio.</p>
           </div>
           <div className={`${styles.luve_page__row__item} position_relative`}>
             <div className={`${homeStyles.home_page__contact_circle}`} style={{ margin: 'auto' }} />

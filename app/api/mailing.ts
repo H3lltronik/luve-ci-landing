@@ -103,4 +103,4 @@ function generateQuickContactEmail (json: QuickContactData) {
       </html>
     `
   return template
-} 
+}

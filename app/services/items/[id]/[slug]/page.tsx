@@ -1,14 +1,11 @@
 import services from '../../../../../assets/data/services.json'
 import { Services } from '../../../../../types'
-import { PrimaryButton } from '../../../../common/Buttons'
 import { ContactDialogForm } from '../../../../home/ContactSection/ContactDialogForm'
 import ContactSection from '../../../../home/ContactSection/ContactSection'
 import SubServiceItem from '../../../../home/ServicesSection/SubServiceItem'
 import styles from '../../../ServicesPage.module.scss'
 import * as LottieIcons from '../../../[id]/[slug]/AnimatedIcons'
 import type { Metadata, ResolvingMetadata } from 'next'
-
-interface ItemPageProps {}
 
 const loadItem = async (id: any): Promise<Services.Item | undefined> => {
   // const service = services.find((service) => service.items.find((item) => item.id === id))
@@ -37,10 +34,6 @@ export async function generateMetadata (
     description: item ? item.meta.description : 'Not found',
     keywords: item ? item.meta.keywords : 'Not found'
   }
-}
-
-const isSoftwareItem = (item: Services.Item) => {
-  return item.id === Number('2')
 }
 
 export default async function ItemPage (props: any) {

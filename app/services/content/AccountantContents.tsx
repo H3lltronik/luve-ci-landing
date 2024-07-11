@@ -2,7 +2,6 @@ import { FunctionComponent } from 'react'
 import { Services } from '../../../types'
 import styles from '../ServicesPage.module.scss'
 import accountantStyles from './Accountant/AccountantContents.module.scss'
-import * as Icons from '../../common/Icons'
 import PromoSlider from './Accountant/PromoSlider'
 import Grid from './Accountant/Grid'
 import { ServicesSection } from '../../home'
@@ -21,9 +20,6 @@ if (accountantServices) {
 }
 
 const AccountantContents: FunctionComponent<AccountantContentsProps> = (props) => {
-  const { service } = props
-  const grid1Title = (<>PROPORCIONAMOS</>)
-  const grid2Title = (<>Paquetes Contables</>)
   const images = [
     {
       src: '/images/promocionales/Contablidad.png',

@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect } from 'react'
 import styles from './Header.module.scss'
 import useHeaderStore from '../../../store/headerStore'
 

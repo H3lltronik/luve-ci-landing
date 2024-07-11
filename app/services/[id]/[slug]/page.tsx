@@ -1,5 +1,4 @@
 import styles from '../../ServicesPage.module.scss'
-import luvePageStyles from '../../../luve/LuvePage.module.scss'
 import services from '../../../../assets/data/services.json'
 import ContactSection from '../../../home/ContactSection/ContactSection'
 import { Services } from '../../../../types'

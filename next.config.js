@@ -8,7 +8,7 @@ const nextConfig = {
     ]
   },
   images: {
-    domains: ['images.unsplash.com', 'picsum.photos', 'images.pexels.com', 'avatarfiles.alphacoders.com', 's3.us-east-1.amazonaws.com']
+    domains: ['images.unsplash.com', 'picsum.photos', 'images.pexels.com', 'avatarfiles.alphacoders.com', 's3.us-east-1.amazonaws.com', 'www.facebook.com']
   },
   reactStrictMode: true,
   swcMinify: true,

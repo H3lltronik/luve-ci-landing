@@ -47,7 +47,7 @@ const FinantialContents: FunctionComponent<FinantialContentsProps> = (props) => 
         {
           service.items.map((item, index) => {
             return (
-              <SubServiceItem item={item} key={index} inverted={index % 2 != 0} />
+              <SubServiceItem item={item} key={index} inverted={index % 2 !== 0} />
             )
           })
         }
