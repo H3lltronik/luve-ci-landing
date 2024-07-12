@@ -10,12 +10,12 @@ const LazyLoad = dynamic(() => import('react-lazyload'), {
 })
 
 const HeroSection = () => {
-  const ref = useParallax({
+  const ref = useParallax<HTMLDivElement>({
     speed: 5,
     // translateY: [100, -200],
     easing: 'easeInCubic'
   })
-  const ref2 = useParallax({
+  const ref2 = useParallax<HTMLDivElement>({
     speed: 8,
     // translateY: [100, -200],
     easing: 'easeInCubic'
@@ -46,13 +46,12 @@ const HeroSection = () => {
         </div>
         <LuveLogo className={styles.home_page__video_hero_content_logo} />
         <div className={styles.home_page__video_hero_content}>
+          {/* red dot pulsating anim */}
+          <div className='w-[50px] h-[50px] rounded-full bg-[#e31937] transition duration-300 ease-in-out pulse-relative' />
           <div ref={ref.ref} className=''>
-            <h1 data-aos='fade-up'>LUVE</h1>
-            <h1 data-aos='fade-up' data-aos-delay='200'>
-              <span>
-                Cons<span className='red'>u</span>ltoria Int
-                <span className='red'>e</span>gral
-              </span>
+            <h1>
+              Cons<span className='red'>u</span>ltoria Int
+              <span className='red'>e</span>gral
             </h1>
             <br />
 
@@ -70,8 +69,9 @@ const HeroSection = () => {
           </div>
 
           <SimpleButton
+            title='CONOCE MAS'
             data-aos='fade-in'
-            data-aos-offset={-100}
+            data-aos-offset='-100'
             data-aos-delay='1000'
             ref={ref2.ref}
             onClick={handleClick}

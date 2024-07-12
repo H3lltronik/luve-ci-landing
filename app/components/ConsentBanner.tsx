@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
+import { SimpleButton } from '../common/Buttons'
 
 const ConsentBanner: React.FC = () => {
   const [showBanner, setShowBanner] = useState(false)
@@ -54,10 +55,15 @@ const ConsentBanner: React.FC = () => {
         Utilizamos cookies para mejorar su experiencia en nuestro sitio. Al
         aceptar, usted acepta nuestro uso de cookies.
       </p>
-      <button onClick={handleAccept} style={{ marginRight: '10px' }}>
-        Aceptar
-      </button>
-      <button onClick={handleReject}>Rechazar</button>
+
+      <div className='flex justify-center gap-2 py-2'>
+        <SimpleButton title='Aceptar' onClick={handleAccept} />
+        <SimpleButton
+          title='Rechazar'
+          onClick={handleReject}
+          btnClassName='!bg-black !hover:bg-white !text-white !hover:text-black !hover:border-black'
+        />
+      </div>
     </div>
   )
 }

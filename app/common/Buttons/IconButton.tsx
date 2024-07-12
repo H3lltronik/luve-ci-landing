@@ -63,7 +63,7 @@ const IconButton = React.forwardRef<any, IconButtonProps>((props, ref) => {
       ref={ref}
       className={`${props.className} ${styles.icon_button__wrapper}`}
     >
-      <button className={styles.icon_button} role={role} aria-label={props.ariaLabel} aria-labelledby={props.ariaLabelledby}>
+      <button className={`${styles.icon_button} icon_button`} role={role} aria-label={props.ariaLabel} aria-labelledby={props.ariaLabelledby}>
         {getIcon()}
       </button>
     </div>

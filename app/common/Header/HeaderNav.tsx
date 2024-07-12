@@ -4,19 +4,21 @@ import React, { Fragment, useRef } from 'react'
 import { Header as HeaderType } from '../../../types'
 import { PrimaryButton } from '../Buttons'
 
+import useHeaderStore from '../../../store/headerStore'
+import { useOnClickOutside } from '../../utils/hooks/useOnClickOutside'
 import { LuveLogo } from '../Logo'
 import styles from './Header.module.scss'
 import MobileMenu from './MobileMenu'
-import useHeaderStore from '../../../store/headerStore'
-import { useOnClickOutside } from '../../utils/hooks/useOnClickOutside'
 
 interface HeaderNavProps {
-    links: any
+  links: any;
 }
-export const HeaderNav : React.FunctionComponent<HeaderNavProps> = (props) => {
+export const HeaderNav: React.FunctionComponent<HeaderNavProps> = (props) => {
   const { links } = props
   const ref = useRef<any>()
-  const setMobileMenuOpened = useHeaderStore(store => store.setMobileMenuOpened)
+  const setMobileMenuOpened = useHeaderStore(
+    (store) => store.setMobileMenuOpened
+  )
   useOnClickOutside(ref, () => handleOutsideClick())
 
   const handleOutsideClick = () => {
@@ -50,18 +52,25 @@ export const HeaderNav : React.FunctionComponent<HeaderNavProps> = (props) => {
   )
 }
 
-const ListItem = ({ link } : any) => {
-  const setMobileMenuOpened = useHeaderStore(store => store.setMobileMenuOpened)
+const ListItem = ({ link }: any) => {
+  const setMobileMenuOpened = useHeaderStore(
+    (store) => store.setMobileMenuOpened
+  )
 
   const handleClick = () => {
-    if (!link.children) { setMobileMenuOpened(false) }
+    if (!link.children) {
+      setMobileMenuOpened(false)
+    }
   }
 
   return (
     <Fragment key={link.path}>
       {link.children
         ? (
-          <li className={`${styles.header_nav_li} ${styles.header_nav_li_sub}`} onClick={handleClick}>
+          <li
+            className={`${styles.header_nav_li} ${styles.header_nav_li_sub}`}
+            onClick={handleClick}
+          >
             <span>{link.label}</span>
             <ul className={styles.header_nav_ul_sub}>
               {renderList(link.children)}
@@ -69,11 +78,11 @@ const ListItem = ({ link } : any) => {
           </li>
           )
         : (
-          <Link href={link.path} key={link.path} aria-label={link.label}>
-            <li className={styles.header_nav_li} onClick={handleClick}>
+          <li className={styles.header_nav_li} onClick={handleClick}>
+            <Link href={link.path} key={link.path} aria-label={link.label}>
               <span>{link.label}</span>
-            </li>
-          </Link>
+            </Link>
+          </li>
           )}
     </Fragment>
   )
