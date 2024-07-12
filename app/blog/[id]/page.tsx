@@ -3,6 +3,7 @@ import parse from 'html-react-parser'
 import type { Metadata, ResolvingMetadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import { notFound } from 'next/navigation'
 import apolloClient from '../../../data/api/apollo-client'
 import { GET_BLOG_ENTRY_BY_SLUG } from '../../../data/graphql/queries'
 import { GetBlogEntryBySlugQuery } from '../../../data/graphql/types'
@@ -74,7 +75,7 @@ export async function generateViewport ({ params }: Props) {
 
 export default async function BlogPage ({ params }: { params: { id: string } }) {
   if (!params.id) {
-    return <h1>Not found</h1>
+    return notFound()
   }
 
   const { data } = await apolloClient.query<GetBlogEntryBySlugQuery>({
@@ -87,9 +88,7 @@ export default async function BlogPage ({ params }: { params: { id: string } }) 
       ? data.findSlug.data?.attributes
       : null
 
-  if (!blogData) {
-    return <h1>Not found</h1>
-  }
+  if (!blogData) return notFound()
 
   return (
     <>
