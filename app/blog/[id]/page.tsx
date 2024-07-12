@@ -10,7 +10,6 @@ import { PrimaryButton } from '../../common/Buttons'
 import { StructuredData } from '../../components/StructuredData'
 import { BlogEntryCard } from '../BlogEntryCard'
 import { BlogEntryCardMarquee } from '../BlogEntryCardMarquee'
-import Tag from '../components/Tag/Tag'
 
 type Props = {
   params: { id: string };
