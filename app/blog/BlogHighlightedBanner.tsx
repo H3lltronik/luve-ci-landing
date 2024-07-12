@@ -97,6 +97,7 @@ const BlogHighlightedBanner = async () => {
                   data.blogEntryHighlighted?.data?.attributes?.blog_entry?.data
                     ?.attributes?.slug ?? 'default-slug'
                 }`}
+                aria-label='Read more button'
               >
                 <div className='inline-block'>
                   <PrimaryButton text='Leer más' />

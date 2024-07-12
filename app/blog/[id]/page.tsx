@@ -88,7 +88,7 @@ export default async function BlogPage ({ params }: { params: { id: string } }) 
       <StructuredData data={blogData.seo?.structuredData} />
       <header className='content-container md:pt-5 px-10'>
         <div className='inline-block mb-5'>
-          <Link href='/blog'>
+          <Link href='/blog' aria-label='Back button'>
             <PrimaryButton text='REGRESAR' />
           </Link>
         </div>

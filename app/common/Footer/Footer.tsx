@@ -16,15 +16,15 @@ const Footer = (props: any) => {
             <Image src='/logos/logo_luve.svg' alt='Luve logo' width={90} height={70} />
           </div>
           <div className={styles.footer__logo__icons}>
-            <Link href='https://www.facebook.com/LuveGF' target='_blank' rel='noreferrer'>
-              <IconButton icon='FacebookIcon' />
+            <Link href='https://www.facebook.com/LuveGF' target='_blank' rel='noreferrer' aria-label='Facebook'>
+              <IconButton icon='FacebookIcon' ariaLabel='Facebook' />
             </Link>
-            <Link href={`https://wa.me/523344515189${whatsappMsg}`} target='_blank' rel='noreferrer'>
-              <IconButton className={styles.footer__whatsapp} icon='WhatsAppIcon' />
+            <Link href={`https://wa.me/523344515189${whatsappMsg}`} target='_blank' rel='noreferrer' aria-label='Whatsapp'>
+              <IconButton className={styles.footer__whatsapp} icon='WhatsAppIcon' ariaLabel='Whatsapp' />
             </Link>
 
-            <Link href='https://www.linkedin.com/in/luve-ci-a0a56826b/' target='_blank' rel='noreferrer'>
-              <IconButton className='' icon='LinkedInIcon' />
+            <Link href='https://www.linkedin.com/in/luve-ci-a0a56826b/' target='_blank' rel='noreferrer' aria-label='Linked'>
+              <IconButton className='' icon='LinkedInIcon' ariaLabel='Linked' />
             </Link>
           </div>
         </div>

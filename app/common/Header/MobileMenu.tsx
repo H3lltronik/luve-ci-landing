@@ -18,7 +18,7 @@ export default function MobileMenu (props: any) {
   }, [mobileMenuOpened, props])
 
   return (
-    <section className={styles.header__mobile_menu}>
+    <section className={`${styles.header__mobile_menu} -mb-5 md:mb-0`}>
       <div className={styles.header__mobile_menu__wrapper}>
         <div className={styles.header__mobile_menu__button} onMouseDown={() => setMobileMenuOpened(!mobileMenuOpened)}>
           <div className={`hamburger  ${mobileMenuOpened ? 'active' : ''}`}>

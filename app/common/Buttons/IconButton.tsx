@@ -6,9 +6,14 @@ import * as Icons from '../Icons'
 type IconButtonProps = {
   icon: 'RightArrowIcon' | 'WordIcon' | 'InfoIcon' | 'GroupIcon' | 'GraphIcon' | 'BoardTableIcon' | 'WhatsAppIcon' | 'PhoneIcon' | 'ArrobaIcon' | 'WhatsAppIcon2' | 'TwitterIcon' | 'LinkedInIcon' | 'HamburgerIcon' | 'FacebookIcon';
   className?: string;
+  ariaLabel?: string;
+  ariaLabelledby?: string;
+  role?: string;
 };
 // eslint-disable-next-line react/display-name
 const IconButton = React.forwardRef<any, IconButtonProps>((props, ref) => {
+  const role = props.role || 'button'
+
   const getIcon = () => {
     let icon: React.ReactNode | null = null
 
@@ -58,7 +63,7 @@ const IconButton = React.forwardRef<any, IconButtonProps>((props, ref) => {
       ref={ref}
       className={`${props.className} ${styles.icon_button__wrapper}`}
     >
-      <button className={styles.icon_button}>
+      <button className={styles.icon_button} role={role} aria-label={props.ariaLabel} aria-labelledby={props.ariaLabelledby}>
         {getIcon()}
       </button>
     </div>

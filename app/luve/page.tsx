@@ -7,6 +7,23 @@ import ContactSection from '../home/ContactSection/ContactSection'
 import HorizontalModule from './HorizontalModule/HorizontalModule'
 import { IsClientCtxProvider } from '../utils/hooks/IsClient'
 import InnerPageHeader from '../common/InnerPageHeader/InnerPageHeader'
+import { Metadata, ResolvingMetadata } from 'next'
+
+type Props = {
+  params: { id: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+export async function generateMetadata (
+  { params, searchParams }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  return {
+    title: 'Luve Consultoria Integral | Acerca de nosotros  ',
+    description: 'Somos un Grupo de Profesionales en diferentes materias, con el objetivo de apoyar a nuestros clientes en su crecimiento personal o empresarial, por medio de servicios y soluciones financieras, contables, de tecnología y bienestar laboral a la medida.',
+    keywords: 'luve, luve ci, luve consultoria integral, luve consultoria, luve acerca de nosotros, luve quienes somos, luve a donde queremos llegar, luve que nos impulsa, luve valores, luve compromiso, luve empatia, luve honestidad, luve contacto'
+  }
+}
 
 export default function LuvePage () {
   return (
@@ -56,21 +73,21 @@ export default function LuvePage () {
             <div className={styles.luve_page__title}>
               <h2>Compromiso</h2>
             </div>
-            <p>Con las necesidades reales de nuestros clientes.</p>
+            <p className='mt-16 md:mt-20'>Con las necesidades reales de nuestros clientes.</p>
           </div>
           <div className={`${styles.luve_page__row__item} position_relative`}>
             <div className={`${homeStyles.home_page__contact_circle}`} style={{ margin: 'auto' }} />
             <div className={styles.luve_page__title}>
               <h2>Empatia</h2>
             </div>
-            <p>Hacia la necesidad real de nuestros clientes, Vemos primero que la conveniencia sea real para el cte. antes de otorgarle opciones de crédito y servicio.</p>
+            <p className='mt-16 md:mt-20'>Hacia la necesidad real de nuestros clientes, Vemos primero que la conveniencia sea real para el cte. antes de otorgarle opciones de crédito y servicio.</p>
           </div>
           <div className={`${styles.luve_page__row__item} position_relative`}>
             <div className={`${homeStyles.home_page__contact_circle}`} style={{ margin: 'auto' }} />
             <div className={styles.luve_page__title}>
               <h2>Honestidad</h2>
             </div>
-            <p>Acerca de todos nuestros procesos, costo de servicio y de nuestros socios de negocio.</p>
+            <p className='mt-16 md:mt-20'>Acerca de todos nuestros procesos, costo de servicio y de nuestros socios de negocio.</p>
           </div>
 
         </div>

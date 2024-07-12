@@ -27,7 +27,7 @@ export const HeaderNav : React.FunctionComponent<HeaderNavProps> = (props) => {
     <div ref={ref}>
       <div className='page-header'>
         <div className={styles.header_container}>
-          <Link href='/'>
+          <Link href='/' aria-label='Luve logo'>
             <LuveLogo className={styles.header_logo} />
           </Link>
 
@@ -69,7 +69,7 @@ const ListItem = ({ link } : any) => {
           </li>
           )
         : (
-          <Link href={link.path} key={link.path}>
+          <Link href={link.path} key={link.path} aria-label={link.label}>
             <li className={styles.header_nav_li} onClick={handleClick}>
               <span>{link.label}</span>
             </li>

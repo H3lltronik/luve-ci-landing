@@ -36,7 +36,7 @@ const ContactForm = () => {
         <input name='nombre' required type='text' placeholder='Nombre completo' />
         <input name='email' required type='email' placeholder='Correo electronico' />
         <input name='phone' required type='text' placeholder='Telefono celular' />
-        <select name='state' id='state'>
+        <select name='state' id='state' aria-label='State'>
           {contactData.states.map((state) => (
             <option key={state.value} value={state.label}>
               {state.label}
@@ -44,7 +44,7 @@ const ContactForm = () => {
           ))}
         </select>
         <input name='giro' required type='text' placeholder='Giro de la empresa' />
-        <select name='service' id='service'>
+        <select name='service' id='service' aria-label='Servicio'>
           {contactData.services.map((state) => (
             <option key={state.value} value={state.label}>
               {state.label}
@@ -64,7 +64,7 @@ const ContactForm = () => {
         <div>
           <input required name='accept' id='acceptTermp' type='checkbox' />
           <label htmlFor='acceptTermp'>
-            Acepto los <Link href='www.google.com'>Terminos y condiciones</Link>
+            Acepto los <Link href='www.google.com' aria-label='Terminos y condiciones'>Terminos y condiciones</Link>
           </label>
         </div>
 

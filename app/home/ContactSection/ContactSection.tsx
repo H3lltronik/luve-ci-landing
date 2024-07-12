@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import messengerLogo from '../../../assets/messenger_logo.png'
@@ -25,7 +26,7 @@ const ContactSection: React.FC<ContactSectionProps> = (props) => {
         <div data-aos='fade-in' className={styles.home_page__contact__info}>
           <div className={styles.home_page__contact_circle} />
           <h2 className={styles.home_page__contact__title}>CONTACTANOS</h2>
-          <h4 className={styles.home_page__contact__subtitle}>Nos contactaremos contigo.</h4>
+          <h3 className={styles.home_page__contact__subtitle}>Nos contactaremos contigo.</h3>
 
           <div className={styles.home_page__contact__list}>
             <div className={styles.home_page__contact__list__item}>
@@ -49,7 +50,7 @@ const ContactSection: React.FC<ContactSectionProps> = (props) => {
           </div>
 
           <div className={styles.home_page__contact__map}>
-            <iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d784.533366781623!2d-103.3816750948716!3d20.71466470412939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428afca156ac4a1%3A0xb1afa32dd0e9b17f!2sJacarandas%2C%2045160%20Zapopan%2C%20Jal.!5e0!3m2!1ses-419!2smx!4v1679720076602!5m2!1ses-419!2smx' allowFullScreen loading='lazy' referrerPolicy='no-referrer-when-downgrade' style={{ border: 0 }} />
+            <iframe title='ubicacion' src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d784.533366781623!2d-103.3816750948716!3d20.71466470412939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428afca156ac4a1%3A0xb1afa32dd0e9b17f!2sJacarandas%2C%2045160%20Zapopan%2C%20Jal.!5e0!3m2!1ses-419!2smx!4v1679720076602!5m2!1ses-419!2smx' allowFullScreen loading='lazy' referrerPolicy='no-referrer-when-downgrade' style={{ border: 0 }} />
           </div>
         </div>
         <div data-aos='fade-in' className=''>
@@ -58,11 +59,11 @@ const ContactSection: React.FC<ContactSectionProps> = (props) => {
       </div>
 
       <Link href={`https://wa.me/523344515189${whatsappMsg}`} target='_blank' rel='noreferrer'>
-        <IconButton className={styles.home_page__floating_whatsapp} icon='WhatsAppIcon2' />
+        <IconButton className={styles.home_page__floating_whatsapp} icon='WhatsAppIcon2' ariaLabel='Whatsapp' />
       </Link>
       <Link href='https://m.me/107987504244709' target='_blank' rel='noreferrer'>
         <div className={`${styles.home_page__floating_messenger}`}>
-          <img src={messengerLogo.src} alt='' />
+          <Image src={messengerLogo.src} alt='Facebook messenger' width={40} height={40} />
         </div>
       </Link>
     </section>

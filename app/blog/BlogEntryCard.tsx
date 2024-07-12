@@ -32,7 +32,7 @@ export const BlogEntryCard: React.FC<BlogEntryCardProps> = ({
   return (
     <article className='flex flex-col gap-3 transition-all duration-300 ease-in-out hover:shadow-lg group p-2'>
       <header>
-        <Link href={`/blog/${slug}`}>
+        <Link href={`/blog/${slug}`} aria-label={title}>
           <div className='h-[300px] relative transition-all group-hover:scale-105'>
             <BlogCardImages
               imageUrl={imageUrl}
@@ -46,7 +46,7 @@ export const BlogEntryCard: React.FC<BlogEntryCardProps> = ({
         <div className='mb-2'>
           <BlogEntryCardMarquee tags={tags} />
         </div>
-        <Link href={`/blog/${slug}`}>
+        <Link href={`/blog/${slug}`} aria-label={title}>
           <h2 className='font-bold text-3xl mb-3 line-clamp-2'>{title}</h2>
         </Link>
         <p className='text-gray-500 text-sm line-clamp-4'>{description}</p>
