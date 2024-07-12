@@ -32,7 +32,7 @@ export async function generateMetadata (
       : null
 
   return {
-    title: `Luve Blog - ${blogData?.seo?.metaTitle ?? ''}`,
+    title: `${blogData?.seo?.metaTitle ?? ''}`,
     description: blogData?.seo?.metaDescription ?? '',
     keywords: blogData?.seo?.keywords ?? '',
     robots: blogData?.seo?.metaRobots ?? '',
