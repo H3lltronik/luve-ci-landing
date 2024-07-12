@@ -1,6 +1,11 @@
-import { ApolloClient, HttpLink, InMemoryCache, ApolloLink } from '@apollo/client'
-import { onError } from '@apollo/client/link/error'
+import {
+  ApolloClient,
+  ApolloLink,
+  HttpLink,
+  InMemoryCache
+} from '@apollo/client'
 import { setContext } from '@apollo/client/link/context'
+import { onError } from '@apollo/client/link/error'
 
 const loggerLink = new ApolloLink((operation, forward) => {
   return forward(operation).map((response) => {
@@ -11,16 +16,16 @@ const loggerLink = new ApolloLink((operation, forward) => {
 const httpLink = new HttpLink({
   uri: process.env.NEXT_PUBLIC_STRAPI_GRAPHQL_URL,
   fetch: function (uri, options) {
-    return fetch(uri, {
-      ...options ?? {},
+    const config = {
+      ...(options ?? {}),
       headers: {
-        ...options?.headers ?? {},
-        Authorization: `Bearer ${process.env.AUTH_TOKEN}`
+        ...(options?.headers ?? {})
       },
       next: {
         revalidate: 3600 // 1 hour
       }
-    })
+    }
+    return fetch(uri, config)
   }
 })
 
@@ -38,7 +43,9 @@ const authLink = setContext((_, { headers }) => {
 const errorLink = onError(({ graphQLErrors, networkError }) => {
   if (graphQLErrors) {
     graphQLErrors.forEach(({ message, locations, path }) => {
-      console.log(`[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`)
+      console.log(
+        `[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`
+      )
     })
   }
   if (networkError) {
