@@ -8,6 +8,7 @@ import AccountantContents from '../../content/AccountantContents'
 import SoftwareContent from '../../content/Software/SoftwareContent'
 import InnerPageHeader from '../../../common/InnerPageHeader/InnerPageHeader'
 import type { Metadata, ResolvingMetadata } from 'next'
+import { notFound } from 'next/navigation'
 
 const loadService = async (id: string): Promise<Services.Service | undefined> => {
   const service = services.find((service) => service.id === id)
@@ -50,7 +51,7 @@ export async function generateMetadata (
 export default async function ServicesPage (props: any) {
   const { params } = props
   const service = await loadService(params.id)
-  if (!service) return (<div style={{ marginTop: '200px' }}>Service not found</div>)
+  if (!service) return notFound()
 
   return (
     <main className={styles.services_page}>

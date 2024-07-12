@@ -6,6 +6,7 @@ import SubServiceItem from '../../../../home/ServicesSection/SubServiceItem'
 import styles from '../../../ServicesPage.module.scss'
 import * as LottieIcons from '../../../[id]/[slug]/AnimatedIcons'
 import type { Metadata, ResolvingMetadata } from 'next'
+import { notFound } from 'next/navigation'
 
 const loadItem = async (id: any): Promise<Services.Item | undefined> => {
   // const service = services.find((service) => service.items.find((item) => item.id === id))
@@ -40,9 +41,7 @@ export default async function ItemPage (props: any) {
   const { params } = props
   const item = await loadItem(params.id)
 
-  if (!item) {
-    return <div>Item not found</div>
-  }
+  if (!item) return notFound()
 
   return (
     <main className={styles.services_page}>
