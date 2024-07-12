@@ -9,7 +9,19 @@ const loggerLink = new ApolloLink((operation, forward) => {
 })
 
 const httpLink = new HttpLink({
-  uri: process.env.NEXT_PUBLIC_STRAPI_GRAPHQL_URL
+  uri: process.env.NEXT_PUBLIC_STRAPI_GRAPHQL_URL,
+  fetch: function (uri, options) {
+    return fetch(uri, {
+      ...options ?? {},
+      headers: {
+        ...options?.headers ?? {},
+        Authorization: `Bearer ${process.env.AUTH_TOKEN}`
+      },
+      next: {
+        revalidate: 3600 // 1 hour
+      }
+    })
+  }
 })
 
 const authLink = setContext((_, { headers }) => {
