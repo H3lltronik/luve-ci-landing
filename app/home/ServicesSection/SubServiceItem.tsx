@@ -56,7 +56,7 @@ const SubServiceItem: React.FC<ServiceItemProps> = (props) => {
               ? props.buttonComponent
               : (
                 <Link href={`/services/items/${item.id}/${item.slug}`}>
-                  <PrimaryButton text={`${props.actionButtonText || 'MAS INFORMACION'} `} />
+                  <PrimaryButton text={`${props.actionButtonText || 'DETALLE DE SERVICIO'} `} />
                 </Link>
                 )
           }

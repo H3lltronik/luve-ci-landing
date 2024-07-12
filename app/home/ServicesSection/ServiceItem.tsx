@@ -28,7 +28,7 @@ const ServiceItem: React.FC<ServiceItemProps> = (props) => {
 
         <div className={styles.home_services__item__button}>
           <Link href={`/services/${item.id}/${item.slug}`}>
-            <PrimaryButton text={`${props.actionButtonText || 'MAS INFORMACION'} `} />
+            <PrimaryButton text={`${props.actionButtonText || 'DETALLE DE SERVICIO'} `} />
           </Link>
         </div>
 

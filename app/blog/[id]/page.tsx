@@ -38,19 +38,27 @@ export async function generateMetadata (
     authors: {
       name: blogData?.author?.data?.attributes?.name ?? ''
     },
-    other: {
-      canonical: blogData?.seo?.canonicalURL ?? '',
-      'og:title': blogData?.seo?.metaTitle ?? '',
-      'og:description': blogData?.seo?.metaDescription ?? '',
-      'og:image': blogData?.seo?.metaImage?.data?.attributes?.url ?? '',
-      'og:site_name': 'Luve CI',
-      'og:type': 'article',
-      'og:url': blogData?.seo?.canonicalURL ?? ''
+    alternates: {
+      canonical: blogData?.seo?.canonicalURL ?? ''
+    },
+    openGraph: {
+      title: blogData?.seo?.metaTitle ?? '',
+      description: blogData?.seo?.metaDescription ?? '',
+      images: [
+        {
+          url: blogData?.seo?.metaImage?.data?.attributes?.url ?? '',
+          width: 800,
+          height: 600
+        }
+      ],
+      siteName: 'Luve CI',
+      type: 'article',
+      url: blogData?.seo?.canonicalURL ?? ''
     }
   }
 }
 
-export async function generateViewport ({ params } : Props) {
+export async function generateViewport ({ params }: Props) {
   const { data } = await apolloClient.query<GetBlogEntryBySlugQuery>({
     query: GET_BLOG_ENTRY_BY_SLUG,
     variables: { slug: params.id }
@@ -118,11 +126,14 @@ export default async function BlogPage ({ params }: { params: { id: string } }) 
                     {dayjs(blogData.date).format('MMMM D, YYYY')}
                   </strong>
                   <div className='md:h-[25px] w-[3px] bg-[#535353]' />
-                  <BlogEntryCardMarquee tags={blogData.tags?.data.map((tag) => ({
-                    id: tag.id ?? '',
-                    name: tag.attributes?.name ?? 'Unknown Tag',
-                    slug: tag.attributes?.slug ?? 'unknown-slug'
-                  })) ?? []}
+                  <BlogEntryCardMarquee
+                    tags={
+                      blogData.tags?.data.map((tag) => ({
+                        id: tag.id ?? '',
+                        name: tag.attributes?.name ?? 'Unknown Tag',
+                        slug: tag.attributes?.slug ?? 'unknown-slug'
+                      })) ?? []
+                    }
                   />
                 </div>
                 <h1 className='text-2xl md:text-3xl text-black uppercase tracking-wider mt-3'>

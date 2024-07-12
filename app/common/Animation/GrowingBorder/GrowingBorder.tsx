@@ -6,6 +6,7 @@ import { motion } from 'framer-motion'
 interface GrowingBorderProps {
     children: React.ReactNode,
     duration?: number
+    className?: string
 }
 const defaultDuration = 1
 export const GrowingBorder : React.FunctionComponent<GrowingBorderProps> = (props) => {
@@ -40,7 +41,7 @@ export const GrowingBorder : React.FunctionComponent<GrowingBorderProps> = (prop
   return (
     <motion.div
       ref={ref}
-      className={`${styles.border_animation_container}`}
+      className={`${styles.border_animation_container} ${props.className || ''}`}
       style={{ width: '100%', height: '100%' }}
     >
       <motion.div
@@ -84,20 +85,3 @@ export const GrowingBorder : React.FunctionComponent<GrowingBorderProps> = (prop
 
   )
 }
-// export const GrowingBorder : React.FunctionComponent<GrowingBorderProps> = (props) => {
-//   const { children } = props
-//   return (
-//     <div className={`${styles.border_animation_container}`}>
-//       <div className={`${styles.border_item} ${styles.top_middle_to_right}`} />
-//       <div className={`${styles.border_item} ${styles.top_middle_to_left}`} />
-
-//       <div className={`${styles.border_item} ${styles.top_left_to_bottom}`} />
-//       <div className={`${styles.border_item} ${styles.top_right_to_bottom}`} />
-
-//       <div className={`${styles.border_item} ${styles.bottom_left_to_middle}`} />
-//       <div className={`${styles.border_item} ${styles.bottom_right_to_middle}`} />
-//       {children}
-//     </div>
-
-//   )
-// }
