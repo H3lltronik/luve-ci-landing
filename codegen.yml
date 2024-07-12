@@ -1,5 +1,5 @@
 overwrite: true
-schema: "http://localhost:1337/graphql"
+schema: "https://strapi-production-5ff9.up.railway.app/graphql"
 documents: "data/graphql/**/*.ts"
 generates:
   ./data/graphql/types.ts:

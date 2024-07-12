@@ -7,7 +7,9 @@ import apolloClient from '../../../data/api/apollo-client'
 import { GET_BLOG_ENTRY_BY_SLUG } from '../../../data/graphql/queries'
 import { GetBlogEntryBySlugQuery } from '../../../data/graphql/types'
 import { PrimaryButton } from '../../common/Buttons'
+import { StructuredData } from '../../components/StructuredData'
 import { BlogEntryCard } from '../BlogEntryCard'
+import { BlogEntryCardMarquee } from '../BlogEntryCardMarquee'
 import Tag from '../components/Tag/Tag'
 
 type Props = {
@@ -84,6 +86,7 @@ export default async function BlogPage ({ params }: { params: { id: string } }) 
 
   return (
     <>
+      <StructuredData data={blogData.seo?.structuredData} />
       <header className='content-container md:pt-5 px-10'>
         <div className='inline-block mb-5'>
           <Link href='/blog'>
@@ -91,8 +94,8 @@ export default async function BlogPage ({ params }: { params: { id: string } }) 
           </Link>
         </div>
       </header>
-      <main className='content-container flex flex-col lg:flex-row gap-5 md:gap-10 px-4 md:px-10 pb-10'>
-        <section className='flex-grow'>
+      <main className='content-container grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-5 md:gap-10 px-4 md:px-10 pb-10'>
+        <section className='overflow-y-auto max-h-[unset]'>
           <article>
             <div className='md:rounded-lg overflow-hidden relative h-[200px] md:h-[300px] lg:h-[545px]'>
               <Image
@@ -112,18 +115,16 @@ export default async function BlogPage ({ params }: { params: { id: string } }) 
             <div className='md:translate-y-[-50px] bg-white md:rounded-lg p-4 md:p-5 overflow-hidden md:mx-5 shadow-[0px_20px_20px_10px_#00000024]'>
               <header className='border-b-[1px] pb-2'>
                 <div className='flex items-center gap-5'>
-                  <strong className='text-xl md:text-2xl text-[#535353] uppercase'>
+                  <strong className='text-xl md:text-2xl text-[#535353] uppercase whitespace-nowrap'>
                     {dayjs(blogData.date).format('MMMM D, YYYY')}
                   </strong>
                   <div className='md:h-[25px] w-[3px] bg-[#535353]' />
-                  {blogData.tags?.data.map((tag) => (
-                    <Tag
-                      key={tag.attributes?.slug}
-                      mode='normal'
-                      type='normal'
-                      text={tag.attributes?.name ?? 'Sin categoría'}
-                    />
-                  )) ?? null}
+                  <BlogEntryCardMarquee tags={blogData.tags?.data.map((tag) => ({
+                    id: tag.id ?? '',
+                    name: tag.attributes?.name ?? 'Unknown Tag',
+                    slug: tag.attributes?.slug ?? 'unknown-slug'
+                  })) ?? []}
+                  />
                 </div>
                 <h1 className='text-2xl md:text-3xl text-black uppercase tracking-wider mt-3'>
                   {blogData.title}

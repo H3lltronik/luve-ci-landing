@@ -1,7 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import "../node_modules/ckeditor5/dist/ckeditor5-content.css";
+/* @import "../node_modules/ckeditor5/dist/ckeditor5-content.css"; */
+@import "./ckeditor2.css";
+/* @import "./ckeditor.css"; */
 
 /* video, image, figure, etc, etc all those things should be display: inline */
 .ck-content video,
@@ -10,6 +12,143 @@
 .ck-content .image,
 .ck-content .image-inline {
   display: inline;
+}
+
+.ck-content {
+  font-family: "Source Sans Pro", system-ui, Roboto, "Helvetica Neue",
+    "Helvetica", Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+.ck-content p {
+  font-size: 1em;
+  line-height: 1.6em;
+  padding-top: 0.2em;
+  margin-bottom: var(--ck-spacing-large);
+}
+
+.ck-content h1,
+.ck-content h2,
+.ck-content h3,
+.ck-content h4,
+.ck-content h5,
+.ck-content h6 {
+  line-height: 2.2em;
+  padding-top: 0.8em;
+  margin-bottom: 0.4em;
+}
+
+.ck-content h1 {
+  font-size: 2em;
+  font-weight: 700;
+}
+
+.ck-content h2 {
+  font-size: 1.75em;
+  font-weight: 600;
+}
+
+.ck-content h3 {
+  font-size: 1.48em;
+  font-weight: 400;
+}
+
+.ck-content h4 {
+  font-size: 1.22em;
+  font-weight: 400;
+}
+
+.ck-content h5 {
+  font-size: 1em;
+  font-weight: 700;
+}
+
+.ck-content h6 {
+  font-size: 1em;
+  font-weight: 400;
+}
+
+.ck-content ul,
+.ck-content ol {
+  margin: 1em 0;
+  padding-left: 2em;
+}
+
+.ck-content li {
+  margin-bottom: 0.5em;
+}
+
+.ck-content blockquote {
+  margin: 1em 0;
+  padding: 0.5em 1em;
+  border-left: 4px solid #ccc;
+  background-color: #f9f9f9;
+}
+
+.ck-content pre {
+  background: #f4f4f4;
+  padding: 1em;
+  overflow: auto;
+  font-size: 0.9em;
+  line-height: 1.4em;
+}
+
+.ck-content code {
+  background: #f4f4f4;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+}
+
+.ck-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+}
+
+.ck-content th,
+.ck-content td {
+  border: 1px solid #ccc;
+  padding: 0.5em;
+}
+
+.ck-content th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+.ck-content a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.ck-content a:hover {
+  text-decoration: underline;
+}
+
+.ck-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.ck-content hr {
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 2em 0;
+}
+
+.ck-content b,
+.ck-content strong {
+  font-weight: bold;
+}
+
+.ck-content i,
+.ck-content em {
+  font-style: italic;
+}
+
+.ck-content u {
+  text-decoration: underline;
 }
 
 .responsive-iframe-container {
