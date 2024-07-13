@@ -1,6 +1,7 @@
 import dayjs from 'dayjs'
 import parse from 'html-react-parser'
 import type { Metadata, ResolvingMetadata } from 'next'
+import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
@@ -11,6 +12,8 @@ import { PrimaryButton } from '../../common/Buttons'
 import { StructuredData } from '../../components/StructuredData'
 import { BlogEntryCard } from '../BlogEntryCard'
 import { BlogEntryCardMarquee } from '../BlogEntryCardMarquee'
+
+const SocialsShare = dynamic(() => import('./SocialsShare').then((mod) => mod.SocialsShare))
 
 type Props = {
   params: { id: string };
@@ -92,6 +95,7 @@ export default async function BlogPage ({ params }: { params: { id: string } }) 
 
   return (
     <>
+      <SocialsShare title={blogData.seo?.metaTitle ?? ''} description={blogData.seo?.metaDescription ?? ''} />
       <StructuredData data={blogData.seo?.structuredData} />
       <header className='content-container md:pt-5 px-10'>
         <div className='inline-block mb-5'>

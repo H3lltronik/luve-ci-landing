@@ -1,110 +1,117 @@
 .primary-button {
-    $ctx: &;
-    color: white;
-    border: unset;
-    cursor: pointer;
-    padding: 5px 40px;
-    border-radius: 40px;
-    
-    transition: 0.3s ease-in-out;
-    background-color: var(--neutral-color-300);
-    p {
-        font-size: 16px !important;
-    }
-    &__disabled {
-        opacity: 0.5;
-    }
-    &_wrapper {
-        position: relative;
-        &:hover {
-            #{$ctx}_icon {
-                color: var(--primary-color-200);
-                background-color: var(--neutral-color-300);
-            }
-            #{$ctx}_icon_wrapper {
-                left: 100%;
-                transform: translate(calc(-100% - 3px), -50%);
-            }
-            #{$ctx} {
-                background-color: var(--primary-color-200);
-            }
-        }
-    }
-    &_icon {
-        width: 20px;
-        height: 20px;
-        font-size: 15px;
-        border-radius: 100%;
-        transition: 0.3s ease-in-out;
-        color: var(--neutral-color-300);
+  $ctx: &;
+  color: white;
+  border: unset;
+  cursor: pointer;
+  padding: 5px 40px;
+  border-radius: 40px;
+
+  transition: 0.3s ease-in-out;
+  background-color: var(--neutral-color-300);
+  p {
+    font-size: 16px !important;
+  }
+  &__disabled {
+    opacity: 0.5;
+  }
+  &_wrapper {
+    position: relative;
+    &:hover {
+      #{$ctx}_icon {
+        color: var(--primary-color-200);
+        background-color: var(--neutral-color-300);
+      }
+      #{$ctx}_icon_wrapper {
+        left: 100%;
+        transform: translate(calc(-100% - 3px), -50%);
+      }
+      #{$ctx} {
         background-color: var(--primary-color-200);
-        &_wrapper {
-            position: absolute;
-            top: 50%; left: 0%;
-            transition: 0.3s ease-in-out;
-            transform: translate(3px, -50%);
-        }
-        svg {
-            position: absolute;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-        }
+      }
     }
-    h3, p {
-        margin: 0;
+  }
+  &_icon {
+    width: 20px;
+    height: 20px;
+    font-size: 15px;
+    border-radius: 100%;
+    transition: 0.3s ease-in-out;
+    color: var(--neutral-color-300);
+    background-color: var(--primary-color-200);
+    &_wrapper {
+      position: absolute;
+      top: 50%;
+      left: 0%;
+      transition: 0.3s ease-in-out;
+      transform: translate(3px, -50%);
     }
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  h3,
+  p {
+    margin: 0;
+  }
 }
 
 .simple_button {
-    border: none;
-    padding: 10px;
-    color: white;
-    cursor: pointer;
-    padding: 10px 20px;
-    border-radius: 68px;
-    transition: 0.3s ease-in-out;
-    background-color: var(--primary-color-200);
-    &:hover {
-        background-color: var(--neutral-color-200);
-    }
-    &__wrapper {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-    }
-    h3, p {
-        margin: 0;
-    }
+  border: none;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 68px;
+  transition: 0.3s ease-in-out;
+  background-color: var(--primary-color-200);
+  &:hover {
+    background-color: var(--neutral-color-200);
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  h3,
+  p {
+    margin: 0;
+  }
 }
 
 .icon_button {
-    $logoSize: 20px;
-    $iconSize: 14px;
+  $logoSize: 20px;
+  $iconSize: inherit;
 
-    border: none;
-    color: white;
-    cursor: pointer;
-    position: relative;
-    border-radius: 100%;
-    width: $logoSize;
-    height: $logoSize;
-    transition: 0.3s ease-in-out;
-    background-color: var(--primary-color-200);
-    &:hover {
-        background-color: var(--neutral-color-200);
-    }
-    &__wrapper {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-    }
-    &__icon, svg {
-        position: absolute;
-        top: 50%; left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: $iconSize;
-    }
-    h3, p {
-        margin: 0;
-    }
+  border: none;
+  color: white;
+  cursor: pointer;
+  position: relative;
+  border-radius: 100%;
+  width: $logoSize;
+  height: $logoSize;
+  transition: 0.3s ease-in-out;
+  background-color: var(--primary-color-200);
+  &:hover {
+    background-color: var(--neutral-color-200);
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  &__icon,
+  svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: $iconSize;
+  }
+  h3,
+  p {
+    margin: 0;
+  }
 }

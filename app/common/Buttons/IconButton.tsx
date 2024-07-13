@@ -4,11 +4,12 @@ import styles from './Buttons.module.scss'
 import * as Icons from '../Icons'
 
 type IconButtonProps = {
-  icon: 'RightArrowIcon' | 'WordIcon' | 'InfoIcon' | 'GroupIcon' | 'GraphIcon' | 'BoardTableIcon' | 'WhatsAppIcon' | 'PhoneIcon' | 'ArrobaIcon' | 'WhatsAppIcon2' | 'TwitterIcon' | 'LinkedInIcon' | 'HamburgerIcon' | 'FacebookIcon';
+  icon: 'RightArrowIcon' | 'WordIcon' | 'InfoIcon' | 'GroupIcon' | 'GraphIcon' | 'BoardTableIcon' | 'WhatsAppIcon' | 'PhoneIcon' | 'ArrobaIcon' | 'WhatsAppIcon2' | 'TwitterIcon' | 'LinkedInIcon' | 'HamburgerIcon' | 'FacebookIcon' | 'ThreadsIcon';
   className?: string;
   ariaLabel?: string;
   ariaLabelledby?: string;
   role?: string;
+  classNameBtn?: string;
 };
 // eslint-disable-next-line react/display-name
 const IconButton = React.forwardRef<any, IconButtonProps>((props, ref) => {
@@ -53,6 +54,8 @@ const IconButton = React.forwardRef<any, IconButtonProps>((props, ref) => {
       icon = <Icons.LaptopIcon />
     } else if (props.icon === 'ShopIcon') {
       icon = <Icons.ShopIcon />
+    } else if (props.icon === 'ThreadsIcon') {
+      icon = <Icons.ThreadsIcon />
     }
 
     return icon
@@ -63,7 +66,7 @@ const IconButton = React.forwardRef<any, IconButtonProps>((props, ref) => {
       ref={ref}
       className={`${props.className} ${styles.icon_button__wrapper}`}
     >
-      <button className={`${styles.icon_button} icon_button`} role={role} aria-label={props.ariaLabel} aria-labelledby={props.ariaLabelledby}>
+      <button className={`${styles.icon_button} icon_button ${props.classNameBtn}`} role={role} aria-label={props.ariaLabel} aria-labelledby={props.ariaLabelledby}>
         {getIcon()}
       </button>
     </div>

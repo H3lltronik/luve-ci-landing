@@ -336,7 +336,10 @@ export type DateTimeFilterInput = {
 
 export enum Enum_Componentsharedmetasocial_Socialnetwork {
   Facebook = 'Facebook',
-  Twitter = 'Twitter'
+  LinkedIn = 'LinkedIn',
+  Threads = 'Threads',
+  Twitter = 'Twitter',
+  WhatsApp = 'WhatsApp'
 }
 
 export type FileInfoInput = {
