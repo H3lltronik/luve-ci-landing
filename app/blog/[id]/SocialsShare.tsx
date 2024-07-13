@@ -36,7 +36,7 @@ const generateThreadsShareLink = (title: string, url: string) => {
   const encodedUrl = encodeURIComponent(url)
   const text = `${title}%0A%0A${encodedUrl}`
 
-  return `https://www.threader.app/intent/post?text=${text}`
+  return `https://www.threads.net/intent/post?text=${text}`
 }
 
 export const SocialsShare = (props: SocialsProps) => {
