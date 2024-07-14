@@ -39,15 +39,15 @@ const HeroSection = () => {
       <div className={styles.home_page__video_hero_wrapper}>
         <div className={styles.home_page__video_hero}>
           <LazyLoad offset={100} className='full-size'>
-            <video loop autoPlay muted>
-              <source src='/hero-video.webm' />
+            <video loop autoPlay muted playsInline webkit-playsinline>
+              <source src='/hero-video.webm' type='video/webm' />
             </video>
           </LazyLoad>
         </div>
         <LuveLogo className={styles.home_page__video_hero_content_logo} />
         <div className={styles.home_page__video_hero_content}>
           {/* red dot pulsating anim */}
-          <div className='w-[50px] h-[50px] rounded-full bg-[#e31937] transition duration-300 ease-in-out pulse-relative' />
+          <div className='w-[50px] h-[50px] rounded-full bg-[#e31937] transition duration-300 ease-in-out pulse-relative mt-3 md:mt-0' />
           <div ref={ref.ref} className=''>
             <h1>
               Cons<span className='red'>u</span>ltoria Int

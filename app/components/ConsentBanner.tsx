@@ -43,6 +43,7 @@ const ConsentBanner: React.FC = () => {
     <div
       style={{
         position: 'fixed',
+        zIndex: 100,
         bottom: 0,
         width: '100%',
         backgroundColor: 'white',

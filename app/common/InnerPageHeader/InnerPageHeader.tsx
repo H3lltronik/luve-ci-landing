@@ -8,26 +8,19 @@ type InnerPageHeaderProps = {
   subtitle: string;
   children?: React.ReactNode;
 };
+
 export default function InnerPageHeader (props: InnerPageHeaderProps) {
   const { image, subtitle, title } = props
 
   const subtitleWordFirstLetterRed = () => {
-    const result = []
-    const words = subtitle.split(' ')
-    for (let i = 0; i < words.length; i++) {
-      const word = words[i]
-      if (word.length > 0) {
-        result.push(
-          <>
-            <span className={word.length > 1 ? 'red' : ''}>{word[0]}</span>
-            {word.slice(1)}
-            &nbsp;
-          </>
-        )
-      }
-    }
-
-    return result
+    return subtitle.split(' ').map((word, index) => (
+      <React.Fragment key={index}>
+        <span className='inline'>
+          <span className='text-red-600'>{word[0]}</span>
+          {word.slice(1)}
+        </span>{' '}
+      </React.Fragment>
+    ))
   }
 
   return (
@@ -42,13 +35,17 @@ export default function InnerPageHeader (props: InnerPageHeaderProps) {
       />
 
       <div className={styles.header__container}>
-        <div className={styles.red_dot} />
-        <h1 style={{ flex: 1 }}>
-          <span className={styles.header__subtitle}>{title}</span>
-          <span className={styles.header__title}>
-            {subtitleWordFirstLetterRed()}
-          </span>
-        </h1>
+        <div className='flex-1 flex justify-end items-center'>
+          <div className={styles.red_dot} />
+        </div>
+        <div className='flex-[2]'>
+          <h1>
+            <span className={styles.header__subtitle}>{title}</span>
+            <span className={styles.header__title}>
+              {subtitleWordFirstLetterRed()}
+            </span>
+          </h1>
+        </div>
       </div>
       <div className={styles.header___overlay} />
       {props.children}

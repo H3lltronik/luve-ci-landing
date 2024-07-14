@@ -37,7 +37,7 @@ export const HeaderNav: React.FunctionComponent<HeaderNavProps> = (props) => {
             <ul className={styles.header_nav_ul}>{renderList(links)}</ul>
           </nav>
 
-          <a href='#contact' className={styles.header__contact_button}>
+          <a href='#contact' className={`${styles.header__contact_button}`}>
             <PrimaryButton text='CONTACTO' />
           </a>
 
@@ -45,7 +45,7 @@ export const HeaderNav: React.FunctionComponent<HeaderNavProps> = (props) => {
         </div>
       </div>
 
-      <nav id='mobile_nav' className={styles.header_mobile_nav}>
+      <nav id='mobile_nav' className={`${styles.header_mobile_nav} py-4 mt:pt-0`}>
         <ul className={styles.header_nav_ul}>{renderList(links)}</ul>
       </nav>
     </div>

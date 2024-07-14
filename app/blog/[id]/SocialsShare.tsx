@@ -44,7 +44,7 @@ export const SocialsShare = (props: SocialsProps) => {
   const currentUrl = `${process.env.NEXT_PUBLIC_SITE_URL}${pathname}`
 
   return (
-    <div className='fixed bottom-0 md:bottom-1/2 right-0 md:translate-y-1/2 bg-[#e31937] h-[50px] w-full md:w-[50px] z-50 flex flex-row md:flex-col items-center justify-center'>
+    <div className='fixed bottom-0 md:bottom-1/2 right-0 md:translate-y-1/2 bg-[#e31937] h-[50px] w-full md:w-[50px] z-[5] flex flex-row md:flex-col items-center justify-center'>
       <span className='text-white text-sm md:hidden'>Compartir:</span>
       <Link
         target='_blank'
