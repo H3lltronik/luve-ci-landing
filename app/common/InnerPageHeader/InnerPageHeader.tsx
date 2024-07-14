@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 import styles from './InnerPageHeader.module.scss'
 
@@ -30,13 +31,16 @@ export default function InnerPageHeader (props: InnerPageHeaderProps) {
   }
 
   return (
-    <header
-      className={`${styles.header} mb-[2rem] md:mb-[4rem]`}
-      style={{
-        backgroundImage: `url(${image.src})`,
-        backgroundPosition: 'center'
-      }}
-    >
+    <header className={`${styles.header} mb-[2rem] md:mb-[4rem]`}>
+      <Image
+        src={image.src}
+        alt={image.alt}
+        className='absolute inset-0 w-full h-full object-cover z-[-1]'
+        fill
+        loading='eager'
+        style={{ objectFit: 'cover' }}
+      />
+
       <div className={styles.header__container}>
         <div className={styles.red_dot} />
         <h1 style={{ flex: 1 }}>
