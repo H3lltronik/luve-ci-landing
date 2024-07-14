@@ -39,6 +39,15 @@
   margin-bottom: 0.4em;
 }
 
+.ck-content h1,
+.ck-content h2,
+.ck-content h3,
+.ck-content h4,
+.ck-content h5,
+.ck-content h6 {
+  font-weight: bold;
+}
+
 .ck-content h1 {
   font-size: 2em;
   font-weight: 700;

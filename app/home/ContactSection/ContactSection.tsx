@@ -25,7 +25,9 @@ const ContactSection: React.FC<ContactSectionProps> = (props) => {
       <div className={styles.home_page__contact__content}>
         <div data-aos='fade-in' className={styles.home_page__contact__info}>
           <div className={styles.home_page__contact_circle} />
-          <h2 className={styles.home_page__contact__title}>CONTACTANOS</h2>
+          <a href='#contact-form'>
+            <h2 className={styles.home_page__contact__title}>CONTACTANOS</h2>
+          </a>
           <h3 className={styles.home_page__contact__subtitle}>Nos contactaremos contigo.</h3>
 
           <div className={styles.home_page__contact__list}>
@@ -53,7 +55,7 @@ const ContactSection: React.FC<ContactSectionProps> = (props) => {
             <iframe title='ubicacion' src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d784.533366781623!2d-103.3816750948716!3d20.71466470412939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428afca156ac4a1%3A0xb1afa32dd0e9b17f!2sJacarandas%2C%2045160%20Zapopan%2C%20Jal.!5e0!3m2!1ses-419!2smx!4v1679720076602!5m2!1ses-419!2smx' allowFullScreen loading='lazy' referrerPolicy='no-referrer-when-downgrade' style={{ border: 0 }} />
           </div>
         </div>
-        <div data-aos='fade-in' className=''>
+        <div id='contact-form' data-aos='fade-in' className=''>
           <ContactForm />
         </div>
       </div>

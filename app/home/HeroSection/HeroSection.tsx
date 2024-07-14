@@ -39,7 +39,7 @@ const HeroSection = () => {
       <div className={styles.home_page__video_hero_wrapper}>
         <div className={styles.home_page__video_hero}>
           <LazyLoad offset={100} className='full-size'>
-            <video loop autoPlay muted playsInline webkit-playsinline>
+            <video loop autoPlay muted playsInline webkitPlaysinline>
               <source src='/hero-video.webm' type='video/webm' />
             </video>
           </LazyLoad>
@@ -56,7 +56,7 @@ const HeroSection = () => {
             <br />
 
             <DelayedWindup delay={500}>
-              <h2>
+              <h2 className='px-2'>
                 Ofr<span className='red'>e</span>cemos{' '}
                 <span className='red'>l</span>as mejor
                 <span className='red'>e</span>s so<span className='red'>l</span>
