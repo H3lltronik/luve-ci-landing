@@ -23,10 +23,13 @@ const GoogleAnalytics: React.FC<GoogleAnalyticsProps> = ({ trackingId }) => {
     <>
       <Script
         async
+        type='text/partytown'
+        strategy='worker'
         src={`https://www.googletagmanager.com/gtag/js?id=${trackingId}`}
       />
       <Script
         id='gtag-init'
+        type='text/partytown'
         strategy='worker'
         dangerouslySetInnerHTML={{
           __html: `

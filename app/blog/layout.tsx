@@ -57,7 +57,7 @@ export default async function BlogLayout (props: BlogLayoutProps) {
 
         {props.children}
 
-        <Script src='https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2' strategy='worker' />
+        <Script type='text/partytown' src='https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2' strategy='worker' />
       </main>
     </>
   )

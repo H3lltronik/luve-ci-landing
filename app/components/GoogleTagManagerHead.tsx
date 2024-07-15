@@ -12,7 +12,8 @@ const GoogleTagManagerHead: React.FC<GoogleTagManagerHeadProps> = ({ gtmId }) =>
     <>
       <Script
         id='gtm-head'
-        strategy='beforeInteractive'
+        type='text/partytown'
+        strategy='worker'
         dangerouslySetInnerHTML={{
           __html: `
               (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -26,6 +27,7 @@ const GoogleTagManagerHead: React.FC<GoogleTagManagerHeadProps> = ({ gtmId }) =>
       <Script
         id='consent-init'
         strategy='worker'
+        type='text/partytown'
         dangerouslySetInnerHTML={{
           __html: `
               window.dataLayer = window.dataLayer || [];

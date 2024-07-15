@@ -7,7 +7,8 @@
     "codegen:watch": "nodemon --watch data/graphql --ext ts --exec \"npx graphql-codegen\"",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "partytown": "partytown copylib public/~partytown"
   },
   "dependencies": {
     "@apollo/client": "^3.10.8",
