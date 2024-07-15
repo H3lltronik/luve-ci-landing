@@ -25,7 +25,7 @@ const GoogleTagManagerHead: React.FC<GoogleTagManagerHeadProps> = ({ gtmId }) =>
       />
       <Script
         id='consent-init'
-        strategy='afterInteractive'
+        strategy='worker'
         dangerouslySetInnerHTML={{
           __html: `
               window.dataLayer = window.dataLayer || [];

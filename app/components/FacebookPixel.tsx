@@ -37,7 +37,7 @@ const FacebookPixel: React.FC<FacebookPixelProps> = ({ pixelId }) => {
     <>
       <Script
         id='facebook-pixel'
-        strategy='afterInteractive'
+        strategy='worker'
         dangerouslySetInnerHTML={{
           __html: `
             !function(f,b,e,v,n,t,s)

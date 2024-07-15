@@ -27,7 +27,7 @@ const GoogleAnalytics: React.FC<GoogleAnalyticsProps> = ({ trackingId }) => {
       />
       <Script
         id='gtag-init'
-        strategy='afterInteractive'
+        strategy='worker'
         dangerouslySetInnerHTML={{
           __html: `
             window.dataLayer = window.dataLayer || [];
