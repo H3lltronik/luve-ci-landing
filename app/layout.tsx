@@ -12,6 +12,7 @@ import GoogleAnalytics from './components/GoogleAnalytics'
 import GoogleTagManagerBody from './components/GoogleTagManagerBody'
 import GoogleTagManagerHead from './components/GoogleTagManagerHead'
 import { URLContactDialog } from './components/URLContactDialog'
+import { FloatingSocialsContact } from './home/ContactSection/FloatingSocialsContact'
 // import { SpeedInsights } from '@vercel/speed-insights/next'
 
 const Header = dynamic(() => import('./common/Header/Header'), {
@@ -47,6 +48,7 @@ export default function RootLayout ({
         <AOSInitializer />
         <Preloader />
         <URLContactDialog />
+        <FloatingSocialsContact whatsappMsg='¡Hola Luve! Estoy en tu sitio web, quisiera recibir mas información.' />
         {/* <SpeedInsights /> */}
 
         <Suspense fallback={<>Loading...</>}>

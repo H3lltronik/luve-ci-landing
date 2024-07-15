@@ -97,14 +97,14 @@ export default async function BlogPage ({ params }: { params: { id: string } }) 
     <>
       <SocialsShare title={blogData.seo?.metaTitle ?? ''} description={blogData.seo?.metaDescription ?? ''} />
       <StructuredData data={blogData.seo?.structuredData} />
-      <header className='content-container md:pt-5 px-10'>
+      <header className='content-container md:pt-5 px-10 flex justify-center items-center md:justify-start md:items-start'>
         <div className='inline-block mb-5'>
           <Link href='/blog' aria-label='Back button'>
             <PrimaryButton text='REGRESAR' />
           </Link>
         </div>
       </header>
-      <main className='content-container grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-5 md:gap-10 px-4 md:px-10 pb-10'>
+      <main className='content-container grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-5 md:gap-10 px-0 md:px-10 pb-10'>
         <section className='overflow-y-auto max-h-[unset]'>
           <article>
             <div className='md:rounded-lg overflow-hidden relative h-[200px] md:h-[300px] lg:h-[545px]'>

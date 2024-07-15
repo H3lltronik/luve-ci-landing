@@ -26,7 +26,7 @@ export const HomePageSection = () => {
         </div>
 
         <div className='content-container'>
-          <ContactSection whatsappMsg='¡Hola Luve! Estoy en tu sitio web, quisiera recibir mas información.' />
+          <ContactSection />
         </div>
       </main>
     </ParallaxProvider>

@@ -204,6 +204,9 @@
     right: 0;
     margin: 2rem 1.6rem;
     z-index: 100;
+    @media (max-width: 768px) {
+      bottom: 100px;
+    }
     img {
       width: 100%;
       height: 100%;
@@ -220,6 +223,9 @@
     right: 0;
     margin: 2rem;
     z-index: 100;
+    @media (max-width: 768px) {
+      bottom: 50px;
+    }
     button {
       transition: all 0.5s ease-in-out;
       // increase size of whatsapp icon, bounce a little and return

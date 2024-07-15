@@ -23,6 +23,8 @@ export async function generateMetadata (): Promise<Metadata> {
 
 export default function HomePage (options: any) {
   return (
-    <HomePageSection />
+    <>
+      <HomePageSection />
+    </>
   )
 }
