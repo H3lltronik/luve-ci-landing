@@ -34,7 +34,6 @@
 .ck-content h4,
 .ck-content h5,
 .ck-content h6 {
-  line-height: 2.2em;
   padding-top: 0.8em;
   margin-bottom: 0.4em;
 }
@@ -50,6 +49,7 @@
 
 .ck-content h1 {
   font-size: 2em;
+  line-height: 1.2em;
 }
 
 .ck-content h2 {
