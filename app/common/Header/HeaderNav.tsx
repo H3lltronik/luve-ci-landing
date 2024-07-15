@@ -80,7 +80,9 @@ const ListItem = ({ link }: any) => {
         : (
           <li className={styles.header_nav_li} onClick={handleClick}>
             <Link href={link.path} key={link.path} aria-label={link.label}>
-              <span>{link.label}</span>
+              <div className="className='min-h-[24px]'">
+                <span>{link.label}</span>
+              </div>
             </Link>
           </li>
           )}
