@@ -51,12 +51,14 @@ export const SocialsShare = (props: SocialsProps) => {
         href={generateTwitterShareLink(props.title, currentUrl)}
       >
         <IconButton
+          ariaLabel='Compartir en Twitter'
           icon='TwitterIcon'
           classNameBtn='!w-[50px] !h-[50px] !rounded-none hover:!bg-[#00acee] text-xl'
         />
       </Link>
       <Link href={generateFacebookShareLink(currentUrl)} target='_blank'>
         <IconButton
+          ariaLabel='Compartir en Facebook'
           icon='FacebookIcon'
           classNameBtn='!w-[50px] !h-[50px] !rounded-none hover:!bg-[#3b5998] text-xl'
         />
@@ -66,18 +68,21 @@ export const SocialsShare = (props: SocialsProps) => {
         href={generateThreadsShareLink(props.title, currentUrl)}
       >
         <IconButton
+          ariaLabel='Compartir en Threads'
           icon='ThreadsIcon'
           classNameBtn='!w-[50px] !h-[50px] !rounded-none hover:!bg-[#0077b5] text-xl'
         />
       </Link>
       <Link href={generateLinkedInShareLink(currentUrl)} target='_blank'>
         <IconButton
+          ariaLabel='Compartir en LinkedIn'
           icon='LinkedInIcon'
           classNameBtn='!w-[50px] !h-[50px] !rounded-none hover:!bg-[#0e76a8] text-xl'
         />
       </Link>
       <Link href={generateWhatsAppShareLink(currentUrl)} target='_blank'>
         <IconButton
+          ariaLabel='Compartir en WhatsApp'
           icon='WhatsAppIcon'
           classNameBtn='!w-[50px] !h-[50px] !rounded-none hover:!bg-[#25d366] text-2xl'
         />
